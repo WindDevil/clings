@@ -38,14 +38,18 @@ Markdown 位于 `.ref/books` 与 `.ref/markdown`；扫描版书籍的完整 OCR
 
 ### C 陷阱与缺陷
 
-路径：`.ref/markdown/C/C陷阱与缺陷.md`（扫描版，需 OCR）
+路径：`.ref/markdown/C/C陷阱与缺陷.md`（已 OCR）
 
+- 本轮已用 Tesseract `chi_sim+eng` 对 178 页扫描版完成 OCR，OCR 文本在
+  `.ref/ocr/C/C陷阱与缺陷.txt`。
 - 主题按词法陷阱、语法陷阱、语义陷阱、链接、库函数、预处理器、
   可移植性组织。
 - 当前项目已经覆盖了部分词法/语法/语义陷阱，但缺少链接、库函数边界和
   可移植性系统练习。
 - 建议新增：`sizeof`/类型提升陷阱、声明/定义不匹配、`extern` 链接错误、
   库函数返回值和错误码、整数宽度和字节序。
+- 逐节精确覆盖表见
+  [c-traps-and-pitfalls-coverage.md](c-traps-and-pitfalls-coverage.md)。
 
 ### C 语言接口与实现
 

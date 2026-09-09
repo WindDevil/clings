@@ -37,12 +37,11 @@
 
 ### 转换质量
 
-有文本层的 PDF、EPUB、DOC 已经成功转成 Markdown。以下 9 本是扫描版，
+有文本层的 PDF、EPUB、DOC 已经成功转成 Markdown。以下 8 本仍是扫描版，
 `pdftotext` 只能提取到很少文字，Markdown 中已加入 `OCR required` 警告：
 
 | 书籍 | 页数 | 提取字符数 |
 | --- | ---: | ---: |
-| C 陷阱与缺陷 | 178 | 1,175 |
 | C 语言接口与实现 | 399 | 5,172 |
 | C 专家编程 | 307 | 1,840 |
 | 数据结构与算法分析：C 语言描述 | 406 | 2,434 |
@@ -51,6 +50,10 @@
 | UNIX 网络编程卷 2 | 476 | 5,985 |
 | UNIX 编程艺术 | 544 | 12,196 |
 | 程序员的自我修养：链接、装载与库 | 485 | 14,915 |
+
+《C 陷阱与缺陷》已经用 Tesseract `chi_sim+eng` 完成 OCR，Markdown 中
+现有约 137,825 个字符，逐节覆盖见
+[c-traps-and-pitfalls-coverage.md](c-traps-and-pitfalls-coverage.md)。
 
 这些书的主题仍然可以从书名、目录结构和 C 领域的标准知识中分析，但要做
 全文检索，需要安装 `ocrmypdf`/Tesseract 后重新转换：

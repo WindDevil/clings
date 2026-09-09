@@ -152,6 +152,7 @@ make clean
 │   ├── reading-notes.md       # 20 本 C 参考书的阅读笔记
 │   ├── gap-analysis.md        # 尚未加入的知识点与优先级路线图
 │   ├── c-primer-plus-coverage.md # C Primer Plus 逐章覆盖核对
+│   ├── c-traps-and-pitfalls-coverage.md # C 陷阱与缺陷 OCR 后逐节核对
 │   └── reference/             # PDF 转换后的参考书
 ├── .ref/                      # 本地参考书库（已 gitignore）
 │   ├── PV-Books/              # PaleVerge/PV-Books 完整克隆

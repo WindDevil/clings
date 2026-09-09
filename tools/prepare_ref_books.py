@@ -38,6 +38,7 @@ REF = ROOT / ".ref"
 PV = REF / "PV-Books"
 BOOKS_DIR = REF / "books"
 MARKDOWN_DIR = REF / "markdown"
+OCR_DIR = REF / "ocr"
 MANIFEST = REF / "books-manifest.json"
 
 REPO = "PaleVerge/PV-Books"
@@ -353,6 +354,21 @@ def pdf_pages(path: Path) -> int:
     return 0
 
 
+def ocr_text(source: str) -> str | None:
+    """Return OCR text for a source PDF if it has been generated."""
+    path = OCR_DIR / Path(source).with_suffix(".txt")
+    if not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8", errors="replace")
+
+    def page_heading(match: re.Match[str]) -> str:
+        return f"\n\n---\n\n## Page {int(match.group(1))}\n\n"
+
+    text = re.sub(r"<!--\s*page-(\d+)\s*-->", page_heading, text)
+    text = re.sub(r"\n{4,}", "\n\n\n", text)
+    return text.strip() + "\n"
+
+
 def doc_text(path: Path) -> str:
     home = Path(tempfile.mkdtemp(prefix="clings-ref-soffice-"))
     output_dir = home / "out"
@@ -396,19 +412,27 @@ def convert_book(book: Book) -> dict[str, object]:
     try:
         pages = 0
         if suffix == ".pdf":
-            text = pdf_text(source)
             pages = pdf_pages(source)
+            override = ocr_text(book.source)
+            if override is not None:
+                text = override
+                quality = "ocr"
+            else:
+                text = pdf_text(source)
+                quality = "ok"
         elif suffix == ".epub":
             text = epub_text(source)
+            quality = "ok"
         elif suffix in {".doc", ".docx"}:
             text = doc_text(source)
+            quality = "ok"
         elif suffix in {".txt", ".md"}:
             text = source.read_text(encoding="utf-8", errors="replace")
+            quality = "ok"
         else:
             return {"source": book.source, "conversion": f"unsupported {suffix}"}
 
-        quality = "ok"
-        if suffix == ".pdf":
+        if suffix == ".pdf" and quality != "ocr":
             characters_per_page = len(text) / pages if pages else len(text)
             if len(text) < 2000 or characters_per_page < 100:
                 quality = "ocr-required"
@@ -428,6 +452,15 @@ def convert_book(book: Book) -> dict[str, object]:
                     f"> almost no text layer ({len(text)} characters across {pages}",
                     "> pages). The Markdown below is therefore incomplete. Run an OCR",
                     "> tool such as `ocrmypdf`/Tesseract, then rerun the converter.",
+                    "",
+                ]
+            )
+        elif quality == "ocr":
+            body.extend(
+                [
+                    "> **OCR text:** generated with Tesseract `chi_sim+eng`.",
+                    "> OCR may misrecognize characters or code; check the PDF for",
+                    "> exact code snippets.",
                     "",
                 ]
             )
@@ -475,6 +508,7 @@ def write_index(records: list[dict[str, object]]) -> None:
         "- `PV-Books/`: full clone of https://github.com/PaleVerge/PV-Books.",
         "- `books/`: C-focused books selected from PV-Books.",
         "- `markdown/`: Markdown conversions of the selected books.",
+        "- `ocr/`: OCR text for scanned books that have been processed.",
         "- `cpplings/`, `cplings/`: the two reference exercise repositories.",
         "- `books-manifest.json`: machine-readable download/conversion manifest.",
         "- `OCR-REQUIRED.md`: scanned PDFs that need OCR for full-text Markdown.",

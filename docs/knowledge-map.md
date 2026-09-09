@@ -229,3 +229,33 @@ modern testing workflow.
 | Abstract data types and data structures | `17_data_structures/01`-`03` |
 | Advanced file I/O | `18_file_io_advanced/01`-`06` |
 | Modern C library features | `19_modern_c_library/01`-`04` |
+
+## 16. C Traps and Pitfalls gap closure
+
+The OCR-backed section-by-section mapping is in
+[c-traps-and-pitfalls-coverage.md](c-traps-and-pitfalls-coverage.md).  The
+exercises are distributed into the existing knowledge-domain topics:
+
+| Book section | Exercise |
+| --- | --- |
+| 1.1 `=` vs `==` | `02_operators/08_assignment_vs_equality` |
+| 1.3 maximal munch | `02_operators/09_maximal_munch` |
+| 1.4 octal constants | `01_types_variables/10_octal_constants` |
+| 2.3 semicolon traps | `03_control_flow/08_semicolon_pitfalls` |
+| 2.5-2.6 dangling else | `03_control_flow/09_dangling_else` |
+| 3.2 non-array pointers | `06_pointers/10_one_past_pointer` |
+| 3.5 NULL vs empty string | `06_pointers/08_null_empty_string` |
+| 3.6 asymmetric bounds | `05_arrays_strings/11_asymmetric_bounds` |
+| 3.10 main return values | `00_getting_started/07_main_return_value` |
+| 4.5 external type check | `13_translation_units/04_external_type_check` |
+| 5.1 getchar/putchar | `14_character_io/05_getchar_putchar` |
+| 5.3 buffered output and allocation | `18_file_io_advanced/07_buffered_output_memory` |
+| 6.1 macro whitespace | `09_preprocessor/11_macro_whitespace` |
+| 6.3 macro as statement | `09_preprocessor/12_macro_statement` |
+| 6.4 macro vs typedef | `09_preprocessor/13_macro_not_typedef` |
+| 7.1 standard changes | `00_getting_started/08_standard_changes` |
+| 7.2 identifier length | `00_getting_started/09_identifier_length` |
+| 7.4 char signedness | `01_types_variables/11_char_signedness` |
+| 7.6 memory location zero | `06_pointers/09_memory_location_zero` |
+| 7.8 RAND_MAX | `10_stdlib_io/16_rand_max` |
+| 7.10 free then realloc | `07_dynamic_memory/08_free_then_realloc` |

@@ -15,3 +15,5 @@ Run an exercise with:
 | `05_goto_cleanup` | Use goto for a clear cleanup path in C. | 第一章 1.9 goto 关键字；第六章 函数设计 |
 | `06_state_machine` | Track state while scanning a string. | 第三章 3.2 条件编译；控制流综合练习 |
 | `07_while_do_while` | Distinguish entry-condition and exit-condition loops. | C Primer Plus 第6章 6.2、6.8 |
+| `08_semicolon_pitfalls` | Avoid accidentally ending an if or loop with a semicolon. | C 陷阱与缺陷 2.3 |
+| `09_dangling_else` | Use braces to make else bind to the intended if. | C 陷阱与缺陷 2.5-2.6 |

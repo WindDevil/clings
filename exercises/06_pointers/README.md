@@ -15,3 +15,6 @@ Run an exercise with:
 | `05_void_pointer` | Use void pointers and unsigned char for type-agnostic code. | 第四章 4.1.6 如何达到手中无剑、胸中也无剑的地步 |
 | `06_dangling_wild` | Set a freed pointer to NULL to prevent accidental reuse. | 第五章 5.1 什么是野指针；5.3.5 内存泄漏 |
 | `07_pointer_to_array` | Distinguish a pointer to an array from a pointer to its first element. | 第四章 4.3.2 a 和 &a 的区别；4.4 指针数组和数组指针 |
+| `08_null_empty_string` | Distinguish a null pointer, an empty string, and the NUL character. | C 陷阱与缺陷 3.5 |
+| `09_memory_location_zero` | Treat address zero as a null pointer, not as a valid object address. | C 陷阱与缺陷 7.6 |
+| `10_one_past_pointer` | Do not treat a pointer to a single object as an array. | C 陷阱与缺陷 3.2 |

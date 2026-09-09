@@ -23,3 +23,4 @@ Run an exercise with:
 | `13_printf_advanced` | Use width, zero padding, precision, and the * width argument. | C Primer Plus 第4章 4.4.3-4.4.6 |
 | `14_scanf_advanced` | Use field width and a scanset in sscanf. | C Primer Plus 第4章 4.4.5、第11章 11.2.4 |
 | `15_ctype_full` | Use isalnum and toupper with unsigned char casts. | C Primer Plus 第7章 7.2.2、第11章 11.7 |
+| `16_rand_max` | Do not assume rand() returns a value below a fixed small bound. | C 陷阱与缺陷 7.8 |

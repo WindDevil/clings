@@ -87,6 +87,7 @@ def load_specs() -> list[ExerciseSpec]:
     from specs_09_12 import SPECS as specs_09_12
     from specs_c_primer_existing import SPECS as specs_c_primer_existing
     from specs_c_primer_new import SPECS as specs_c_primer_new
+    from specs_c_traps import SPECS as specs_c_traps
 
     specs = (
         specs_00_04
@@ -94,6 +95,7 @@ def load_specs() -> list[ExerciseSpec]:
         + specs_09_12
         + specs_c_primer_existing
         + specs_c_primer_new
+        + specs_c_traps
     )
     seen: set[str] = set()
     for spec in specs:

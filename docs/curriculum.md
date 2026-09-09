@@ -5,7 +5,7 @@ corresponding section of *C语言深度解剖*.  The book is a deep-dive
 companion; the exercises also cover standard-library, tooling, and
 portability topics that are outside the book's original scope.
 
-Total exercises: **146** across **20** topics.
+Total exercises: **167** across **20** topics.
 
 ## 00_getting_started - Getting Started
 
@@ -17,6 +17,9 @@ Total exercises: **146** across **20** topics.
 | `00_getting_started/04_debug_assert` | Use assert for programmer errors and return values for user errors. | 第五章 内存管理；调试与测试资料 |
 | `00_getting_started/05_compiler_diagnostics` | Fix a format-string warning that the compiler reports. | 第一章 1.5 sizeof；格式化输入输出资料 |
 | `00_getting_started/06_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. | 第二章 2.1 注释符号；2.2 接续符和转义符 |
+| `00_getting_started/07_main_return_value` | Return a defined success or failure status from a program. | C 陷阱与缺陷 3.10 |
+| `00_getting_started/08_standard_changes` | Detect the C standard version at compile time. | C 陷阱与缺陷 7.1 |
+| `00_getting_started/09_identifier_length` | Use long internal identifiers and rely on the standard minimum. | C 陷阱与缺陷 7.2 |
 
 ## 01_types_variables - Types, Variables, and Storage
 
@@ -31,6 +34,8 @@ Total exercises: **146** across **20** topics.
 | `01_types_variables/07_qualifiers` | Use const, volatile, restrict, extern, auto, and register. | 第一章 1.1-1.3 auto、register、static；1.11 const；1.12 volatile；1.13 extern |
 | `01_types_variables/08_stdbool_stddef` | Use bool and size_t from the standard headers. | 第一章 1.4 基本数据类型；C99/C11 标准库 |
 | `01_types_variables/09_long_double` | Use long double and compare its precision with double. | C Primer Plus 第3章 3.4.6 |
+| `01_types_variables/10_octal_constants` | Recognize that a leading zero means base 8. | C 陷阱与缺陷 1.4 |
+| `01_types_variables/11_char_signedness` | Use signed char and unsigned char explicitly when the sign matters. | C 陷阱与缺陷 7.4 |
 
 ## 02_operators - Operators and Expressions
 
@@ -43,6 +48,8 @@ Total exercises: **146** across **20** topics.
 | `02_operators/05_shifts` | Build masks and avoid shifting by the width of the type. | 第二章 2.5.1 左移和右移 |
 | `02_operators/06_sizeof_incdec` | Distinguish sizeof expressions from increment side effects. | 第一章 1.5 sizeof；第二章 2.7 ++、-- |
 | `02_operators/07_compound_assignment` | Use +=, -=, *=, /=, %= and the comma operator. | C Primer Plus 第5章 5.3、第6章 6.6-6.7 |
+| `02_operators/08_assignment_vs_equality` | Use == for comparison and recognize the = versus == trap. | C 陷阱与缺陷 1.1 |
+| `02_operators/09_maximal_munch` | Understand how the lexer greedily forms the longest token. | C 陷阱与缺陷 1.3 |
 
 ## 03_control_flow - Control Flow
 
@@ -55,6 +62,8 @@ Total exercises: **146** across **20** topics.
 | `03_control_flow/05_goto_cleanup` | Use goto for a clear cleanup path in C. | 第一章 1.9 goto 关键字；第六章 函数设计 |
 | `03_control_flow/06_state_machine` | Track state while scanning a string. | 第三章 3.2 条件编译；控制流综合练习 |
 | `03_control_flow/07_while_do_while` | Distinguish entry-condition and exit-condition loops. | C Primer Plus 第6章 6.2、6.8 |
+| `03_control_flow/08_semicolon_pitfalls` | Avoid accidentally ending an if or loop with a semicolon. | C 陷阱与缺陷 2.3 |
+| `03_control_flow/09_dangling_else` | Use braces to make else bind to the intended if. | C 陷阱与缺陷 2.5-2.6 |
 
 ## 04_functions - Functions and Scope
 
@@ -83,6 +92,7 @@ Total exercises: **146** across **20** topics.
 | `05_arrays_strings/08_vla` | Create an array whose length is a runtime value. | C Primer Plus 第10章 10.8 |
 | `05_arrays_strings/09_compound_literals` | Create a temporary struct value with a compound literal. | C Primer Plus 第10章 10.9 |
 | `05_arrays_strings/10_pointer_compatibility` | Pass a non-const array through a pointer-to-const. | C Primer Plus 第10章 10.6-10.7 |
+| `05_arrays_strings/11_asymmetric_bounds` | Use the half-open interval [low, high). | C 陷阱与缺陷 3.6 |
 
 ## 06_pointers - Pointers and Memory Layout
 
@@ -95,6 +105,9 @@ Total exercises: **146** across **20** topics.
 | `06_pointers/05_void_pointer` | Use void pointers and unsigned char for type-agnostic code. | 第四章 4.1.6 如何达到手中无剑、胸中也无剑的地步 |
 | `06_pointers/06_dangling_wild` | Set a freed pointer to NULL to prevent accidental reuse. | 第五章 5.1 什么是野指针；5.3.5 内存泄漏 |
 | `06_pointers/07_pointer_to_array` | Distinguish a pointer to an array from a pointer to its first element. | 第四章 4.3.2 a 和 &a 的区别；4.4 指针数组和数组指针 |
+| `06_pointers/08_null_empty_string` | Distinguish a null pointer, an empty string, and the NUL character. | C 陷阱与缺陷 3.5 |
+| `06_pointers/09_memory_location_zero` | Treat address zero as a null pointer, not as a valid object address. | C 陷阱与缺陷 7.6 |
+| `06_pointers/10_one_past_pointer` | Do not treat a pointer to a single object as an array. | C 陷阱与缺陷 3.2 |
 
 ## 07_dynamic_memory - Dynamic Memory and Data Structures
 
@@ -107,6 +120,7 @@ Total exercises: **146** across **20** topics.
 | `07_dynamic_memory/05_buffer_bounds` | Copy at most dest_size - 1 bytes and always terminate. | 第五章 5.3.4 内存越界；5.3.2 为指针分配的内存太小 |
 | `07_dynamic_memory/06_flexible_array` | Allocate a struct plus trailing data in one block. | 第一章 1.14.2 柔性数组 |
 | `07_dynamic_memory/07_linked_list` | Build, traverse, and free a linked list. | 第五章 内存管理；结构体与指针综合 |
+| `07_dynamic_memory/08_free_then_realloc` | Use realloc directly instead of freeing before growing an allocation. | C 陷阱与缺陷 7.10 |
 
 ## 08_structs_unions_enums - Structs, Unions, Enums, and Bitfields
 
@@ -139,6 +153,9 @@ Total exercises: **146** across **20** topics.
 | `09_preprocessor/08_pragma_error_line` | Use diagnostics, line control, and packing pragmas. | 第三章 3.4 #error；3.5 #line；3.6.8 #pragma pack |
 | `09_preprocessor/09_std_macros` | Use __FILE__, __LINE__, __func__, and __STDC_VERSION__. | 第三章 3.1 宏定义；编译器预定义宏 |
 | `09_preprocessor/10_undef_defined` | Undefine a macro and test it with defined(). | C Primer Plus 第16章 16.6.1-16.6.2 |
+| `09_preprocessor/11_macro_whitespace` | Remember that a space can turn a function-like macro into an object-like macro. | C 陷阱与缺陷 6.1 |
+| `09_preprocessor/12_macro_statement` | Use do { ... } while (0) for a statement-like macro. | C 陷阱与缺陷 6.3 |
+| `09_preprocessor/13_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. | C 陷阱与缺陷 6.4 |
 
 ## 10_stdlib_io - Standard Library and File I/O
 
@@ -159,6 +176,7 @@ Total exercises: **146** across **20** topics.
 | `10_stdlib_io/13_printf_advanced` | Use width, zero padding, precision, and the * width argument. | C Primer Plus 第4章 4.4.3-4.4.6 |
 | `10_stdlib_io/14_scanf_advanced` | Use field width and a scanset in sscanf. | C Primer Plus 第4章 4.4.5、第11章 11.2.4 |
 | `10_stdlib_io/15_ctype_full` | Use isalnum and toupper with unsigned char casts. | C Primer Plus 第7章 7.2.2、第11章 11.7 |
+| `10_stdlib_io/16_rand_max` | Do not assume rand() returns a value below a fixed small bound. | C 陷阱与缺陷 7.8 |
 
 ## 11_ub_safety - Undefined Behavior, Safety, and Portability
 
@@ -196,6 +214,7 @@ Total exercises: **146** across **20** topics.
 | `13_translation_units/01_header_source_split` | Compile a program from a main file, a header, and an implementation file. | C Primer Plus 第9章 9.4、第16章 16.5 |
 | `13_translation_units/02_extern_linkage` | Declare a global variable in a header and define it in another file. | C Primer Plus 第12章 12.1.7、12.1.9 |
 | `13_translation_units/03_static_internal_linkage` | Keep a counter private to one translation unit with static. | C Primer Plus 第12章 12.1.8-12.1.9 |
+| `13_translation_units/04_external_type_check` | Keep declarations and definitions consistent across translation units. | C 陷阱与缺陷 4.5 |
 
 ## 14_character_io - Character I/O and Input Validation
 
@@ -205,6 +224,7 @@ Total exercises: **146** across **20** topics.
 | `14_character_io/02_eof_ferror` | Read until EOF and distinguish end-of-file from an error. | C Primer Plus 第8章 8.3、第13章 13.7.7 |
 | `14_character_io/03_input_validation` | Reject input with trailing characters or out-of-range values. | C Primer Plus 第8章 8.6 |
 | `14_character_io/04_iso646` | Use and/or/not from iso646.h. | C Primer Plus 第7章 7.3.1 |
+| `14_character_io/05_getchar_putchar` | Use the standard input/output character macros directly. | C 陷阱与缺陷 5.1；C Primer Plus 第8章 |
 
 ## 15_string_functions - String Functions and Conversion
 
@@ -243,6 +263,7 @@ Total exercises: **146** across **20** topics.
 | `18_file_io_advanced/04_fseek_ftell` | Seek to a byte offset and report the resulting position. | C Primer Plus 第13章 13.5 |
 | `18_file_io_advanced/05_fflush_setvbuf` | Configure full buffering and flush a stream. | C Primer Plus 第13章 13.7.2-13.7.3 |
 | `18_file_io_advanced/06_binary_random_access` | Read a specific struct record from a binary file. | C Primer Plus 第13章 13.7.9 |
+| `18_file_io_advanced/07_buffered_output_memory` | Combine malloc, setvbuf, output, fclose, and free. | C 陷阱与缺陷 5.3 |
 
 ## 19_modern_c_library - Modern C Library and Language Features
 

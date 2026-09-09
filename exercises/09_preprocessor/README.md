@@ -18,3 +18,6 @@ Run an exercise with:
 | `08_pragma_error_line` | Use diagnostics, line control, and packing pragmas. | 第三章 3.4 #error；3.5 #line；3.6.8 #pragma pack |
 | `09_std_macros` | Use __FILE__, __LINE__, __func__, and __STDC_VERSION__. | 第三章 3.1 宏定义；编译器预定义宏 |
 | `10_undef_defined` | Undefine a macro and test it with defined(). | C Primer Plus 第16章 16.6.1-16.6.2 |
+| `11_macro_whitespace` | Remember that a space can turn a function-like macro into an object-like macro. | C 陷阱与缺陷 6.1 |
+| `12_macro_statement` | Use do { ... } while (0) for a statement-like macro. | C 陷阱与缺陷 6.3 |
+| `13_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. | C 陷阱与缺陷 6.4 |

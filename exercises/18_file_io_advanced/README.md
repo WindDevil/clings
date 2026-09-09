@@ -14,3 +14,4 @@ Run an exercise with:
 | `04_fseek_ftell` | Seek to a byte offset and report the resulting position. | C Primer Plus 第13章 13.5 |
 | `05_fflush_setvbuf` | Configure full buffering and flush a stream. | C Primer Plus 第13章 13.7.2-13.7.3 |
 | `06_binary_random_access` | Read a specific struct record from a binary file. | C Primer Plus 第13章 13.7.9 |
+| `07_buffered_output_memory` | Combine malloc, setvbuf, output, fclose, and free. | C 陷阱与缺陷 5.3 |

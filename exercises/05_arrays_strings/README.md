@@ -18,3 +18,4 @@ Run an exercise with:
 | `08_vla` | Create an array whose length is a runtime value. | C Primer Plus 第10章 10.8 |
 | `09_compound_literals` | Create a temporary struct value with a compound literal. | C Primer Plus 第10章 10.9 |
 | `10_pointer_compatibility` | Pass a non-const array through a pointer-to-const. | C Primer Plus 第10章 10.6-10.7 |
+| `11_asymmetric_bounds` | Use the half-open interval [low, high). | C 陷阱与缺陷 3.6 |

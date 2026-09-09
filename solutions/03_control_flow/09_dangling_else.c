@@ -1,0 +1,29 @@
+/*
+ * clings exercise: 03_control_flow/09_dangling_else
+ * title: Dangling else
+ * objective: Use braces to make else bind to the intended if.
+ * reference: C 陷阱与缺陷 2.5-2.6
+ * hint: Without braces, else binds to the nearest unmatched if.
+ */
+
+#include "clings/test.h"
+
+int classify(int x, int y)
+{
+    if (x > 0) {
+        if (y > 0) {
+            return 1;
+        }
+    } else {
+        return 2;
+    }
+    return 0;
+}
+
+int main(void)
+{
+    CLINGS_CHECK_INT(classify(1, 1), 1);
+    CLINGS_CHECK_INT(classify(1, -1), 0);
+    CLINGS_CHECK_INT(classify(-1, 1), 2);
+    return clings_report();
+}

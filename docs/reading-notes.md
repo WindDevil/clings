@@ -55,14 +55,17 @@ Markdown 位于 `.ref/books` 与 `.ref/markdown`；扫描版书籍的完整 OCR
 
 ### C 语言接口与实现
 
-路径：`.ref/markdown/C/C语言接口与实现.md`（扫描版，需 OCR）
+路径：`.ref/markdown/C/C语言接口与实现.md`（已 OCR）
 
+- 本轮已用 Tesseract `chi_sim+eng` 对 399 页扫描版完成 OCR，OCR 文本在
+  `.ref/ocr/C/C语言接口与实现.txt`。
 - 核心是“接口与实现分离”，以及用 C 实现 ADT。
 - 典型章节包括内存管理、列表、表、集合、位向量、异常、线程、文本和
   环形缓冲区。
-- 当前项目只有链表；建议按这本书的思路新增
-  `16_data_structures`，并加入不透明类型、接口头文件、实现文件和
-  资源所有权练习。
+- 当前项目只有链表、动态数组、队列和二叉查找树等基础结构，距离书中
+  24 个可复用接口还很远。
+- 逐章覆盖见
+  [c-interfaces-and-implementations-coverage.md](c-interfaces-and-implementations-coverage.md)。
 
 ### C 专家编程
 

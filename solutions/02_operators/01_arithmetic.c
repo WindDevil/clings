@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/01_arithmetic
  * title: Integer arithmetic
  * objective: Practice integer division, modulo, and truncation.
- * reference: 第二章 2.4 逻辑运算符；2.8 除法
  * hint: Integer division truncates toward zero.
  */
 

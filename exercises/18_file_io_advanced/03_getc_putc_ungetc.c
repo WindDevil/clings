@@ -2,7 +2,6 @@
  * clings exercise: 18_file_io_advanced/03_getc_putc_ungetc
  * title: getc, putc, and ungetc
  * objective: Peek at a character and put it back into the stream.
- * reference: C Primer Plus 第13章 13.2.3、13.7.1
  * hint: ungetc pushes one character back onto the input stream.
  */
 

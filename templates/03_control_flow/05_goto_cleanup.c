@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/05_goto_cleanup
  * title: goto for single-exit cleanup
  * objective: Use goto for a clear cleanup path in C.
- * reference: 第一章 1.9 goto 关键字；第六章 函数设计
  * hint: Set *out only after the copy has been allocated and filled.
  */
 

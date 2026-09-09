@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/10_octal_constants
  * title: Octal integer constants
  * objective: Recognize that a leading zero means base 8.
- * reference: C 陷阱与缺陷 1.4
  * hint: 010 is 8, not 10; 0195 is not a valid C integer constant.
  */
 

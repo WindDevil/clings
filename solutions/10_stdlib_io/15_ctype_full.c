@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/15_ctype_full
  * title: ctype.h classification and conversion
  * objective: Use isalnum and toupper with unsigned char casts.
- * reference: C Primer Plus 第7章 7.2.2、第11章 11.7
  * hint: Pass (unsigned char) to ctype functions to avoid negative arguments.
  */
 

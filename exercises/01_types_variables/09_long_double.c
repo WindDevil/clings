@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/09_long_double
  * title: long double
  * objective: Use long double and compare its precision with double.
- * reference: C Primer Plus 第3章 3.4.6
  * hint: Use the L suffix for long double constants.
  */
 

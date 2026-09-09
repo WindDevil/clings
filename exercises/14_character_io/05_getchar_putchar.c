@@ -2,7 +2,6 @@
  * clings exercise: 14_character_io/05_getchar_putchar
  * title: getchar and putchar
  * objective: Use the standard input/output character macros directly.
- * reference: C 陷阱与缺陷 5.1；C Primer Plus 第8章
  * hint: ungetc can push a character back onto stdin for a test.
  */
 

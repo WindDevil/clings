@@ -2,7 +2,6 @@
  * clings exercise: 15_string_functions/04_fgets_fputs_sort
  * title: fgets, fputs, and sorting strings
  * objective: Read a line with fgets and sort an array of strings.
- * reference: C Primer Plus 第11章 11.2.3、11.6
  * hint: qsort receives an array of pointers, so cast to const char *const *.
  */
 

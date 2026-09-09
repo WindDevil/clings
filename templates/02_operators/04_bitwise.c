@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/04_bitwise
  * title: Bitwise set, clear, toggle, and test
  * objective: Use masks and bitwise operators safely.
- * reference: 第二章 2.5 位运算符
  * hint: Clearing a bit uses value & ~(1u << bit).
  */
 

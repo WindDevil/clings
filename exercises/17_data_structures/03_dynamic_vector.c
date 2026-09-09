@@ -2,7 +2,6 @@
  * clings exercise: 17_data_structures/03_dynamic_vector
  * title: Dynamic array/vector
  * objective: Grow a dynamic array and preserve existing elements.
- * reference: C Primer Plus 第17章 17.2、17.6
  * hint: Double the capacity when the array is full.
  */
 

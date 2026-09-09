@@ -2,7 +2,6 @@
  * clings exercise: 14_character_io/04_iso646
  * title: iso646.h alternative spellings
  * objective: Use and/or/not from iso646.h.
- * reference: C Primer Plus 第7章 7.3.1
  * hint: iso646.h defines and as && and or as ||.
  */
 

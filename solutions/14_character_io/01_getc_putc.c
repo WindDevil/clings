@@ -2,7 +2,6 @@
  * clings exercise: 14_character_io/01_getc_putc
  * title: getc and putc
  * objective: Copy a stream one character at a time with getc and putc.
- * reference: C Primer Plus 第8章 8.1、第13章 13.2.3
  * hint: getc returns EOF when there are no more characters.
  */
 

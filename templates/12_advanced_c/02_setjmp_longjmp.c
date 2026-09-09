@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/02_setjmp_longjmp
  * title: setjmp and longjmp
  * objective: Use non-local jumps for a simple error path.
- * reference: 第六章 函数；C 标准 setjmp.h
  * hint: longjmp returns control to the matching setjmp call.
  */
 

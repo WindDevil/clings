@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/08_file_io
  * title: Text file I/O
  * objective: Write and read a text file with fopen, fputs, and fread.
- * reference: 第五章 5.3.5 内存泄漏；标准库 stdio.h 资料
  * hint: Use mode "w" for writing and mode "r" for reading.
  */
 

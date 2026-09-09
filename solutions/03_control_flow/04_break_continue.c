@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/04_break_continue
  * title: break and continue
  * objective: Use break to stop early and continue to skip one iteration.
- * reference: 第一章 1.8.1 break 与 continue 的区别
  * hint: continue skips the rest of the current iteration; break exits the loop.
  */
 

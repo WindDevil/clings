@@ -2,7 +2,6 @@
  * clings exercise: 13_translation_units/02_extern_linkage
  * title: External linkage across files
  * objective: Declare a global variable in a header and define it in another file.
- * reference: C Primer Plus 第12章 12.1.7、12.1.9
  * hint: The extern declaration promises a definition in config.c.
  */
 

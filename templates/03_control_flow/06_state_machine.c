@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/06_state_machine
  * title: A small state machine
  * objective: Track state while scanning a string.
- * reference: 第三章 3.2 条件编译；控制流综合练习
  * hint: A word starts when the previous character was whitespace.
  */
 

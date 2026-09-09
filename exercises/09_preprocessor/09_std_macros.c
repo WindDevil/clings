@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/09_std_macros
  * title: Predefined macros
  * objective: Use __FILE__, __LINE__, __func__, and __STDC_VERSION__.
- * reference: 第三章 3.1 宏定义；编译器预定义宏
  * hint: __func__ is the name of the current function.
  */
 

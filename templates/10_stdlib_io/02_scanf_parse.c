@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/02_scanf_parse
  * title: Parsing with scanf
  * objective: Parse a comma-separated pair with sscanf.
- * reference: 第一章 1.6 条件判断；标准库 scanf 资料
  * hint: The literal comma in the format must match the input.
  */
 

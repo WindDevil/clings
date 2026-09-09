@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/02_function_macro
  * title: Function-like macros
  * objective: Protect macro arguments and the whole expansion with parentheses.
- * reference: 第三章 3.1.4 用 define 宏定义表达式
  * hint: Parenthesize both the parameters and the entire replacement expression.
  */
 

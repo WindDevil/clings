@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/04_bitfields
  * title: Bitfields
  * objective: Store several small flags in one struct.
- * reference: 第一章 1.14 struct 关键字；2.5 位运算符
  * hint: The write flag must reflect the enabled argument.
  */
 

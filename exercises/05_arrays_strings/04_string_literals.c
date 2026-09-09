@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/04_string_literals
  * title: String literals and mutable strings
  * objective: Scan a const string and modify a mutable char array.
- * reference: 第四章 4.2 数组；第二章 2.3 单引号、双引号
  * hint: A string literal must not be modified; a char array may be modified.
  */
 

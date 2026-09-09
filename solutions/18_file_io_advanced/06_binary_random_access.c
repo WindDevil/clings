@@ -2,7 +2,6 @@
  * clings exercise: 18_file_io_advanced/06_binary_random_access
  * title: Binary random access
  * objective: Read a specific struct record from a binary file.
- * reference: C Primer Plus 第13章 13.7.9
  * hint: Seek by index * sizeof(record).
  */
 

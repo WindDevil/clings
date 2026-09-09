@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/09_memory_functions
  * title: memcpy, memmove, memset, and memcmp
  * objective: Use the byte-oriented memory functions correctly.
- * reference: 第四章 指针与数组；标准库 string.h 资料
  * hint: memcpy requires non-overlapping regions; memmove handles overlap.
  */
 

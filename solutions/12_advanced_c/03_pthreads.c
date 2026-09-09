@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/03_pthreads
  * title: POSIX threads and a mutex
  * objective: Create threads and protect shared state with a mutex.
- * reference: 第六章 函数；POSIX threads 资料
  * hint: Each worker increments the shared counter 1000 times.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/12_stack_frame
  * title: Stack frames
  * objective: Observe that nested function calls use distinct activation records.
- * reference: C 专家编程 第6章
  * hint: __builtin_frame_address is a GCC/Clang extension.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/04_pointer_to_pointer
  * title: Pointers to pointers
  * objective: Let a function allocate and update a caller-owned pointer.
- * reference: 第四章 4.5.2 二级指针
  * hint: Assign through *slot, not to the local slot parameter.
  */
 

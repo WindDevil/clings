@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/07_main_return_value
  * title: main return values
  * objective: Return a defined success or failure status from a program.
- * reference: C 陷阱与缺陷 3.10
  * hint: EXIT_SUCCESS is 0 on hosted implementations; EXIT_FAILURE is nonzero.
  */
 

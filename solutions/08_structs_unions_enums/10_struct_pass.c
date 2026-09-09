@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/10_struct_pass
  * title: Passing structs by value and by pointer
  * objective: Compare struct value parameters with struct pointer parameters.
- * reference: C Primer Plus 第14章 14.7
  * hint: A struct pointer can modify the caller's struct.
  */
 

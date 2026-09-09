@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/04_memory_leak
  * title: Detecting a memory leak
  * objective: Pair every allocation with a matching free.
- * reference: 第五章 5.3.5 内存泄漏
  * hint: The cleanup path must release the tracked allocation.
  */
 

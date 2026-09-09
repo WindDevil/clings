@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/09_maximal_munch
  * title: Lexical maximal munch
  * objective: Understand how the lexer greedily forms the longest token.
- * reference: C 陷阱与缺陷 1.3
  * hint: a+++b is tokenized as (a++) + b.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 13_translation_units/04_external_type_check
  * title: External type checking
  * objective: Keep declarations and definitions consistent across translation units.
- * reference: C 陷阱与缺陷 4.5
  * hint: The linker does not compare the types of extern declarations.
  */
 

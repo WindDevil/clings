@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/02_null_and_const
  * title: NULL and const correctness
  * objective: Check for NULL and respect pointer-to-const.
- * reference: 第四章 4.1.3 int *p = NULL 和 *p = NULL
  * hint: A pointer-to-const can read but not write the pointed-to object.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 13_translation_units/03_static_internal_linkage
  * title: Internal linkage and file-scope state
  * objective: Keep a counter private to one translation unit with static.
- * reference: C Primer Plus 第12章 12.1.8-12.1.9
  * hint: static file-scope objects are visible only in their own .c file.
  */
 

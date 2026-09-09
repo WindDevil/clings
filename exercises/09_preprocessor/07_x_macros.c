@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/07_x_macros
  * title: X-macros
  * objective: Generate an enum and a string table from one list.
- * reference: 第三章 3.1 宏定义；3.7 #运算符
  * hint: The string table uses #name, not a fixed string.
  */
 

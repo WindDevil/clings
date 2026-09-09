@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/10_pointer_compatibility
  * title: Pointer compatibility and const
  * objective: Pass a non-const array through a pointer-to-const.
- * reference: C Primer Plus 第10章 10.6-10.7
  * hint: A pointer to const may point at non-const data.
  */
 

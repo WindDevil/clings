@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/01_signed_overflow
  * title: Avoid signed integer overflow
  * objective: Detect overflow before performing signed addition.
- * reference: 第一章 1.4 signed、unsigned 关键字；第五章 内存管理
  * hint: Unsigned arithmetic wraps; signed overflow is undefined behavior.
  */
 

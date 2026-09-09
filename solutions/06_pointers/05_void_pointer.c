@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/05_void_pointer
  * title: Generic byte-level swap
  * objective: Use void pointers and unsigned char for type-agnostic code.
- * reference: 第四章 4.1.6 如何达到手中无剑、胸中也无剑的地步
  * hint: Copy the byte from a before overwriting it.
  */
 

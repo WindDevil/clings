@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/03_overflow
  * title: Unsigned wrap and checked signed addition
  * objective: Understand modulo wrap and avoid signed integer overflow.
- * reference: 第一章 1.4 基本数据类型；第五章 内存管理
  * hint: Check INT_MAX - b before adding b to a.
  */
 

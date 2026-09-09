@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/05_compiler_diagnostics
  * title: Read compiler diagnostics
  * objective: Fix a format-string warning that the compiler reports.
- * reference: 第一章 1.5 sizeof；格式化输入输出资料
  * hint: size_t has its own length modifier; do not use %d for it.
  */
 

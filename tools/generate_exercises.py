@@ -29,7 +29,6 @@ def header(spec: ExerciseSpec) -> str:
  * clings exercise: {spec.ident}
  * title: {spec.title}
  * objective: {spec.objective}
- * reference: {spec.reference}
  * hint: {spec.hint}
  */
 """
@@ -85,19 +84,19 @@ def load_specs() -> list[ExerciseSpec]:
     from specs_00_04 import SPECS as specs_00_04
     from specs_05_08 import SPECS as specs_05_08
     from specs_09_12 import SPECS as specs_09_12
-    from specs_c_primer_existing import SPECS as specs_c_primer_existing
-    from specs_c_primer_new import SPECS as specs_c_primer_new
-    from specs_c_traps import SPECS as specs_c_traps
-    from specs_expert_c import SPECS as specs_expert_c
+    from specs_advanced_topics import SPECS as specs_advanced_topics
+    from specs_extra_existing import SPECS as specs_extra_existing
+    from specs_extra_topics import SPECS as specs_extra_topics
+    from specs_pitfalls import SPECS as specs_pitfalls
 
     specs = (
         specs_00_04
         + specs_05_08
         + specs_09_12
-        + specs_c_primer_existing
-        + specs_c_primer_new
-        + specs_c_traps
-        + specs_expert_c
+        + specs_extra_existing
+        + specs_extra_topics
+        + specs_pitfalls
+        + specs_advanced_topics
     )
     seen: set[str] = set()
     for spec in specs:
@@ -147,13 +146,11 @@ def topic_readme_contents(specs: list[ExerciseSpec]) -> dict[Path, str]:
             f"./clings run {topic_specs[0].slug}",
             "```",
             "",
-            "| Exercise | Objective | Reference |",
-            "| --- | --- | --- |",
+            "| Exercise | Objective |",
+            "| --- | --- |",
         ]
         for spec in topic_specs:
-            lines.append(
-                f"| `{spec.slug}` | {spec.objective} | {spec.reference} |"
-            )
+            lines.append(f"| `{spec.slug}` | {spec.objective} |")
         lines.append("")
         contents[EXERCISES_DIR / topic / "README.md"] = "\n".join(lines)
     return contents
@@ -167,10 +164,7 @@ def curriculum_content(specs: list[ExerciseSpec]) -> str:
     lines = [
         "# Curriculum and coverage map",
         "",
-        "This map connects each topic to the exercises that teach it and to the",
-        "corresponding section of *C语言深度解剖*.  The book is a deep-dive",
-        "companion; the exercises also cover standard-library, tooling, and",
-        "portability topics that are outside the book's original scope.",
+        "This map connects each topic to the exercises that teach it.",
         "",
         f"Total exercises: **{len(specs)}** across **{len(by_topic)}** topics.",
         "",
@@ -180,14 +174,12 @@ def curriculum_content(specs: list[ExerciseSpec]) -> str:
             [
                 f"## {topic} - {TOPIC_TITLES.get(topic, topic)}",
                 "",
-                "| Exercise | Objective | Book reference |",
-                "| --- | --- | --- |",
+                "| Exercise | Objective |",
+                "| --- | --- |",
             ]
         )
         for spec in topic_specs:
-            lines.append(
-                f"| `{spec.ident}` | {spec.objective} | {spec.reference} |"
-            )
+            lines.append(f"| `{spec.ident}` | {spec.objective} |")
         lines.append("")
 
     lines.extend(

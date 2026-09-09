@@ -2,7 +2,6 @@
  * clings exercise: 13_translation_units/05_dynamic_linking
  * title: Dynamic linking with dlopen
  * objective: Load a symbol from a shared library at runtime.
- * reference: C 专家编程 第5章
  * hint: Use dlopen, dlsym, and dlclose; convert the object pointer through a union.
  */
 

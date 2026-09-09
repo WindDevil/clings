@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/06_flexible_array
  * title: Flexible array members
  * objective: Allocate a struct plus trailing data in one block.
- * reference: 第一章 1.14.2 柔性数组
  * hint: The allocation size is sizeof *packet + length bytes.
  */
 

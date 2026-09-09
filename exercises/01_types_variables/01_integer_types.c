@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/01_integer_types
  * title: Integer types and ranges
  * objective: Use sizeof, CHAR_BIT, INT_MIN, and INT_MAX correctly.
- * reference: 第一章 1.4 基本数据类型
  * hint: The number of bits in an int is sizeof(int) * CHAR_BIT.
  */
 

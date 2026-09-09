@@ -11,7 +11,7 @@ SPECS = [
         slug="01_object_macro",
         title="Object-like macros",
         objective="Use a named compile-time constant.",
-        reference="第三章 3.1.1 数值宏常量",
+        reference="",
         hint="Object-like macros are simple text substitutions.",
         code=r"""
 #define CLINGS_BUFFER_SIZE 16
@@ -43,7 +43,7 @@ CLINGS_CHECK_INT(version(), 2);
         slug="02_function_macro",
         title="Function-like macros",
         objective="Protect macro arguments and the whole expansion with parentheses.",
-        reference="第三章 3.1.4 用 define 宏定义表达式",
+        reference="",
         hint="Parenthesize both the parameters and the entire replacement expression.",
         code=r"""
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
@@ -76,7 +76,7 @@ CLINGS_CHECK_INT(MIN(2, 3) * 2, 4);
         slug="03_stringize_paste",
         title="Stringizing and token pasting",
         objective="Use # to stringize and ## to paste tokens.",
-        reference="第三章 3.7 #运算符；3.8 ##运算符",
+        reference="",
         hint="A second helper macro is needed to expand a macro before stringizing it.",
         code=r"""
 #define CLINGS_VALUE 123
@@ -114,7 +114,7 @@ CLINGS_CHECK_INT(concatenated_value(), 42);
         slug="04_conditional_compilation",
         title="Conditional compilation",
         objective="Select code at preprocessing time based on the language version.",
-        reference="第三章 3.2 条件编译",
+        reference="",
         hint="C11 introduced __STDC_VERSION__ value 201112L.",
         code=r"""
 #if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
@@ -143,7 +143,7 @@ CLINGS_CHECK_INT(has_c11(), 1);
         slug="05_include_guards",
         title="Include guards",
         objective="Prevent multiple inclusion with a preprocessor guard.",
-        reference="第三章 3.3 文件包含",
+        reference="",
         hint="Define the guard macro before the guarded declarations.",
         code=r"""
 #ifndef CLINGS_GUARD_H
@@ -183,7 +183,7 @@ CLINGS_CHECK_INT(guarded_value(), 42);
         slug="06_variadic_macros",
         title="Variadic macros",
         objective="Forward a variable argument list to a variadic function.",
-        reference="第三章 3.1 宏定义；第六章 函数",
+        reference="",
         hint="SUM(...) should pass every argument, including the count.",
         code=r"""
 #include <stdarg.h>
@@ -220,7 +220,7 @@ CLINGS_CHECK_INT(SUM(0), 0);
         slug="07_x_macros",
         title="X-macros",
         objective="Generate an enum and a string table from one list.",
-        reference="第三章 3.1 宏定义；3.7 #运算符",
+        reference="",
         hint="The string table uses #name, not a fixed string.",
         code=r"""
 #define COLOR_LIST(X) X(RED) X(GREEN) X(BLUE)
@@ -254,7 +254,7 @@ CLINGS_CHECK_STR(color_names[COLOR_BLUE], "BLUE");
         slug="08_pragma_error_line",
         title="#error, #line, and #pragma pack",
         objective="Use diagnostics, line control, and packing pragmas.",
-        reference="第三章 3.4 #error；3.5 #line；3.6.8 #pragma pack",
+        reference="",
         hint="#pragma pack(push, 1) removes padding between the two members.",
         code=r"""
 #include <stddef.h>
@@ -297,7 +297,7 @@ CLINGS_CHECK_INT(line_number(), 1000);
         slug="09_std_macros",
         title="Predefined macros",
         objective="Use __FILE__, __LINE__, __func__, and __STDC_VERSION__.",
-        reference="第三章 3.1 宏定义；编译器预定义宏",
+        reference="",
         hint="__func__ is the name of the current function.",
         code=r"""
 const char *current_file(void)
@@ -342,7 +342,7 @@ CLINGS_CHECK(standard_version() >= 2011);
         slug="01_printf_formats",
         title="printf format specifiers",
         objective="Match each conversion specifier to its argument type.",
-        reference="第一章 1.5 sizeof；标准库 printf 资料",
+        reference="",
         hint="long values use %ld; doubles use %f or %.2f.",
         code=r"""
 #include <stdio.h>
@@ -372,7 +372,7 @@ CLINGS_CHECK_STR(buffer, "42 3.50 ok");
         slug="02_scanf_parse",
         title="Parsing with scanf",
         objective="Parse a comma-separated pair with sscanf.",
-        reference="第一章 1.6 条件判断；标准库 scanf 资料",
+        reference="",
         hint="The literal comma in the format must match the input.",
         code=r"""
 #include <stdio.h>
@@ -403,7 +403,7 @@ CLINGS_CHECK_INT(parse_pair("3 4", &first, &second), -1);
         slug="03_strtol_errno",
         title="Robust integer parsing",
         objective="Use strtol, errno, and the end pointer to validate input.",
-        reference="第五章 5.3.1 函数的入口校验；标准库 strtol 资料",
+        reference="",
         hint="Reject empty input, trailing characters, ERANGE, and out-of-range values.",
         code=r"""
 #include <errno.h>
@@ -448,7 +448,7 @@ CLINGS_CHECK_INT(parse_int("99999999999999999999", &out), -1);
         slug="04_qsort_bsearch",
         title="qsort and bsearch",
         objective="Use comparison callbacks for sorting and searching.",
-        reference="第四章 4.7 函数指针；标准库 qsort 资料",
+        reference="",
         hint="The comparator returns negative, zero, or positive.",
         code=r"""
 #include <stdlib.h>
@@ -494,7 +494,7 @@ CLINGS_CHECK(find_int(values, 4, 99) == NULL);
         slug="05_math_functions",
         title="The math library",
         objective="Use hypot and other functions from math.h.",
-        reference="第一章 1.4 基本数据类型；标准库 math.h 资料",
+        reference="",
         hint="hypot(x, y) computes sqrt(x*x + y*y) without avoidable overflow.",
         code=r"""
 #include <math.h>
@@ -520,7 +520,7 @@ CLINGS_CHECK_INT(distance(1.0, 1.0, 1.0, 1.0) == 0.0, 1);
         slug="06_time_functions",
         title="Time arithmetic",
         objective="Use time_t and difftime.",
-        reference="标准库 time.h 资料",
+        reference="",
         hint="difftime(end, start) returns end - start seconds.",
         code=r"""
 #include <time.h>
@@ -546,7 +546,7 @@ CLINGS_CHECK_INT(seconds_between(250, 100), -150);
         slug="07_random",
         title="Pseudo-random numbers",
         objective="Seed the generator and bound its output.",
-        reference="标准库 stdlib.h 资料",
+        reference="",
         hint="rand() % upper produces values from 0 to upper - 1.",
         code=r"""
 #include <stdlib.h>
@@ -583,7 +583,7 @@ CLINGS_CHECK_INT(random_bounded(0), 0);
         slug="08_file_io",
         title="Text file I/O",
         objective="Write and read a text file with fopen, fputs, and fread.",
-        reference="第五章 5.3.5 内存泄漏；标准库 stdio.h 资料",
+        reference="",
         hint="Use mode \"w\" for writing and mode \"r\" for reading.",
         code=r"""
 #include <stdio.h>
@@ -634,7 +634,7 @@ remove(path);
         slug="09_memory_functions",
         title="memcpy, memmove, memset, and memcmp",
         objective="Use the byte-oriented memory functions correctly.",
-        reference="第四章 指针与数组；标准库 string.h 资料",
+        reference="",
         hint="memcpy requires non-overlapping regions; memmove handles overlap.",
         code=r"""
 #include <string.h>
@@ -684,7 +684,7 @@ CLINGS_CHECK_STR(buffer, "aabcd");
         slug="10_string_search",
         title="Searching strings",
         objective="Use strchr, strrchr, and strstr.",
-        reference="第五章 内存管理；标准库 string.h 资料",
+        reference="",
         hint="strstr finds a substring, not just a single character.",
         code=r"""
 #include <string.h>
@@ -724,7 +724,7 @@ CLINGS_CHECK(find_substring(text, "xyz") == NULL);
         slug="11_stdint_inttypes",
         title="Fixed-width integers and format macros",
         objective="Use uint64_t and PRIu64 from stdint.h and inttypes.h.",
-        reference="第一章 1.4 基本数据类型；C99 标准库",
+        reference="",
         hint="PRIu64 is the portable printf specifier for uint64_t.",
         code=r"""
 #include <inttypes.h>
@@ -762,7 +762,7 @@ CLINGS_CHECK_INT(low_32_bits(UINT64_C(0x1122334455667788)), 0x55667788u);
         slug="12_environment",
         title="Environment variables",
         objective="Read and write environment variables with getenv and setenv.",
-        reference="第五章 5.3.1.3 函数的入口校验；标准库 stdlib.h 资料",
+        reference="",
         hint="setenv must succeed before getenv can find the new value.",
         code=r"""
 #include <stdio.h>
@@ -806,7 +806,7 @@ unsetenv(name);
         slug="01_signed_overflow",
         title="Avoid signed integer overflow",
         objective="Detect overflow before performing signed addition.",
-        reference="第一章 1.4 signed、unsigned 关键字；第五章 内存管理",
+        reference="",
         hint="Unsigned arithmetic wraps; signed overflow is undefined behavior.",
         code=r"""
 #include <limits.h>
@@ -840,7 +840,7 @@ CLINGS_CHECK_INT(out, 42);
         slug="02_uninitialized",
         title="Initialize before use",
         objective="Give every local variable a defined initial value.",
-        reference="第五章 5.3.3 内存分配成功，但并未初始化",
+        reference="",
         hint="Start result at -1 so the fallback path is well-defined.",
         code=r"""
 int initialized_or_default(int value)
@@ -869,7 +869,7 @@ CLINGS_CHECK_INT(initialized_or_default(7), 7);
         slug="03_out_of_bounds",
         title="Bounds checking",
         objective="Reject indices outside the logical array length.",
-        reference="第五章 5.3.4 内存越界",
+        reference="",
         hint="An index is invalid when it is less than zero or greater than or equal to count.",
         code=r"""
 int get_or_default(const int *values, int count, int index, int fallback)
@@ -900,7 +900,7 @@ CLINGS_CHECK_INT(get_or_default(values, 3, -1, 123), 123);
         slug="04_use_after_free",
         title="Use-after-free",
         objective="Clear a pointer after freeing its target.",
-        reference="第五章 5.3.6 内存已经被释放了，但是继续通过指针来使用",
+        reference="",
         hint="Write NULL through the pointer-to-pointer after free.",
         code=r"""
 #include <stdlib.h>
@@ -936,7 +936,7 @@ CLINGS_CHECK_INT(is_null(value), 1);
         slug="05_sequence_points",
         title="Sequence points",
         objective="Avoid unsequenced reads and writes of the same object.",
-        reference="第二章 2.7 ++、--操作符",
+        reference="",
         hint="Read the old value, update the object, then return the old value.",
         code=r"""
 int next_value(int *value)
@@ -967,7 +967,7 @@ CLINGS_CHECK_INT(value, 7);
         slug="06_strict_aliasing",
         title="Type punning without strict-aliasing violations",
         objective="Reinterpret object representation with memcpy.",
-        reference="第四章 4.7.2 *(int*)&p；第五章 内存管理",
+        reference="",
         hint="memcpy preserves the bit pattern; a cast to float converts the numeric value.",
         code=r"""
 #include <string.h>
@@ -995,7 +995,7 @@ CLINGS_CHECK_INT(bits_to_float(0x00000000u) == 0.0f, 1);
         slug="07_alignment",
         title="Alignment requirements",
         objective="Query alignment with alignof and keep members aligned.",
-        reference="第三章 3.6.8.1 为什么会有内存对齐",
+        reference="",
         hint="alignof reports the strictest alignment the type requires.",
         code=r"""
 #include <stdalign.h>
@@ -1032,7 +1032,7 @@ CLINGS_CHECK_INT(second_member_is_aligned(), 1);
         slug="08_null_pointer",
         title="Null pointer checks",
         objective="Never dereference a null pointer.",
-        reference="第四章 4.1.3 int *p = NULL 和 *p = NULL 有什么区别",
+        reference="",
         hint="Use a conditional expression to provide a fallback.",
         code=r"""
 int dereference_or_default(const int *pointer, int fallback)
@@ -1062,7 +1062,7 @@ CLINGS_CHECK_INT(dereference_or_default(NULL, -1), -1);
         slug="01_variadic",
         title="Variadic functions",
         objective="Read a variable number of int arguments with va_list.",
-        reference="第六章 函数；C 标准 stdarg.h",
+        reference="",
         hint="The loop must consume exactly count arguments.",
         code=r"""
 #include <stdarg.h>
@@ -1098,7 +1098,7 @@ CLINGS_CHECK_INT(sum_variadic(5, 10, 20, 30, 40, 50), 150);
         slug="02_setjmp_longjmp",
         title="setjmp and longjmp",
         objective="Use non-local jumps for a simple error path.",
-        reference="第六章 函数；C 标准 setjmp.h",
+        reference="",
         hint="longjmp returns control to the matching setjmp call.",
         code=r"""
 #include <setjmp.h>
@@ -1141,7 +1141,7 @@ CLINGS_CHECK_INT(run_checked(-1, &out), -1);
         slug="03_pthreads",
         title="POSIX threads and a mutex",
         objective="Create threads and protect shared state with a mutex.",
-        reference="第六章 函数；POSIX threads 资料",
+        reference="",
         hint="Each worker increments the shared counter 1000 times.",
         code=r"""
 #include <pthread.h>
@@ -1197,7 +1197,7 @@ CLINGS_CHECK_INT(run_threads(), 2000);
         slug="04_atomics",
         title="C11 atomics",
         objective="Use atomic_int for lock-free counter updates.",
-        reference="C11 标准 atomics 资料",
+        reference="",
         hint="atomic_fetch_add adds to the current value and returns the old value.",
         code=r"""
 #include <stdatomic.h>
@@ -1242,7 +1242,7 @@ CLINGS_CHECK_INT(atomic_counter_get(&counter), 8);
         slug="05_generic",
         title="_Generic selection",
         objective="Choose an expression based on the type of a value.",
-        reference="C11 标准 _Generic 资料",
+        reference="",
         hint="The controlling expression is not evaluated; only its type is used.",
         code=r"""
 #define type_name(value)                                                     \
@@ -1267,7 +1267,7 @@ CLINGS_CHECK_STR(type_name(1L), "other");
         slug="06_static_assert",
         title="Compile-time assertions",
         objective="Use _Static_assert to enforce assumptions at compile time.",
-        reference="C11 标准 _Static_assert 资料",
+        reference="",
         hint="A failed static assertion must make the build fail.",
         code=r"""
 #include <limits.h>
@@ -1296,7 +1296,7 @@ CLINGS_CHECK_INT(static_asserts_passed(), 1);
         slug="07_align",
         title="alignof and alignas",
         objective="Query and request alignment.",
-        reference="C11 标准 alignof/alignas 资料",
+        reference="",
         hint="Double usually requires more alignment than int.",
         code=r"""
 #include <stdalign.h>
@@ -1327,7 +1327,7 @@ CLINGS_CHECK(align_of_double() >= align_of_int());
         slug="08_anonymous_union",
         title="Anonymous structs and unions",
         objective="Access anonymous union members directly through the outer struct.",
-        reference="第一章 1.15 union 关键字；C11 匿名结构体/联合",
+        reference="",
         hint="An anonymous union member is promoted into the enclosing struct scope.",
         code=r"""
 struct variant {
@@ -1370,7 +1370,7 @@ CLINGS_CHECK_INT(variant_real(&real_value) == 3.5, 1);
         slug="09_thread_local",
         title="Thread-local storage",
         objective="Use _Thread_local to give each thread its own object.",
-        reference="C11 标准 _Thread_local 资料；POSIX threads",
+        reference="",
         hint="The worker thread modifies its own copy of thread_value.",
         code=r"""
 #include <pthread.h>
@@ -1410,7 +1410,7 @@ CLINGS_CHECK_INT(thread_local_demo(), 7);
         slug="10_complex",
         title="Complex numbers",
         objective="Use double complex, I, conj, creal, and cimag.",
-        reference="C99 标准 complex.h 资料",
+        reference="",
         hint="conj changes the sign of the imaginary part.",
         code=r"""
 #include <complex.h>
@@ -1455,7 +1455,7 @@ CLINGS_CHECK_INT(imaginary_part(conjugated) == -4.0, 1);
         slug="11_signal",
         title="Signals and sig_atomic_t",
         objective="Install a signal handler and use a sig_atomic_t flag.",
-        reference="C 标准 signal.h 资料",
+        reference="",
         hint="raise(SIGINT) invokes the installed handler synchronously.",
         code=r"""
 #include <signal.h>

@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/03_short_circuit
  * title: Short-circuit evaluation
  * objective: Observe that && and || may not evaluate their right operand.
- * reference: 第二章 2.4 逻辑运算符
  * hint: The right side of && is only evaluated when the left side is true.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 16_data_representation/04_bitfield_portability
  * title: Bitfields and explicit masks
  * objective: Pack fields with bitfields and compare them with an explicit mask.
- * reference: C Primer Plus 第15章 15.4
  * hint: Bitfield layout is implementation-defined; masks make the encoding explicit.
  */
 

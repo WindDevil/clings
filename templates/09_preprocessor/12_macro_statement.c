@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/12_macro_statement
  * title: Macros are not statements
  * objective: Use do { ... } while (0) for a statement-like macro.
- * reference: C 陷阱与缺陷 6.3
  * hint: A bare block macro breaks if/else syntax.
  */
 

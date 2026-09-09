@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/01_object_macro
  * title: Object-like macros
  * objective: Use a named compile-time constant.
- * reference: 第三章 3.1.1 数值宏常量
  * hint: Object-like macros are simple text substitutions.
  */
 

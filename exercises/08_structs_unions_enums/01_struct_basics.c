@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/01_struct_basics
  * title: Defining and using structs
  * objective: Create a struct value and access its members through a pointer.
- * reference: 第一章 1.14 struct 关键字
  * hint: Use the arrow operator when you have a pointer.
  */
 

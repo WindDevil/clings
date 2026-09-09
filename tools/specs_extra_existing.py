@@ -1,4 +1,4 @@
-"""C Primer Plus gap exercises that extend existing topics."""
+"""Additional exercises that extend existing topics."""
 
 from spec import ex
 
@@ -8,7 +8,7 @@ SPECS = [
         slug="09_long_double",
         title="long double",
         objective="Use long double and compare its precision with double.",
-        reference="C Primer Plus 第3章 3.4.6",
+        reference="",
         hint="Use the L suffix for long double constants.",
         code=r"""
 #include <float.h>
@@ -39,7 +39,7 @@ CLINGS_CHECK_INT(long_double_has_extra_precision(), 1);
         slug="07_compound_assignment",
         title="Compound assignment and comma",
         objective="Use +=, -=, *=, /=, %= and the comma operator.",
-        reference="C Primer Plus 第5章 5.3、第6章 6.6-6.7",
+        reference="",
         hint="The comma operator evaluates left to right and yields the right operand.",
         code=r"""
 int compound_demo(int value)
@@ -75,7 +75,7 @@ CLINGS_CHECK_INT(comma_sum(2, 3), 7);
         slug="07_while_do_while",
         title="while and do-while",
         objective="Distinguish entry-condition and exit-condition loops.",
-        reference="C Primer Plus 第6章 6.2、6.8",
+        reference="",
         hint="A do-while body always executes at least once.",
         code=r"""
 int sum_while(int limit)
@@ -116,7 +116,7 @@ CLINGS_CHECK_INT(count_do_while(3), 3);
         slug="08_tail_recursion",
         title="Tail recursion",
         objective="Rewrite a recursive sum using an accumulator.",
-        reference="C Primer Plus 第9章 9.3.3",
+        reference="",
         hint="The recursive call should be the last operation.",
         code=r"""
 static int sum_tail(int value, int accumulator)
@@ -146,7 +146,7 @@ CLINGS_CHECK_INT(sum_tail_wrapper(10), 55);
         slug="08_vla",
         title="Variable-length arrays",
         objective="Create an array whose length is a runtime value.",
-        reference="C Primer Plus 第10章 10.8",
+        reference="",
         hint="A VLA is declared with a runtime expression: int values[n].",
         code=r"""
 int sum_vla(int count)
@@ -179,7 +179,7 @@ CLINGS_CHECK_INT(sum_vla(10), 55);
         slug="09_compound_literals",
         title="Compound literals",
         objective="Create a temporary struct value with a compound literal.",
-        reference="C Primer Plus 第10章 10.9",
+        reference="",
         hint="The syntax is (struct point){.x = 3, .y = 4}.",
         code=r"""
 struct point {
@@ -213,7 +213,7 @@ CLINGS_CHECK_INT(point_sum((struct point){1, 2}), 3);
         slug="10_pointer_compatibility",
         title="Pointer compatibility and const",
         objective="Pass a non-const array through a pointer-to-const.",
-        reference="C Primer Plus 第10章 10.6-10.7",
+        reference="",
         hint="A pointer to const may point at non-const data.",
         code=r"""
 #include <stddef.h>
@@ -252,7 +252,7 @@ CLINGS_CHECK_INT(sum_const(const_values, 3), 15);
         slug="09_struct_array",
         title="Arrays of structs",
         objective="Traverse an array of structs and find the best element.",
-        reference="C Primer Plus 第14章 14.4",
+        reference="",
         hint="Use students[i].score for each element.",
         code=r"""
 #include <stddef.h>
@@ -304,7 +304,7 @@ CLINGS_CHECK_STR(best_student(students, 3)->name, "Grace");
         slug="10_struct_pass",
         title="Passing structs by value and by pointer",
         objective="Compare struct value parameters with struct pointer parameters.",
-        reference="C Primer Plus 第14章 14.7",
+        reference="",
         hint="A struct pointer can modify the caller's struct.",
         code=r"""
 struct point {
@@ -343,7 +343,7 @@ CLINGS_CHECK_INT(point.y, 2);
         slug="11_struct_file",
         title="Writing and reading structs",
         objective="Store a struct with fwrite and read it back with fread.",
-        reference="C Primer Plus 第14章 14.8",
+        reference="",
         hint="Use binary mode and compare the number of complete items written.",
         code=r"""
 #include <stdio.h>
@@ -400,7 +400,7 @@ remove(path);
         slug="12_complex_declarations",
         title="Complex declarations and function-pointer tables",
         objective="Read and use a typedef for a function pointer and an array of function pointers.",
-        reference="C Primer Plus 第14章 14.13-14.14",
+        reference="",
         hint="binary_operation is a typedef for int (*)(int, int).",
         code=r"""
 typedef int (*binary_operation)(int, int);
@@ -442,7 +442,7 @@ CLINGS_CHECK_INT(use_operation_table(), 7);
         slug="10_undef_defined",
         title="#undef and defined",
         objective="Undefine a macro and test it with defined().",
-        reference="C Primer Plus 第16章 16.6.1-16.6.2",
+        reference="",
         hint="#undef removes the macro before the second #if.",
         code=r"""
 #define CLINGS_FEATURE 1
@@ -487,7 +487,7 @@ CLINGS_CHECK_INT(after_undef(), 0);
         slug="13_printf_advanced",
         title="Advanced printf formatting",
         objective="Use width, zero padding, precision, and the * width argument.",
-        reference="C Primer Plus 第4章 4.4.3-4.4.6",
+        reference="",
         hint="%08d zero-pads to width 8; %.3f uses three fractional digits.",
         code=r"""
 #include <stdio.h>
@@ -529,7 +529,7 @@ CLINGS_CHECK_STR(buffer, "   42");
         slug="14_scanf_advanced",
         title="Advanced scanf input",
         objective="Use field width and a scanset in sscanf.",
-        reference="C Primer Plus 第4章 4.4.5、第11章 11.2.4",
+        reference="",
         hint="%3d reads at most three digits; %[abc] reads only a, b, and c.",
         code=r"""
 #include <stdio.h>
@@ -570,7 +570,7 @@ CLINGS_CHECK_INT(parse_set("xyz", buffer, sizeof buffer), -1);
         slug="15_ctype_full",
         title="ctype.h classification and conversion",
         objective="Use isalnum and toupper with unsigned char casts.",
-        reference="C Primer Plus 第7章 7.2.2、第11章 11.7",
+        reference="",
         hint="Pass (unsigned char) to ctype functions to avoid negative arguments.",
         code=r"""
 #include <ctype.h>

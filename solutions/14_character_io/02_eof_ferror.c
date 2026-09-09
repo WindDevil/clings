@@ -2,7 +2,6 @@
  * clings exercise: 14_character_io/02_eof_ferror
  * title: EOF, feof, and ferror
  * objective: Read until EOF and distinguish end-of-file from an error.
- * reference: C Primer Plus 第8章 8.3、第13章 13.7.7
  * hint: feof is true only after a read attempts to pass the end of the file.
  */
 

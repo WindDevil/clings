@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/10_complex
  * title: Complex numbers
  * objective: Use double complex, I, conj, creal, and cimag.
- * reference: C99 标准 complex.h 资料
  * hint: conj changes the sign of the imaginary part.
  */
 

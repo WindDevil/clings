@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/08_null_empty_string
  * title: NULL, empty string, and NUL
  * objective: Distinguish a null pointer, an empty string, and the NUL character.
- * reference: C 陷阱与缺陷 3.5
  * hint: NULL is a null pointer; "" is a valid empty string; '\0' is NUL.
  */
 

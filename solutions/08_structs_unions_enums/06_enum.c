@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/06_enum
  * title: Enums
  * objective: Use an enum for a small closed set of values.
- * reference: 第一章 1.16 enum 关键字
  * hint: Each case should return the matching color name.
  */
 

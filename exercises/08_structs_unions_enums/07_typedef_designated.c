@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/07_typedef_designated
  * title: typedef and designated initializers
  * objective: Use a typedef and initialize members by name.
- * reference: 第一章 1.17 typedef 关键字
  * hint: Designated initializers make the field mapping explicit.
  */
 

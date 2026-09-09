@@ -1,19 +1,7 @@
 # C knowledge coverage map
 
 This map is organized by C language and systems-programming knowledge areas.
-Every row points to at least one exercise.  The `docs/reference/` Markdown
-book is the deep-dive companion for the topics marked with book references.
-
-The map intentionally includes topics that are not part of the original book,
-such as C11 atomics, `_Generic`, `_Static_assert`, CMake, sanitizers, and
-modern testing workflow.
-
-> For topics that are **not yet covered**, including multi-translation-unit
-> linking, POSIX system programming, allocators, data structures, security,
-> and build/debug tooling, see [gap-analysis.md](gap-analysis.md).
->
-> 《C Primer Plus》第 6 版的逐章覆盖情况见
-> [c-primer-plus-coverage.md](c-primer-plus-coverage.md)。
+Every row points to at least one exercise.
 
 ## 1. Program structure, translation, and tooling
 
@@ -31,7 +19,7 @@ modern testing workflow.
 
 | Knowledge point | Exercises | Notes |
 | --- | --- | --- |
-| Comments, identifiers, keywords | all exercises | Keywords are highlighted by the book chapters. |
+| Comments, identifiers, keywords | all exercises | Lexical and keyword usage across the exercises. |
 | Comments, line continuation, escapes | `00_getting_started/06_lexical_elements` | `/* ... */`, backslash-newline, `\n`, `\t`, `\"`. |
 | Character constants and string literals | `01_types_variables/05_char_ascii`, `05_arrays_strings/04_string_literals` | `char`, ASCII, mutable arrays vs immutable literals. |
 | Integer types and ranges | `01_types_variables/01_integer_types` | `sizeof`, `CHAR_BIT`, `INT_MIN`, `INT_MAX`. |
@@ -41,7 +29,7 @@ modern testing workflow.
 | Character classification | `01_types_variables/05_char_ascii` | ASCII assumptions and portable `ctype.h` usage. |
 | `const`, `enum`, `#define` constants | `01_types_variables/06_storage_scope`, `09_preprocessor/01_object_macro`, `08_structs_unions_enums/06_enum` | Three ways to express named constants. |
 | `auto`, `register`, `static`, scope, lifetime | `01_types_variables/06_storage_scope`, `04_functions/05_static_inline` | File scope, block scope, static storage duration. |
-| `const`, `volatile`, `restrict`, `extern`, `auto`, `register` | `01_types_variables/07_qualifiers` | Type qualifiers and storage-class specifiers from the book's keyword chapter. |
+| `const`, `volatile`, `restrict`, `extern`, `auto`, `register` | `01_types_variables/07_qualifiers` | Type qualifiers and storage-class specifiers. |
 | `stdbool.h` and `stddef.h` | `01_types_variables/08_stdbool_stddef` | `bool`, `size_t`, and standard typedefs. |
 | `typedef` and type aliases | `08_structs_unions_enums/07_typedef_designated` | `typedef` is not a macro. |
 | `sizeof` and object size | `02_operators/06_sizeof_incdec`, `08_structs_unions_enums/03_padding_alignment` | `sizeof` is an operator, not a function. |
@@ -217,61 +205,3 @@ modern testing workflow.
 | Build reproducibility | `Makefile`, `CMakePresets.json`, `Dockerfile`, CI |
 | Formatting and style | `.clang-format`, `.editorconfig`, `make format` |
 | Keeping code and answers in sync | `tools/generate_exercises.py`, `--check` in CI |
-
-## 15. C Primer Plus gap closure
-
-| Topic | Exercises |
-| --- | --- |
-| Multi-file translation units and linkage | `13_translation_units/01_header_source_split`, `02_extern_linkage`, `03_static_internal_linkage` |
-| Character I/O and validation | `14_character_io/01_getc_putc`, `02_eof_ferror`, `03_input_validation`, `04_iso646` |
-| String functions and conversion | `15_string_functions/01`-`05` |
-| Data representation and bit operations | `16_data_representation/01`-`04` |
-| Abstract data types and data structures | `17_data_structures/01`-`03` |
-| Advanced file I/O | `18_file_io_advanced/01`-`06` |
-| Modern C library features | `19_modern_c_library/01`-`04` |
-
-## 16. C Traps and Pitfalls gap closure
-
-The OCR-backed section-by-section mapping is in
-[c-traps-and-pitfalls-coverage.md](c-traps-and-pitfalls-coverage.md).  The
-exercises are distributed into the existing knowledge-domain topics:
-
-| Book section | Exercise |
-| --- | --- |
-| 1.1 `=` vs `==` | `02_operators/08_assignment_vs_equality` |
-| 1.3 maximal munch | `02_operators/09_maximal_munch` |
-| 1.4 octal constants | `01_types_variables/10_octal_constants` |
-| 2.3 semicolon traps | `03_control_flow/08_semicolon_pitfalls` |
-| 2.5-2.6 dangling else | `03_control_flow/09_dangling_else` |
-| 3.2 non-array pointers | `06_pointers/10_one_past_pointer` |
-| 3.5 NULL vs empty string | `06_pointers/08_null_empty_string` |
-| 3.6 asymmetric bounds | `05_arrays_strings/11_asymmetric_bounds` |
-| 3.10 main return values | `00_getting_started/07_main_return_value` |
-| 4.5 external type check | `13_translation_units/04_external_type_check` |
-| 5.1 getchar/putchar | `14_character_io/05_getchar_putchar` |
-| 5.3 buffered output and allocation | `18_file_io_advanced/07_buffered_output_memory` |
-| 6.1 macro whitespace | `09_preprocessor/11_macro_whitespace` |
-| 6.3 macro as statement | `09_preprocessor/12_macro_statement` |
-| 6.4 macro vs typedef | `09_preprocessor/13_macro_not_typedef` |
-| 7.1 standard changes | `00_getting_started/08_standard_changes` |
-| 7.2 identifier length | `00_getting_started/09_identifier_length` |
-| 7.4 char signedness | `01_types_variables/11_char_signedness` |
-| 7.6 memory location zero | `06_pointers/09_memory_location_zero` |
-| 7.8 RAND_MAX | `10_stdlib_io/16_rand_max` |
-| 7.10 free then realloc | `07_dynamic_memory/08_free_then_realloc` |
-
-## 17. Expert C Programming gap closure
-
-| Book topic | Exercise |
-| --- | --- |
-| Implementation-defined behavior and pragmas | `00_getting_started/10_implementation_defined` |
-| Integer promotions | `01_types_variables/12_integer_promotions` |
-| Declaration grammar and function-pointer tables | `08_structs_unions_enums/13_declaration_grammar` |
-| Default argument promotions | `04_functions/09_default_argument_promotions` |
-| restrict and aliasing | `06_pointers/11_restrict_aliasing` |
-| Arena allocator | `07_dynamic_memory/09_arena_allocator` |
-| Allocation statistics | `07_dynamic_memory/10_allocation_stats` |
-| Dynamic linking | `13_translation_units/05_dynamic_linking` |
-| Endianness | `16_data_representation/05_endianness` |
-| Stack frames | `12_advanced_c/12_stack_frame` |
-| varargs and default promotions | `10_stdlib_io/17_printf_varargs` |

@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/08_pragma_error_line
  * title: #error, #line, and #pragma pack
  * objective: Use diagnostics, line control, and packing pragmas.
- * reference: 第三章 3.4 #error；3.5 #line；3.6.8 #pragma pack
  * hint: #pragma pack(push, 1) removes padding between the two members.
  */
 

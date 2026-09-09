@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/09_thread_local
  * title: Thread-local storage
  * objective: Use _Thread_local to give each thread its own object.
- * reference: C11 标准 _Thread_local 资料；POSIX threads
  * hint: The worker thread modifies its own copy of thread_value.
  */
 

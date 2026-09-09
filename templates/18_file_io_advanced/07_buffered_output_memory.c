@@ -2,7 +2,6 @@
  * clings exercise: 18_file_io_advanced/07_buffered_output_memory
  * title: Buffered output and memory allocation
  * objective: Combine malloc, setvbuf, output, fclose, and free.
- * reference: C 陷阱与缺陷 5.3
  * hint: The buffer passed to setvbuf must remain valid until the stream is closed.
  */
 

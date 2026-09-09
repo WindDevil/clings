@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/08_standard_changes
  * title: C standard changes
  * objective: Detect the C standard version at compile time.
- * reference: C 陷阱与缺陷 7.1
  * hint: __STDC_VERSION__ is 201112L for C11 and 201710L for C17.
  */
 

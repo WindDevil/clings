@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/04_atomics
  * title: C11 atomics
  * objective: Use atomic_int for lock-free counter updates.
- * reference: C11 标准 atomics 资料
  * hint: atomic_fetch_add adds to the current value and returns the old value.
  */
 

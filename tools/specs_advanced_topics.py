@@ -1,4 +1,4 @@
-"""Exercises for the gaps identified in Expert C Programming."""
+"""Advanced C and systems-programming exercises."""
 
 from spec import ex
 
@@ -8,7 +8,7 @@ SPECS = [
         slug="10_implementation_defined",
         title="Implementation-defined behavior",
         objective="Observe implementation-defined char signedness and packing pragmas.",
-        reference="C 专家编程 第1章",
+        reference="",
         hint="CHAR_MIN tells you whether plain char is signed; #pragma pack changes padding.",
         code=r"""
 #include <limits.h>
@@ -52,7 +52,7 @@ CLINGS_CHECK_INT(packed_size(), (int)(sizeof(char) + sizeof(int)));
         slug="12_integer_promotions",
         title="Integer promotions",
         objective="See that char operands are promoted to int in arithmetic expressions.",
-        reference="C 专家编程 第8章",
+        reference="",
         hint="sizeof(left + right) is sizeof(int) for char operands.",
         code=r"""
 #include <stddef.h>
@@ -86,7 +86,7 @@ CLINGS_CHECK_INT(unsigned_char_promotion(), 256);
         slug="09_default_argument_promotions",
         title="Default argument promotions",
         objective="Use the promoted types expected by variadic functions.",
-        reference="C 专家编程 第8章",
+        reference="",
         hint="char and short promote to int; float promotes to double.",
         code=r"""
 #include <stdarg.h>
@@ -131,7 +131,7 @@ CLINGS_CHECK_INT(sum_double_promoted(2, 1.5f, 2.5f) == 4.0, 1);
         slug="13_declaration_grammar",
         title="Declaration grammar and function-pointer tables",
         objective="Read a typedef for an array of function pointers.",
-        reference="C 专家编程 第3章",
+        reference="",
         hint="operation_table is typedef int (*[3])(int, int).",
         code=r"""
 typedef int (*binary_operation)(int, int);
@@ -183,7 +183,7 @@ CLINGS_CHECK_INT(declaration_demo(), 7);
         slug="11_restrict_aliasing",
         title="restrict and aliasing contracts",
         objective="Use restrict to promise that two pointer parameters do not alias.",
-        reference="C 专家编程 第10章",
+        reference="",
         hint="restrict tells the compiler that destination and source do not overlap.",
         code=r"""
 #include <stddef.h>
@@ -219,7 +219,7 @@ CLINGS_CHECK_INT(restrict_demo(), 55);
         slug="09_arena_allocator",
         title="Arena allocator",
         objective="Implement a simple bump allocator with aligned allocations.",
-        reference="C 专家编程 第7章；C 语言接口与实现 第6章",
+        reference="",
         hint="Align each request to 8 bytes before bumping the used offset.",
         code=r"""
 #include <stddef.h>
@@ -278,7 +278,7 @@ CLINGS_CHECK(arena_alloc(&arena, 100) == NULL);
         slug="10_allocation_stats",
         title="Allocation statistics",
         objective="Track outstanding allocations with wrapped malloc and free.",
-        reference="C 专家编程 第7章",
+        reference="",
         hint="Increment the free counter when a non-NULL pointer is freed.",
         code=r"""
 #include <stddef.h>
@@ -331,7 +331,7 @@ CLINGS_CHECK_INT(outstanding_allocations(), 0);
         slug="05_dynamic_linking",
         title="Dynamic linking with dlopen",
         objective="Load a symbol from a shared library at runtime.",
-        reference="C 专家编程 第5章",
+        reference="",
         hint="Use dlopen, dlsym, and dlclose; convert the object pointer through a union.",
         code=r"""
 #include <dlfcn.h>
@@ -376,7 +376,7 @@ CLINGS_CHECK_INT(dynamic_strlen(), 5);
         slug="05_endianness",
         title="Endianness",
         objective="Detect byte order and inspect an integer's first byte.",
-        reference="C 专家编程 第6章",
+        reference="",
         hint="A uint16_t value of 1 stores 0x01 first on little-endian systems.",
         code=r"""
 #include <stdint.h>
@@ -417,7 +417,7 @@ if (is_little_endian()) {
         slug="12_stack_frame",
         title="Stack frames",
         objective="Observe that nested function calls use distinct activation records.",
-        reference="C 专家编程 第6章",
+        reference="",
         hint="__builtin_frame_address is a GCC/Clang extension.",
         code=r"""
 static void *inner_frame(void)

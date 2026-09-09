@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/01_printf_formats
  * title: printf format specifiers
  * objective: Match each conversion specifier to its argument type.
- * reference: 第一章 1.5 sizeof；标准库 printf 资料
  * hint: long values use %ld; doubles use %f or %.2f.
  */
 

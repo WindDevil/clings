@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/11_stdint_inttypes
  * title: Fixed-width integers and format macros
  * objective: Use uint64_t and PRIu64 from stdint.h and inttypes.h.
- * reference: 第一章 1.4 基本数据类型；C99 标准库
  * hint: PRIu64 is the portable printf specifier for uint64_t.
  */
 

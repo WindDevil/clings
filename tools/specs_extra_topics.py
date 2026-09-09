@@ -1,4 +1,4 @@
-"""C Primer Plus gap exercises that form new topics."""
+"""Additional exercises that form new topics."""
 
 from spec import ex, project
 
@@ -11,7 +11,7 @@ SPECS = [
         slug="01_header_source_split",
         title="Header and source split",
         objective="Compile a program from a main file, a header, and an implementation file.",
-        reference="C Primer Plus 第9章 9.4、第16章 16.5",
+        reference="",
         hint="Declare add in the header and define it in math_utils.c.",
         files={
             "math_utils.h": r"""
@@ -55,7 +55,7 @@ int main(void)
         slug="02_extern_linkage",
         title="External linkage across files",
         objective="Declare a global variable in a header and define it in another file.",
-        reference="C Primer Plus 第12章 12.1.7、12.1.9",
+        reference="",
         hint="The extern declaration promises a definition in config.c.",
         files={
             "config.h": r"""
@@ -95,7 +95,7 @@ int main(void)
         slug="03_static_internal_linkage",
         title="Internal linkage and file-scope state",
         objective="Keep a counter private to one translation unit with static.",
-        reference="C Primer Plus 第12章 12.1.8-12.1.9",
+        reference="",
         hint="static file-scope objects are visible only in their own .c file.",
         files={
             "counter.h": r"""
@@ -152,7 +152,7 @@ int main(void)
         slug="01_getc_putc",
         title="getc and putc",
         objective="Copy a stream one character at a time with getc and putc.",
-        reference="C Primer Plus 第8章 8.1、第13章 13.2.3",
+        reference="",
         hint="getc returns EOF when there are no more characters.",
         code=r"""
 #include <stdio.h>
@@ -195,7 +195,7 @@ fclose(output);
         slug="02_eof_ferror",
         title="EOF, feof, and ferror",
         objective="Read until EOF and distinguish end-of-file from an error.",
-        reference="C Primer Plus 第8章 8.3、第13章 13.7.7",
+        reference="",
         hint="feof is true only after a read attempts to pass the end of the file.",
         code=r"""
 #include <stdio.h>
@@ -239,7 +239,7 @@ fclose(file);
         slug="03_input_validation",
         title="Input validation",
         objective="Reject input with trailing characters or out-of-range values.",
-        reference="C Primer Plus 第8章 8.6",
+        reference="",
         hint="Use %c after %d to detect trailing non-whitespace input.",
         code=r"""
 #include <stdio.h>
@@ -279,7 +279,7 @@ CLINGS_CHECK_INT(read_choice("abc", &choice), -1);
         slug="04_iso646",
         title="iso646.h alternative spellings",
         objective="Use and/or/not from iso646.h.",
-        reference="C Primer Plus 第7章 7.3.1",
+        reference="",
         hint="iso646.h defines and as && and or as ||.",
         code=r"""
 #include <iso646.h>
@@ -311,7 +311,7 @@ CLINGS_CHECK_INT(is_yes("n"), 0);
         slug="01_strcat_strncat",
         title="strcat and strncat",
         objective="Append a string while respecting the destination size.",
-        reference="C Primer Plus 第11章 11.5.2-11.5.3",
+        reference="",
         hint="strncat appends at most n characters and always terminates.",
         code=r"""
 #include <stddef.h>
@@ -348,7 +348,7 @@ CLINGS_CHECK_STR(small, "Hello w");
         slug="02_strncpy_bounded",
         title="Bounded copying with strncpy",
         objective="Copy a string safely and always terminate the destination.",
-        reference="C Primer Plus 第11章 11.5.5",
+        reference="",
         hint="strncpy does not guarantee a terminating NUL when the source is too long.",
         code=r"""
 #include <stddef.h>
@@ -386,7 +386,7 @@ CLINGS_CHECK_INT(copy_bounded(buffer, 0, "x"), -1);
         slug="03_sprintf_snprintf",
         title="sprintf and snprintf",
         objective="Format text with snprintf and understand truncation.",
-        reference="C Primer Plus 第11章 11.5.6",
+        reference="",
         hint="snprintf returns the number of characters that would have been written.",
         code=r"""
 #include <stdio.h>
@@ -417,7 +417,7 @@ CLINGS_CHECK_STR(small, "Ada:3");
         slug="04_fgets_fputs_sort",
         title="fgets, fputs, and sorting strings",
         objective="Read a line with fgets and sort an array of strings.",
-        reference="C Primer Plus 第11章 11.2.3、11.6",
+        reference="",
         hint="qsort receives an array of pointers, so cast to const char *const *.",
         code=r"""
 #include <stddef.h>
@@ -468,7 +468,7 @@ CLINGS_CHECK_STR(values[2], "pear");
         slug="05_strtod",
         title="Converting strings to double",
         objective="Parse a double with strtod and reject trailing input.",
-        reference="C Primer Plus 第11章 11.9",
+        reference="",
         hint="Check errno, endptr, and the character after the number.",
         code=r"""
 #include <errno.h>
@@ -510,7 +510,7 @@ CLINGS_CHECK_INT(parse_double("", &value), -1);
         slug="01_base_conversion",
         title="Binary, octal, and hexadecimal input",
         objective="Parse a hexadecimal string with strtoul.",
-        reference="C Primer Plus 第15章 15.2",
+        reference="",
         hint="Base 16 accepts an optional 0x prefix.",
         code=r"""
 #include <stdlib.h>
@@ -547,7 +547,7 @@ CLINGS_CHECK_INT(parse_hex("xyz", &value), -1);
         slug="02_integer_binary_representation",
         title="Integer bit patterns",
         objective="Count set bits and convert sign-magnitude to two's complement.",
-        reference="C Primer Plus 第15章 15.1",
+        reference="",
         hint="value &= value - 1 clears the lowest set bit.",
         code=r"""
 int count_set_bits(unsigned int value)
@@ -584,7 +584,7 @@ CLINGS_CHECK_INT(sign_magnitude_to_twos_complement(0x80000001u), 0xFFFFFFFFu);
         slug="03_float_binary_representation",
         title="Floating-point bit patterns",
         objective="Inspect and reconstruct an IEEE-754 float with memcpy.",
-        reference="C Primer Plus 第15章 15.1.3",
+        reference="",
         hint="Use memcpy instead of pointer casts to avoid strict-aliasing violations.",
         code=r"""
 #include <stdint.h>
@@ -620,7 +620,7 @@ CLINGS_CHECK_INT(bits_to_float(0x3f800000u) == 1.0f, 1);
         slug="04_bitfield_portability",
         title="Bitfields and explicit masks",
         objective="Pack fields with bitfields and compare them with an explicit mask.",
-        reference="C Primer Plus 第15章 15.4",
+        reference="",
         hint="Bitfield layout is implementation-defined; masks make the encoding explicit.",
         code=r"""
 struct flags {
@@ -658,7 +658,7 @@ CLINGS_CHECK_INT(pack_flags(0, 1, 15), 62);
         slug="01_queue_adt",
         title="Queue ADT",
         objective="Implement a fixed-capacity circular queue.",
-        reference="C Primer Plus 第17章 17.4",
+        reference="",
         hint="The tail index wraps with modulo capacity.",
         code=r"""
 #include <stddef.h>
@@ -733,7 +733,7 @@ CLINGS_CHECK_INT(value, 2);
         slug="02_binary_search_tree",
         title="Binary search tree",
         objective="Insert into and search a binary search tree.",
-        reference="C Primer Plus 第17章 17.7",
+        reference="",
         hint="Smaller values go left; larger values go right.",
         code=r"""
 #include <stddef.h>
@@ -813,7 +813,7 @@ free_tree(root);
         slug="03_dynamic_vector",
         title="Dynamic array/vector",
         objective="Grow a dynamic array and preserve existing elements.",
-        reference="C Primer Plus 第17章 17.2、17.6",
+        reference="",
         hint="Double the capacity when the array is full.",
         code=r"""
 #include <stddef.h>
@@ -875,7 +875,7 @@ vector_free(&vector);
         slug="01_fprintf_fscanf",
         title="fprintf and fscanf",
         objective="Write formatted data to a file and read it back.",
-        reference="C Primer Plus 第13章 13.4.1",
+        reference="",
         hint="The format strings used for writing and reading must agree.",
         code=r"""
 #include <stdio.h>
@@ -927,7 +927,7 @@ remove(path);
         slug="02_fgets_fputs",
         title="fgets and fputs",
         objective="Copy a text file line by line.",
-        reference="C Primer Plus 第13章 13.4.2",
+        reference="",
         hint="fgets includes the newline when the buffer is large enough.",
         code=r"""
 #include <stdio.h>
@@ -974,7 +974,7 @@ fclose(output);
         slug="03_getc_putc_ungetc",
         title="getc, putc, and ungetc",
         objective="Peek at a character and put it back into the stream.",
-        reference="C Primer Plus 第13章 13.2.3、13.7.1",
+        reference="",
         hint="ungetc pushes one character back onto the input stream.",
         code=r"""
 #include <stdio.h>
@@ -1011,7 +1011,7 @@ fclose(file);
         slug="04_fseek_ftell",
         title="Random access with fseek and ftell",
         objective="Seek to a byte offset and report the resulting position.",
-        reference="C Primer Plus 第13章 13.5",
+        reference="",
         hint="fseek with SEEK_SET positions the stream at an absolute offset.",
         code=r"""
 #include <stdio.h>
@@ -1050,7 +1050,7 @@ fclose(file);
         slug="05_fflush_setvbuf",
         title="Stream buffering",
         objective="Configure full buffering and flush a stream.",
-        reference="C Primer Plus 第13章 13.7.2-13.7.3",
+        reference="",
         hint="setvbuf must be called before other I/O on the stream.",
         code=r"""
 #include <stdio.h>
@@ -1087,7 +1087,7 @@ fclose(file);
         slug="06_binary_random_access",
         title="Binary random access",
         objective="Read a specific struct record from a binary file.",
-        reference="C Primer Plus 第13章 13.7.9",
+        reference="",
         hint="Seek by index * sizeof(record).",
         code=r"""
 #include <stddef.h>
@@ -1155,7 +1155,7 @@ remove(path);
         slug="01_noreturn",
         title="_Noreturn functions",
         objective="Declare a function that never returns and observe its exit status.",
-        reference="C Primer Plus 第16章 16.8",
+        reference="",
         hint="The child process calls terminate_now and exits with status 7.",
         code=r"""
 #include <stdnoreturn.h>
@@ -1199,7 +1199,7 @@ CLINGS_CHECK_INT(run_noreturn(), 1);
         slug="02_tgmath",
         title="Type-generic math with tgmath.h",
         objective="Use sqrt with both double and float arguments through tgmath.h.",
-        reference="C Primer Plus 第16章 16.10.3",
+        reference="",
         hint="tgmath.h selects the correct real function from the argument type.",
         code=r"""
 #include <tgmath.h>
@@ -1230,7 +1230,7 @@ CLINGS_CHECK_INT(generic_sqrtf(16.0f) == 4.0f, 1);
         slug="03_atexit",
         title="Registering atexit handlers",
         objective="Register a cleanup function with atexit.",
-        reference="C Primer Plus 第16章 16.11.1",
+        reference="",
         hint="atexit returns 0 on success and nonzero on failure.",
         code=r"""
 #include <stdlib.h>
@@ -1259,7 +1259,7 @@ CLINGS_CHECK_INT(register_cleanup(), 0);
         slug="04_atomic_flag",
         title="atomic_flag spin lock",
         objective="Use atomic_flag as a simple test-and-set lock.",
-        reference="C Primer Plus 第12章 12.5.4；C11 stdatomic.h",
+        reference="",
         hint="atomic_flag_test_and_set returns the previous state.",
         code=r"""
 #include <stdatomic.h>

@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/03_padding_alignment
  * title: Padding and alignment
  * objective: Observe padding and member offsets with offsetof.
- * reference: 第一章 1.14.1 空结构体多大；第三章 3.6.8 #pragma pack
  * hint: offsetof takes the struct type and the member name.
  */
 

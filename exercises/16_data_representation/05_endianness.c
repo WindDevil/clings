@@ -2,7 +2,6 @@
  * clings exercise: 16_data_representation/05_endianness
  * title: Endianness
  * objective: Detect byte order and inspect an integer's first byte.
- * reference: C 专家编程 第6章
  * hint: A uint16_t value of 1 stores 0x01 first on little-endian systems.
  */
 

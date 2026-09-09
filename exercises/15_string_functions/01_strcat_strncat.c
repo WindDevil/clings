@@ -2,7 +2,6 @@
  * clings exercise: 15_string_functions/01_strcat_strncat
  * title: strcat and strncat
  * objective: Append a string while respecting the destination size.
- * reference: C Primer Plus 第11章 11.5.2-11.5.3
  * hint: strncat appends at most n characters and always terminates.
  */
 

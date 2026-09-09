@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/08_assignment_vs_equality
  * title: Assignment versus equality
  * objective: Use == for comparison and recognize the = versus == trap.
- * reference: C 陷阱与缺陷 1.1
  * hint: A single = assigns; a double == compares.
  */
 

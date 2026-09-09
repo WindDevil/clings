@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/07_alignment
  * title: Alignment requirements
  * objective: Query alignment with alignof and keep members aligned.
- * reference: 第三章 3.6.8.1 为什么会有内存对齐
  * hint: alignof reports the strictest alignment the type requires.
  */
 

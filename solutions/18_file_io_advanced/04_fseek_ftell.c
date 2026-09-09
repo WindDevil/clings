@@ -2,7 +2,6 @@
  * clings exercise: 18_file_io_advanced/04_fseek_ftell
  * title: Random access with fseek and ftell
  * objective: Seek to a byte offset and report the resulting position.
- * reference: C Primer Plus 第13章 13.5
  * hint: fseek with SEEK_SET positions the stream at an absolute offset.
  */
 

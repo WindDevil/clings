@@ -2,7 +2,6 @@
  * clings exercise: 18_file_io_advanced/01_fprintf_fscanf
  * title: fprintf and fscanf
  * objective: Write formatted data to a file and read it back.
- * reference: C Primer Plus 第13章 13.4.1
  * hint: The format strings used for writing and reading must agree.
  */
 

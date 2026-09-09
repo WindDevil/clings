@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/07_tokenize
  * title: Tokenizing with strtok_r
  * objective: Split a string without modifying the caller's buffer.
- * reference: 第五章 内存管理；标准库 string.h 资料
  * hint: Pass both space and comma as delimiters.
  */
 

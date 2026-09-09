@@ -2,7 +2,6 @@
  * clings exercise: 16_data_representation/02_integer_binary_representation
  * title: Integer bit patterns
  * objective: Count set bits and convert sign-magnitude to two's complement.
- * reference: C Primer Plus 第15章 15.1
  * hint: value &= value - 1 clears the lowest set bit.
  */
 

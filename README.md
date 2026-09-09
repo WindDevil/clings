@@ -1,10 +1,6 @@
 # clings
 
-`clings` 是一套面向 C 语言的动手练习集，参考
-[rustlings](https://github.com/rust-lang/rustlings)、
-[cpplings](https://github.com/nooneknowspeter/cpplings) 和
-[cplings](https://github.com/rdjondo/cplings) 的组织方式，
-并结合《C 语言深度解剖》的知识点设计。
+`clings` 是一套面向 C 语言的动手练习集。
 
 每个练习都是一个可以独立编译和运行的 C 程序。初始文件故意保留
 `TODO`、错误表达式或编译错误；你需要修改代码，让编译和测试通过。
@@ -24,7 +20,6 @@
   `templates/` 保存原始练习，`exercises/` 是你实际修改的目录。
 - **现代工程结构**：Makefile、CMake Presets、CTest、CI、Docker、
   clang-format、EditorConfig。
-- **书籍参考**：PDF 已转换为 Markdown，并建立练习与章节的映射。
 
 ## 快速开始
 
@@ -83,7 +78,7 @@ make clean
 
 ## 学习流程
 
-1. 阅读 `exercises/<topic>/README.md` 和练习文件顶部的目标、书籍参考。
+1. 阅读 `exercises/<topic>/README.md` 和练习文件顶部的目标。
 2. 修改 `exercises/<topic>/<exercise>.c`，运行 `./clings run <exercise>`。
 3. 如果卡住，先用 `./clings hint <exercise>`，再看编译器或测试输出。
 4. 通过后继续下一个练习；进度记录在 `.clings/progress.json`。
@@ -140,30 +135,14 @@ make clean
 │   ├── specs_00_04.py         # 前五章练习规格
 │   ├── specs_05_08.py         # 中间四章练习规格
 │   ├── specs_09_12.py         # 后四章练习规格
-│   ├── specs_c_primer_existing.py # C Primer Plus 缺口（现有主题）
-│   ├── specs_c_primer_new.py  # C Primer Plus 缺口（新主题）
-│   ├── pdf_to_markdown.py     # PDF -> Markdown 转换器
-│   └── prepare_ref_books.py   # PV-Books C 书籍下载/转换器
+│   ├── specs_extra_existing.py # 扩展现有主题的练习规格
+│   ├── specs_extra_topics.py  # 扩展新主题的练习规格
+│   ├── specs_pitfalls.py      # 常见 C 陷阱练习规格
+│   └── specs_advanced_topics.py # 高级 C 与系统编程练习规格
 ├── docs/
 │   ├── architecture.md        # 运行器、生成器、测试框架设计
 │   ├── curriculum.md          # 按主题列出全部练习
 │   ├── knowledge-map.md       # 按 C 知识领域列出覆盖范围
-│   ├── book-coverage.md       # 《C 语言深度解剖》章节到练习的映射
-│   ├── reading-notes.md       # 20 本 C 参考书的阅读笔记
-│   ├── gap-analysis.md        # 尚未加入的知识点与优先级路线图
-│   ├── c-primer-plus-coverage.md # C Primer Plus 逐章覆盖核对
-│   ├── c-traps-and-pitfalls-coverage.md # C 陷阱与缺陷 OCR 后逐节核对
-│   ├── c-interfaces-and-implementations-coverage.md # C 语言接口与实现核对
-│   ├── c-expert-programming-coverage.md # C 专家编程 OCR 后逐章核对
-│   └── reference/             # PDF 转换后的参考书
-├── .ref/                      # 本地参考书库（已 gitignore）
-│   ├── PV-Books/              # PaleVerge/PV-Books 完整克隆
-│   ├── books/                 # 筛选出的 C 书籍
-│   ├── markdown/              # C 书籍的 Markdown 转换
-│   ├── cpplings/              # 参考仓库
-│   ├── cplings/               # 参考仓库
-│   ├── OCR-REQUIRED.md        # 扫描版 PDF 的 OCR 待办
-│   └── books-manifest.json    # 下载/转换清单
 ├── CMakeLists.txt
 ├── CMakePresets.json
 ├── Makefile
@@ -254,29 +233,21 @@ python3 tools/generate_exercises.py --check
 详见 [CONTRIBUTING.md](CONTRIBUTING.md) 和
 [docs/architecture.md](docs/architecture.md)。
 
-## 参考与致谢
-
-- [nooneknowspeter/cpplings](https://github.com/nooneknowspeter/cpplings)
-- [rdjondo/cplings](https://github.com/rdjondo/cplings)
-- [rustlings](https://github.com/rust-lang/rustlings)
-- 《C 语言深度解剖》，陈正冲 编著
-- C17 标准（ISO/IEC 9899:2018）
-
-## 参考书库与缺口分析
-
-`.ref` 目录保存了本地参考书库：
-
-- `.ref/PV-Books`：PV-Books 的完整克隆；
-- `.ref/books`：筛选出的 C 书籍，已排除 C++；
-- `.ref/markdown`：这些书的 Markdown 转换；
-- `.ref/cpplings`、`.ref/cplings`：两个参考练习仓库；
-- `.ref/OCR-REQUIRED.md`：扫描版 PDF 的 OCR 清单。
-
-阅读笔记见 [docs/reading-notes.md](docs/reading-notes.md)，尚未加入课程的
-知识点与建议优先级见 [docs/gap-analysis.md](docs/gap-analysis.md)。
-
 ## 许可
 
 项目代码使用 MIT License，见 [LICENSE](LICENSE)。
-《C 语言深度解剖》PDF 及其 Markdown 转换件遵循原书版权声明，
-不因本项目而改变许可。
+
+## 参考
+
+项目设计和选题时参考了以下公开资料：
+
+- [rustlings](https://github.com/rust-lang/rustlings)
+- [cpplings](https://github.com/nooneknowspeter/cpplings)
+- [cplings](https://github.com/rdjondo/cplings)
+- 《C 语言深度解剖》
+- 《C Primer Plus》
+- 《C 陷阱与缺陷》
+- 《C 专家编程》
+- 《C 语言接口与实现》
+- 《深入理解计算机系统》
+- C17 标准（ISO/IEC 9899:2018）

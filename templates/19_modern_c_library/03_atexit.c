@@ -2,7 +2,6 @@
  * clings exercise: 19_modern_c_library/03_atexit
  * title: Registering atexit handlers
  * objective: Register a cleanup function with atexit.
- * reference: C Primer Plus 第16章 16.11.1
  * hint: atexit returns 0 on success and nonzero on failure.
  */
 

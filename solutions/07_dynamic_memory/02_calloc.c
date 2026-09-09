@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/02_calloc
  * title: Zero-initialized allocation
  * objective: Use calloc when every byte must start as zero.
- * reference: 第五章 5.3.5.3 用 malloc 函数申请 0 字节内存
  * hint: calloc(count, size) returns zeroed memory.
  */
 

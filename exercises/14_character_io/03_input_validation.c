@@ -2,7 +2,6 @@
  * clings exercise: 14_character_io/03_input_validation
  * title: Input validation
  * objective: Reject input with trailing characters or out-of-range values.
- * reference: C Primer Plus 第8章 8.6
  * hint: Use %c after %d to detect trailing non-whitespace input.
  */
 

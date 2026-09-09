@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/03_loops
  * title: for and while loops
  * objective: Get loop bounds and accumulators right.
- * reference: 第一章 1.8 do、while、for
  * hint: sum_to(n) includes n; factorial multiplies 2 through n.
  */
 

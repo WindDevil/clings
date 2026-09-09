@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/11_restrict_aliasing
  * title: restrict and aliasing contracts
  * objective: Use restrict to promise that two pointer parameters do not alias.
- * reference: C 专家编程 第10章
  * hint: restrict tells the compiler that destination and source do not overlap.
  */
 

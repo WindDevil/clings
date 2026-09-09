@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/06_variadic_macros
  * title: Variadic macros
  * objective: Forward a variable argument list to a variadic function.
- * reference: 第三章 3.1 宏定义；第六章 函数
  * hint: SUM(...) should pass every argument, including the count.
  */
 

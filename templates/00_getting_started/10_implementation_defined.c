@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/10_implementation_defined
  * title: Implementation-defined behavior
  * objective: Observe implementation-defined char signedness and packing pragmas.
- * reference: C 专家编程 第1章
  * hint: CHAR_MIN tells you whether plain char is signed; #pragma pack changes padding.
  */
 

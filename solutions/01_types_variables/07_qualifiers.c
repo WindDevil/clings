@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/07_qualifiers
  * title: Type qualifiers and storage-class specifiers
  * objective: Use const, volatile, restrict, extern, auto, and register.
- * reference: 第一章 1.1-1.3 auto、register、static；1.11 const；1.12 volatile；1.13 extern
  * hint: restrict promises that the two pointer parameters do not alias.
  */
 

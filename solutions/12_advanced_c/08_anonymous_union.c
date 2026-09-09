@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/08_anonymous_union
  * title: Anonymous structs and unions
  * objective: Access anonymous union members directly through the outer struct.
- * reference: 第一章 1.15 union 关键字；C11 匿名结构体/联合
  * hint: An anonymous union member is promoted into the enclosing struct scope.
  */
 

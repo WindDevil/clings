@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/11_macro_whitespace
  * title: Whitespace in macro definitions
  * objective: Remember that a space can turn a function-like macro into an object-like macro.
- * reference: C 陷阱与缺陷 6.1
  * hint: The ( must immediately follow the macro name.
  */
 

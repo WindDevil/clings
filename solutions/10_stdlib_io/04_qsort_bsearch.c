@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/04_qsort_bsearch
  * title: qsort and bsearch
  * objective: Use comparison callbacks for sorting and searching.
- * reference: 第四章 4.7 函数指针；标准库 qsort 资料
  * hint: The comparator returns negative, zero, or positive.
  */
 

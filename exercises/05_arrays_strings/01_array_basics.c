@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/01_array_basics
  * title: Array traversal
  * objective: Iterate over an array and compute a sum and maximum.
- * reference: 第四章 4.2 数组
  * hint: Use values[i] inside the loop, not values[0].
  */
 

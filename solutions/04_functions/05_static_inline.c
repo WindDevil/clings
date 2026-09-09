@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/05_static_inline
  * title: Internal linkage and inline helpers
  * objective: Use static functions and file-scope state.
- * reference: 第一章 1.3 static 关键字；第六章 函数
  * hint: Update call_count before returning the incremented value.
  */
 

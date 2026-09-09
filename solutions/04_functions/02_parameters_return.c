@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/02_parameters_return
  * title: Parameters and return values
  * objective: Return values through parameters and clamp a range.
- * reference: 第六章 6.2 编码风格；6.2 函数设计
  * hint: When count is zero, leave the outputs unchanged.
  */
 

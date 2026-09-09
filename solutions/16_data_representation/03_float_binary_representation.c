@@ -2,7 +2,6 @@
  * clings exercise: 16_data_representation/03_float_binary_representation
  * title: Floating-point bit patterns
  * objective: Inspect and reconstruct an IEEE-754 float with memcpy.
- * reference: C Primer Plus 第15章 15.1.3
  * hint: Use memcpy instead of pointer casts to avoid strict-aliasing violations.
  */
 

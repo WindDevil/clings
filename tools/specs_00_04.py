@@ -11,7 +11,7 @@ SPECS = [
         slug="01_hello_world",
         title="Hello, C!",
         objective="Understand the minimal C program and formatted output.",
-        reference="第一章 前言；任意 C 入门章节",
+        reference="",
         hint="Use snprintf(buffer, size, ...) and the exact string from the test.",
         code=r"""
 #include <stdio.h>
@@ -39,7 +39,7 @@ CLINGS_CHECK_STR(buffer, "Hello, C!");
         slug="02_compilation_model",
         title="Preprocessing, compiling, and linking",
         objective="See how the preprocessor and the C standard version are exposed.",
-        reference="第三章 预处理；编译流程资料",
+        reference="",
         hint="The preprocessor evaluates #if before the compiler sees the code.",
         code=r"""
 #include <stdio.h>
@@ -75,7 +75,7 @@ CLINGS_CHECK(standard_c_year() >= 2011);
         slug="03_main_args",
         title="argc, argv, and the program environment",
         objective="Work with the arguments passed to main.",
-        reference="第六章 函数；C 标准 5.1.2.2.1",
+        reference="",
         hint="argv[0] is the program name; user arguments start at argv[1].",
         code=r"""
 #include <string.h>
@@ -116,7 +116,7 @@ CLINGS_CHECK_INT(find_arg(3, argv, "missing"), -1);
         slug="04_debug_assert",
         title="Assertions and defensive programming",
         objective="Use assert for programmer errors and return values for user errors.",
-        reference="第五章 内存管理；调试与测试资料",
+        reference="",
         hint="A zero denominator is a normal error, so return -1 instead of dividing.",
         code=r"""
 #include <assert.h>
@@ -150,7 +150,7 @@ CLINGS_CHECK_INT(checked_divide(10, 0, &out), -1);
         slug="05_compiler_diagnostics",
         title="Read compiler diagnostics",
         objective="Fix a format-string warning that the compiler reports.",
-        reference="第一章 1.5 sizeof；格式化输入输出资料",
+        reference="",
         hint="size_t has its own length modifier; do not use %d for it.",
         code=r"""
 #include <stdio.h>
@@ -179,7 +179,7 @@ CLINGS_CHECK_STR(buffer, "123");
         slug="06_lexical_elements",
         title="Comments, line continuation, and escapes",
         objective="Recognize comments, backslash-newline continuation, and escape sequences.",
-        reference="第二章 2.1 注释符号；2.2 接续符和转义符",
+        reference="",
         hint="The escaped text contains a real newline, a tab, and quotation marks.",
         code=r"""
 #include <string.h>
@@ -223,7 +223,7 @@ CLINGS_CHECK_INT(comment_is_ignored(), 3);
         slug="01_integer_types",
         title="Integer types and ranges",
         objective="Use sizeof, CHAR_BIT, INT_MIN, and INT_MAX correctly.",
-        reference="第一章 1.4 基本数据类型",
+        reference="",
         hint="The number of bits in an int is sizeof(int) * CHAR_BIT.",
         code=r"""
 #include <limits.h>
@@ -256,7 +256,7 @@ CLINGS_CHECK_INT(long_can_hold_int((long)INT_MAX + 1L), 0);
         slug="02_signed_unsigned",
         title="Signed and unsigned conversions",
         objective="Avoid the usual arithmetic conversion trap when comparing.",
-        reference="第一章 1.4 signed、unsigned 关键字",
+        reference="",
         hint="A negative int converted to unsigned becomes a very large value.",
         code=r"""
 int compare_int_unsigned(int a, unsigned b)
@@ -291,7 +291,7 @@ CLINGS_CHECK_INT(compare_int_unsigned(2, 9u), -1);
         slug="03_overflow",
         title="Unsigned wrap and checked signed addition",
         objective="Understand modulo wrap and avoid signed integer overflow.",
-        reference="第一章 1.4 基本数据类型；第五章 内存管理",
+        reference="",
         hint="Check INT_MAX - b before adding b to a.",
         code=r"""
 #include <limits.h>
@@ -331,7 +331,7 @@ CLINGS_CHECK_INT(out, 5);
         slug="04_floating_point",
         title="Floating-point comparison",
         objective="Compare floating-point values with an epsilon.",
-        reference="第一章 1.6.2 float 与零值比较",
+        reference="",
         hint="Exact equality is usually the wrong comparison for computed doubles.",
         code=r"""
 #include <math.h>
@@ -358,7 +358,7 @@ CLINGS_CHECK_INT(nearly_equal(-1.0, -1.0, 0.0), 1);
         slug="05_char_ascii",
         title="Characters and ASCII",
         objective="Work with char values and the ctype classification functions.",
-        reference="第一章 1.4 基本数据类型",
+        reference="",
         hint="Lowercase letters live in a contiguous range only for the execution character set.",
         code=r"""
 #include <ctype.h>
@@ -392,7 +392,7 @@ CLINGS_CHECK_INT(to_upper_ascii('!'), '!');
         slug="06_storage_scope",
         title="Storage classes and scope",
         objective="Observe the lifetime of a static variable and block scope.",
-        reference="第一章 1.1-1.3 auto、register、static",
+        reference="",
         hint="++counter increments first; counter++ returns the old value.",
         code=r"""
 static int counter = 0;
@@ -426,7 +426,7 @@ CLINGS_CHECK_INT(next_counter(), 3);
         slug="07_qualifiers",
         title="Type qualifiers and storage-class specifiers",
         objective="Use const, volatile, restrict, extern, auto, and register.",
-        reference="第一章 1.1-1.3 auto、register、static；1.11 const；1.12 volatile；1.13 extern",
+        reference="",
         hint="restrict promises that the two pointer parameters do not alias.",
         code=r"""
 extern int shared_value;
@@ -486,7 +486,7 @@ CLINGS_CHECK_INT(auto_value(), 5);
         slug="08_stdbool_stddef",
         title="stdbool.h and stddef.h",
         objective="Use bool and size_t from the standard headers.",
-        reference="第一章 1.4 基本数据类型；C99/C11 标准库",
+        reference="",
         hint="bool is defined in <stdbool.h>; size_t is defined in <stddef.h>.",
         code=r"""
 #include <stdbool.h>
@@ -523,7 +523,7 @@ CLINGS_CHECK_INT(size_of_int(), sizeof(int));
         slug="01_arithmetic",
         title="Integer arithmetic",
         objective="Practice integer division, modulo, and truncation.",
-        reference="第二章 2.4 逻辑运算符；2.8 除法",
+        reference="",
         hint="Integer division truncates toward zero.",
         code=r"""
 int quotient(int a, int b)
@@ -559,7 +559,7 @@ CLINGS_CHECK_INT(average_floor(2, 3), 2);
         slug="02_precedence",
         title="Precedence and parentheses",
         objective="Use parentheses to express intent clearly.",
-        reference="第二章 2.9 运算符的优先级",
+        reference="",
         hint="Multiplication binds more tightly than addition.",
         code=r"""
 int precedence_demo(int a, int b, int c)
@@ -589,7 +589,7 @@ CLINGS_CHECK_INT(parenthesized(1, 1, 0), 0);
         slug="03_short_circuit",
         title="Short-circuit evaluation",
         objective="Observe that && and || may not evaluate their right operand.",
-        reference="第二章 2.4 逻辑运算符",
+        reference="",
         hint="The right side of && is only evaluated when the left side is true.",
         code=r"""
 static int side_effect_count = 0;
@@ -635,7 +635,7 @@ CLINGS_CHECK_INT(touch_count(), 1);
         slug="04_bitwise",
         title="Bitwise set, clear, toggle, and test",
         objective="Use masks and bitwise operators safely.",
-        reference="第二章 2.5 位运算符",
+        reference="",
         hint="Clearing a bit uses value & ~(1u << bit).",
         code=r"""
 unsigned set_bit(unsigned value, unsigned bit)
@@ -677,7 +677,7 @@ CLINGS_CHECK_INT(test_bit(0x8u, 2u), 0);
         slug="05_shifts",
         title="Shift operators and masks",
         objective="Build masks and avoid shifting by the width of the type.",
-        reference="第二章 2.5.1 左移和右移",
+        reference="",
         hint="A mask of width w has w low bits set: (1u << w) - 1u.",
         code=r"""
 unsigned low_bits_mask(unsigned width)
@@ -708,7 +708,7 @@ CLINGS_CHECK_INT(shift_left_safe(1u, 32u), 0u);
         slug="06_sizeof_incdec",
         title="sizeof and increment operators",
         objective="Distinguish sizeof expressions from increment side effects.",
-        reference="第一章 1.5 sizeof；第二章 2.7 ++、--",
+        reference="",
         hint="Post-increment returns the old value; pre-increment returns the new value.",
         code=r"""
 int size_of_char(void)
@@ -751,7 +751,7 @@ CLINGS_CHECK_INT(value, 7);
         slug="01_if_else",
         title="if and else",
         objective="Write clear conditional branches.",
-        reference="第一章 1.6 if、else 组合",
+        reference="",
         hint="Check for positive, then negative, then the remaining zero case.",
         code=r"""
 int sign_of(int value)
@@ -789,7 +789,7 @@ CLINGS_CHECK_INT(max_of(-1, -2), -1);
         slug="02_switch_case",
         title="switch and fallthrough",
         objective="Use intentional fallthrough and a default case.",
-        reference="第一章 1.7 switch、case 组合",
+        reference="",
         hint="February has 29 days when leap is true.",
         code=r"""
 int days_in_month(int month, int leap)
@@ -834,7 +834,7 @@ CLINGS_CHECK_INT(days_in_month(13, 0), -1);
         slug="03_loops",
         title="for and while loops",
         objective="Get loop bounds and accumulators right.",
-        reference="第一章 1.8 do、while、for",
+        reference="",
         hint="sum_to(n) includes n; factorial multiplies 2 through n.",
         code=r"""
 long sum_to(int n)
@@ -873,7 +873,7 @@ CLINGS_CHECK_INT(factorial(5), 120);
         slug="04_break_continue",
         title="break and continue",
         objective="Use break to stop early and continue to skip one iteration.",
-        reference="第一章 1.8.1 break 与 continue 的区别",
+        reference="",
         hint="continue skips the rest of the current iteration; break exits the loop.",
         code=r"""
 int first_even(const int *values, int count)
@@ -917,7 +917,7 @@ CLINGS_CHECK_INT(sum_positive((const int[]){-1, -2}, 2), 0);
         slug="05_goto_cleanup",
         title="goto for single-exit cleanup",
         objective="Use goto for a clear cleanup path in C.",
-        reference="第一章 1.9 goto 关键字；第六章 函数设计",
+        reference="",
         hint="Set *out only after the copy has been allocated and filled.",
         code=r"""
 #include <stdlib.h>
@@ -973,7 +973,7 @@ CLINGS_CHECK_INT(parse_and_sum(values, 4, NULL), -1);
         slug="06_state_machine",
         title="A small state machine",
         objective="Track state while scanning a string.",
-        reference="第三章 3.2 条件编译；控制流综合练习",
+        reference="",
         hint="A word starts when the previous character was whitespace.",
         code=r"""
 int count_words(const char *text)
@@ -1013,7 +1013,7 @@ CLINGS_CHECK_INT(count_words("  a\tb\n c  "), 3);
         slug="01_declaration_definition",
         title="Declarations and definitions",
         objective="Use a forward declaration and an internal helper.",
-        reference="第六章 函数",
+        reference="",
         hint="The declaration promises the signature; the definition supplies the body.",
         code=r"""
 static int square(int value);
@@ -1044,7 +1044,7 @@ CLINGS_CHECK_INT(square_then_add(-2, 1), 5);
         slug="02_parameters_return",
         title="Parameters and return values",
         objective="Return values through parameters and clamp a range.",
-        reference="第六章 6.2 编码风格；6.2 函数设计",
+        reference="",
         hint="When count is zero, leave the outputs unchanged.",
         code=r"""
 int clamp(int value, int low, int high)
@@ -1102,7 +1102,7 @@ CLINGS_CHECK_INT(maximum, 9);
         slug="03_pass_by_pointer",
         title="Pass by value and pass by pointer",
         objective="Modify caller-owned data through pointers.",
-        reference="第四章 4.6 数组参数与指针参数",
+        reference="",
         hint="Save *a before overwriting it.",
         code=r"""
 void swap_int(int *a, int *b)
@@ -1144,7 +1144,7 @@ CLINGS_CHECK_INT(values[2], 4);
         slug="04_recursion",
         title="Recursion and base cases",
         objective="Write recursive functions with correct base cases.",
-        reference="第六章 6.4 函数递归",
+        reference="",
         hint="factorial(n) = n * factorial(n - 1).",
         code=r"""
 long factorial_recursive(int n)
@@ -1176,7 +1176,7 @@ CLINGS_CHECK_INT(fibonacci(8), 21);
         slug="05_static_inline",
         title="Internal linkage and inline helpers",
         objective="Use static functions and file-scope state.",
-        reference="第一章 1.3 static 关键字；第六章 函数",
+        reference="",
         hint="Update call_count before returning the incremented value.",
         code=r"""
 static int call_count = 0;
@@ -1215,7 +1215,7 @@ CLINGS_CHECK_INT(add_one_calls(), 2);
         slug="06_function_pointers",
         title="Function pointers and dispatch",
         objective="Store functions in variables and choose one at runtime.",
-        reference="第四章 4.7 函数指针",
+        reference="",
         hint="Return the function that matches the operator character.",
         code=r"""
 typedef int (*operation_fn)(int, int);
@@ -1258,7 +1258,7 @@ CLINGS_CHECK_INT(choose_operation('*')(4, 5), 20);
         slug="07_void_and_return",
         title="void functions and return statements",
         objective="Return early from a void function and return values from int functions.",
-        reference="第一章 1.10 void 关键字；1.10 return 关键字",
+        reference="",
         hint="A void function uses a bare return; an int function must return a value.",
         code=r"""
 #include <stddef.h>

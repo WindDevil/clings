@@ -2,7 +2,6 @@
  * clings exercise: 18_file_io_advanced/02_fgets_fputs
  * title: fgets and fputs
  * objective: Copy a text file line by line.
- * reference: C Primer Plus 第13章 13.4.2
  * hint: fgets includes the newline when the buffer is large enough.
  */
 

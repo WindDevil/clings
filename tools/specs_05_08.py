@@ -11,7 +11,7 @@ SPECS = [
         slug="01_array_basics",
         title="Array traversal",
         objective="Iterate over an array and compute a sum and maximum.",
-        reference="第四章 4.2 数组",
+        reference="",
         hint="Use values[i] inside the loop, not values[0].",
         code=r"""
 int array_sum(const int *values, int count)
@@ -52,7 +52,7 @@ CLINGS_CHECK_INT(array_max(values, 4), 7);
         slug="02_array_decay",
         title="Array-to-pointer decay",
         objective="See how an array parameter becomes a pointer.",
-        reference="第四章 4.3 指针与数组之间的恩恩怨怨",
+        reference="",
         hint="Inside a function, an array parameter has pointer type.",
         code=r"""
 int local_array_length(void)
@@ -84,7 +84,7 @@ CLINGS_CHECK_INT(parameter_is_pointer(values), 1);
         slug="03_multidimensional",
         title="Two-dimensional arrays",
         objective="Transpose a 3x3 matrix with nested loops.",
-        reference="第四章 4.5 多维数组与多级指针",
+        reference="",
         hint="The transposed element at [row][column] comes from input[column][row].",
         code=r"""
 void transpose3x3(const int input[3][3], int output[3][3])
@@ -122,7 +122,7 @@ CLINGS_CHECK_INT(output[1][2], 8);
         slug="04_string_literals",
         title="String literals and mutable strings",
         objective="Scan a const string and modify a mutable char array.",
-        reference="第四章 4.2 数组；第二章 2.3 单引号、双引号",
+        reference="",
         hint="A string literal must not be modified; a char array may be modified.",
         code=r"""
 int count_vowels(const char *text)
@@ -172,7 +172,7 @@ CLINGS_CHECK_STR(text, "heLLo");
         slug="05_string_ops",
         title="Implementing string operations",
         objective="Implement strlen, strcmp, and strcpy with pointers.",
-        reference="第四章 4.3 指针与数组；第六章 6.4.2 strlen",
+        reference="",
         hint="The destination pointer must advance after each copied character.",
         code=r"""
 #include <stddef.h>
@@ -224,7 +224,7 @@ CLINGS_CHECK_STR(my_strcpy(buffer, "copy me"), "copy me");
         slug="06_safe_format",
         title="Bounded formatting with snprintf",
         objective="Format text into a fixed-size buffer without overflow.",
-        reference="第三章 3.1 宏定义；标准库 printf 资料",
+        reference="",
         hint="Keep the space between the first and last name.",
         code=r"""
 #include <stdio.h>
@@ -252,7 +252,7 @@ CLINGS_CHECK_STR(buffer, "Ada Lov");
         slug="07_tokenize",
         title="Tokenizing with strtok_r",
         objective="Split a string without modifying the caller's buffer.",
-        reference="第五章 内存管理；标准库 string.h 资料",
+        reference="",
         hint="Pass both space and comma as delimiters.",
         code=r"""
 #include <stdlib.h>
@@ -302,7 +302,7 @@ CLINGS_CHECK_INT(count_tokens(""), 0);
         slug="01_pointer_basics",
         title="Dereference and address-of",
         objective="Read and write through pointers.",
-        reference="第四章 4.1 指针",
+        reference="",
         hint="Assigning the parameter itself does not modify the caller's variable.",
         code=r"""
 int read_through(const int *value)
@@ -334,7 +334,7 @@ CLINGS_CHECK_INT(value, 42);
         slug="02_null_and_const",
         title="NULL and const correctness",
         objective="Check for NULL and respect pointer-to-const.",
-        reference="第四章 4.1.3 int *p = NULL 和 *p = NULL",
+        reference="",
         hint="A pointer-to-const can read but not write the pointed-to object.",
         code=r"""
 #include <stddef.h>
@@ -375,7 +375,7 @@ CLINGS_CHECK_INT(value, 9);
         slug="03_pointer_arithmetic",
         title="Pointer arithmetic",
         objective="Walk an array with pointers and return a pointer into it.",
-        reference="第四章 4.3.1 以指针的形式访问和以下标的形式访问",
+        reference="",
         hint="Advance one element at a time; p < values + count is the end condition.",
         code=r"""
 #include <stddef.h>
@@ -420,7 +420,7 @@ CLINGS_CHECK(find_value(values, 4, 99) == NULL);
         slug="04_pointer_to_pointer",
         title="Pointers to pointers",
         objective="Let a function allocate and update a caller-owned pointer.",
-        reference="第四章 4.5.2 二级指针",
+        reference="",
         hint="Assign through *slot, not to the local slot parameter.",
         code=r"""
 #include <stdlib.h>
@@ -464,7 +464,7 @@ CLINGS_CHECK(slot == &value);
         slug="05_void_pointer",
         title="Generic byte-level swap",
         objective="Use void pointers and unsigned char for type-agnostic code.",
-        reference="第四章 4.1.6 如何达到手中无剑、胸中也无剑的地步",
+        reference="",
         hint="Copy the byte from a before overwriting it.",
         code=r"""
 #include <stddef.h>
@@ -506,7 +506,7 @@ CLINGS_CHECK_INT(y == 1.5, 1);
         slug="06_dangling_wild",
         title="Dangling pointers and safe free",
         objective="Set a freed pointer to NULL to prevent accidental reuse.",
-        reference="第五章 5.1 什么是野指针；5.3.5 内存泄漏",
+        reference="",
         hint="After free(*pointer), assign NULL through the pointer-to-pointer.",
         code=r"""
 #include <stdlib.h>
@@ -542,7 +542,7 @@ CLINGS_CHECK_INT(is_null(value), 1);
         slug="07_pointer_to_array",
         title="Pointers to arrays and &array",
         objective="Distinguish a pointer to an array from a pointer to its first element.",
-        reference="第四章 4.3.2 a 和 &a 的区别；4.4 指针数组和数组指针",
+        reference="",
         hint="&a + 1 advances by the whole array, not by one element.",
         code=r"""
 #include <stddef.h>
@@ -584,7 +584,7 @@ CLINGS_CHECK_INT(pointer_to_array_difference(), (int)(sizeof(int) * 4));
         slug="01_malloc_free",
         title="Allocate, initialize, and free",
         objective="Use malloc and free for a dynamically sized array.",
-        reference="第五章 5.3.5 内存泄漏；如何使用 malloc 函数",
+        reference="",
         hint="Write fill into every element, not just the first.",
         code=r"""
 #include <stdlib.h>
@@ -627,7 +627,7 @@ destroy_array(values);
         slug="02_calloc",
         title="Zero-initialized allocation",
         objective="Use calloc when every byte must start as zero.",
-        reference="第五章 5.3.5.3 用 malloc 函数申请 0 字节内存",
+        reference="",
         hint="calloc(count, size) returns zeroed memory.",
         code=r"""
 #include <stdlib.h>
@@ -658,7 +658,7 @@ free(values);
         slug="03_realloc",
         title="Growing an allocation",
         objective="Use realloc safely and initialize only the new elements.",
-        reference="第五章 5.3.5 内存泄漏；malloc/realloc 资料",
+        reference="",
         hint="Start filling at old_count so the existing elements survive.",
         code=r"""
 #include <stdlib.h>
@@ -700,7 +700,7 @@ free(values);
         slug="04_memory_leak",
         title="Detecting a memory leak",
         objective="Pair every allocation with a matching free.",
-        reference="第五章 5.3.5 内存泄漏",
+        reference="",
         hint="The cleanup path must release the tracked allocation.",
         code=r"""
 #include <stdlib.h>
@@ -768,7 +768,7 @@ CLINGS_CHECK_INT(outstanding(), 0);
         slug="05_buffer_bounds",
         title="Respecting buffer bounds",
         objective="Copy at most dest_size - 1 bytes and always terminate.",
-        reference="第五章 5.3.4 内存越界；5.3.2 为指针分配的内存太小",
+        reference="",
         hint="Leave room for the terminating NUL.",
         code=r"""
 #include <stddef.h>
@@ -805,7 +805,7 @@ CLINGS_CHECK_INT(buffer[4], 'X');
         slug="06_flexible_array",
         title="Flexible array members",
         objective="Allocate a struct plus trailing data in one block.",
-        reference="第一章 1.14.2 柔性数组",
+        reference="",
         hint="The allocation size is sizeof *packet + length bytes.",
         code=r"""
 #include <stdlib.h>
@@ -854,7 +854,7 @@ packet_destroy(packet);
         slug="07_linked_list",
         title="A singly linked list",
         objective="Build, traverse, and free a linked list.",
-        reference="第五章 内存管理；结构体与指针综合",
+        reference="",
         hint="The new node must point at the previous head.",
         code=r"""
 #include <stdlib.h>
@@ -921,7 +921,7 @@ list_free(head);
         slug="01_struct_basics",
         title="Defining and using structs",
         objective="Create a struct value and access its members through a pointer.",
-        reference="第一章 1.14 struct 关键字",
+        reference="",
         hint="Use the arrow operator when you have a pointer.",
         code=r"""
 struct point {
@@ -959,7 +959,7 @@ CLINGS_CHECK_INT(point_sum(&point), 7);
         slug="02_nested_structs",
         title="Nested structs",
         objective="Access a nested member through an outer struct pointer.",
-        reference="第一章 1.14 struct 关键字",
+        reference="",
         hint="The address lives inside the person struct.",
         code=r"""
 #include <stdio.h>
@@ -997,7 +997,7 @@ CLINGS_CHECK_STR(person.address.city, "Shenzhen");
         slug="03_padding_alignment",
         title="Padding and alignment",
         objective="Observe padding and member offsets with offsetof.",
-        reference="第一章 1.14.1 空结构体多大；第三章 3.6.8 #pragma pack",
+        reference="",
         hint="offsetof takes the struct type and the member name.",
         code=r"""
 #include <stddef.h>
@@ -1035,7 +1035,7 @@ CLINGS_CHECK_INT((int)sizeof(struct padded) % (int)sizeof(int), 0);
         slug="04_bitfields",
         title="Bitfields",
         objective="Store several small flags in one struct.",
-        reference="第一章 1.14 struct 关键字；2.5 位运算符",
+        reference="",
         hint="The write flag must reflect the enabled argument.",
         code=r"""
 struct permissions {
@@ -1097,7 +1097,7 @@ CLINGS_CHECK_INT(flag_enabled(&permissions, 9), -1);
         slug="05_union",
         title="Unions share storage",
         objective="Compare union size with the size of its largest member.",
-        reference="第一章 1.15 union 关键字",
+        reference="",
         hint="Every union member starts at the same address.",
         code=r"""
 #include <stddef.h>
@@ -1135,7 +1135,7 @@ CLINGS_CHECK_INT(members_share_address(&word), 1);
         slug="06_enum",
         title="Enums",
         objective="Use an enum for a small closed set of values.",
-        reference="第一章 1.16 enum 关键字",
+        reference="",
         hint="Each case should return the matching color name.",
         code=r"""
 enum color {
@@ -1182,7 +1182,7 @@ CLINGS_CHECK_INT(color_is_valid(99), 0);
         slug="07_typedef_designated",
         title="typedef and designated initializers",
         objective="Use a typedef and initialize members by name.",
-        reference="第一章 1.17 typedef 关键字",
+        reference="",
         hint="Designated initializers make the field mapping explicit.",
         code=r"""
 typedef struct {
@@ -1214,7 +1214,7 @@ CLINGS_CHECK_INT(point.y, 4);
         slug="08_container_of",
         title="offsetof and container_of",
         objective="Recover an outer struct from a pointer to one of its members.",
-        reference="第一章 1.14 struct 关键字；1.5 sizeof",
+        reference="",
         hint="Subtract the byte offset of the inner member.",
         code=r"""
 #include <stddef.h>

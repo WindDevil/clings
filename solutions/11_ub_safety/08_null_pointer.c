@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/08_null_pointer
  * title: Null pointer checks
  * objective: Never dereference a null pointer.
- * reference: 第四章 4.1.3 int *p = NULL 和 *p = NULL 有什么区别
  * hint: Use a conditional expression to provide a fallback.
  */
 

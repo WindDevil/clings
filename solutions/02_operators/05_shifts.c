@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/05_shifts
  * title: Shift operators and masks
  * objective: Build masks and avoid shifting by the width of the type.
- * reference: 第二章 2.5.1 左移和右移
  * hint: A mask of width w has w low bits set: (1u << w) - 1u.
  */
 

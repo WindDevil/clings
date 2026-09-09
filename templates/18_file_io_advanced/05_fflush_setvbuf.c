@@ -2,7 +2,6 @@
  * clings exercise: 18_file_io_advanced/05_fflush_setvbuf
  * title: Stream buffering
  * objective: Configure full buffering and flush a stream.
- * reference: C Primer Plus 第13章 13.7.2-13.7.3
  * hint: setvbuf must be called before other I/O on the stream.
  */
 

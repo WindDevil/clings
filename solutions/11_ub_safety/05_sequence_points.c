@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/05_sequence_points
  * title: Sequence points
  * objective: Avoid unsequenced reads and writes of the same object.
- * reference: 第二章 2.7 ++、--操作符
  * hint: Read the old value, update the object, then return the old value.
  */
 

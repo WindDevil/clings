@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/02_array_decay
  * title: Array-to-pointer decay
  * objective: See how an array parameter becomes a pointer.
- * reference: 第四章 4.3 指针与数组之间的恩恩怨怨
  * hint: Inside a function, an array parameter has pointer type.
  */
 

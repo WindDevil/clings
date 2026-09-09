@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/13_printf_advanced
  * title: Advanced printf formatting
  * objective: Use width, zero padding, precision, and the * width argument.
- * reference: C Primer Plus 第4章 4.4.3-4.4.6
  * hint: %08d zero-pads to width 8; %.3f uses three fractional digits.
  */
 

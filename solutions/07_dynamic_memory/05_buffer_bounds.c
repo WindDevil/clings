@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/05_buffer_bounds
  * title: Respecting buffer bounds
  * objective: Copy at most dest_size - 1 bytes and always terminate.
- * reference: 第五章 5.3.4 内存越界；5.3.2 为指针分配的内存太小
  * hint: Leave room for the terminating NUL.
  */
 

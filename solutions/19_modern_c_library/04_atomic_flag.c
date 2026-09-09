@@ -2,7 +2,6 @@
  * clings exercise: 19_modern_c_library/04_atomic_flag
  * title: atomic_flag spin lock
  * objective: Use atomic_flag as a simple test-and-set lock.
- * reference: C Primer Plus 第12章 12.5.4；C11 stdatomic.h
  * hint: atomic_flag_test_and_set returns the previous state.
  */
 

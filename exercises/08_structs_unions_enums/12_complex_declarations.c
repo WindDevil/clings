@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/12_complex_declarations
  * title: Complex declarations and function-pointer tables
  * objective: Read and use a typedef for a function pointer and an array of function pointers.
- * reference: C Primer Plus 第14章 14.13-14.14
  * hint: binary_operation is a typedef for int (*)(int, int).
  */
 

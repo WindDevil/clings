@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/06_lexical_elements
  * title: Comments, line continuation, and escapes
  * objective: Recognize comments, backslash-newline continuation, and escape sequences.
- * reference: 第二章 2.1 注释符号；2.2 接续符和转义符
  * hint: The escaped text contains a real newline, a tab, and quotation marks.
  */
 

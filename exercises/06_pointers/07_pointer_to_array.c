@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/07_pointer_to_array
  * title: Pointers to arrays and &array
  * objective: Distinguish a pointer to an array from a pointer to its first element.
- * reference: 第四章 4.3.2 a 和 &a 的区别；4.4 指针数组和数组指针
  * hint: &a + 1 advances by the whole array, not by one element.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/07_linked_list
  * title: A singly linked list
  * objective: Build, traverse, and free a linked list.
- * reference: 第五章 内存管理；结构体与指针综合
  * hint: The new node must point at the previous head.
  */
 

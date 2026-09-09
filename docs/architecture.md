@@ -101,8 +101,7 @@ exercises/13_translation_units/01_header_source_split/
 - `exercises/`：学习者实际编辑的文件。
 - `solutions/`：参考答案，不要在这里练习。
 - `templates/`：初始练习的只读副本，由 `reset` 使用。
-- `docs/reference/`：PDF 转换后的参考书。
 - `tools/specs_*.py`：唯一的练习事实来源。
 
-如果只想修改一个练习的提示或参考章节，应修改对应的规格文件，然后
+如果只想修改一个练习的提示或目标，应修改对应的规格文件，然后
 运行生成器，而不是直接编辑生成的文件。

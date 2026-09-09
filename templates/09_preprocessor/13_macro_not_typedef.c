@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/13_macro_not_typedef
  * title: Macros are not type definitions
  * objective: Use typedef instead of an object-like macro for pointer types.
- * reference: C 陷阱与缺陷 6.4
  * hint: INT_POINTER a, b declares b as int, not int *.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/03_pointer_arithmetic
  * title: Pointer arithmetic
  * objective: Walk an array with pointers and return a pointer into it.
- * reference: 第四章 4.3.1 以指针的形式访问和以下标的形式访问
  * hint: Advance one element at a time; p < values + count is the end condition.
  */
 

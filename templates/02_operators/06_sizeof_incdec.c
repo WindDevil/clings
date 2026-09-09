@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/06_sizeof_incdec
  * title: sizeof and increment operators
  * objective: Distinguish sizeof expressions from increment side effects.
- * reference: 第一章 1.5 sizeof；第二章 2.7 ++、--
  * hint: Post-increment returns the old value; pre-increment returns the new value.
  */
 

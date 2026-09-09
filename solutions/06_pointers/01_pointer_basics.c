@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/01_pointer_basics
  * title: Dereference and address-of
  * objective: Read and write through pointers.
- * reference: 第四章 4.1 指针
  * hint: Assigning the parameter itself does not modify the caller's variable.
  */
 

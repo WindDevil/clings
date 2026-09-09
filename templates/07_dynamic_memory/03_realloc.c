@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/03_realloc
  * title: Growing an allocation
  * objective: Use realloc safely and initialize only the new elements.
- * reference: 第五章 5.3.5 内存泄漏；malloc/realloc 资料
  * hint: Start filling at old_count so the existing elements survive.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/08_stdbool_stddef
  * title: stdbool.h and stddef.h
  * objective: Use bool and size_t from the standard headers.
- * reference: 第一章 1.4 基本数据类型；C99/C11 标准库
  * hint: bool is defined in <stdbool.h>; size_t is defined in <stddef.h>.
  */
 

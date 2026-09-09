@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/10_undef_defined
  * title: #undef and defined
  * objective: Undefine a macro and test it with defined().
- * reference: C Primer Plus 第16章 16.6.1-16.6.2
  * hint: #undef removes the macro before the second #if.
  */
 

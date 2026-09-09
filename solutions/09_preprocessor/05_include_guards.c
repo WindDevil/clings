@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/05_include_guards
  * title: Include guards
  * objective: Prevent multiple inclusion with a preprocessor guard.
- * reference: 第三章 3.3 文件包含
  * hint: Define the guard macro before the guarded declarations.
  */
 

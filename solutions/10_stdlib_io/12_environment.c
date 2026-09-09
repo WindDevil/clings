@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/12_environment
  * title: Environment variables
  * objective: Read and write environment variables with getenv and setenv.
- * reference: 第五章 5.3.1.3 函数的入口校验；标准库 stdlib.h 资料
  * hint: setenv must succeed before getenv can find the new value.
  */
 

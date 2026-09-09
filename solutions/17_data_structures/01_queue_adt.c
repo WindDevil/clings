@@ -2,7 +2,6 @@
  * clings exercise: 17_data_structures/01_queue_adt
  * title: Queue ADT
  * objective: Implement a fixed-capacity circular queue.
- * reference: C Primer Plus 第17章 17.4
  * hint: The tail index wraps with modulo capacity.
  */
 

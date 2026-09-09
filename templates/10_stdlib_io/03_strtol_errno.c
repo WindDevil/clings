@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/03_strtol_errno
  * title: Robust integer parsing
  * objective: Use strtol, errno, and the end pointer to validate input.
- * reference: 第五章 5.3.1 函数的入口校验；标准库 strtol 资料
  * hint: Reject empty input, trailing characters, ERANGE, and out-of-range values.
  */
 

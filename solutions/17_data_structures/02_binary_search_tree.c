@@ -2,7 +2,6 @@
  * clings exercise: 17_data_structures/02_binary_search_tree
  * title: Binary search tree
  * objective: Insert into and search a binary search tree.
- * reference: C Primer Plus 第17章 17.7
  * hint: Smaller values go left; larger values go right.
  */
 

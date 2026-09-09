@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/07_random
  * title: Pseudo-random numbers
  * objective: Seed the generator and bound its output.
- * reference: 标准库 stdlib.h 资料
  * hint: rand() % upper produces values from 0 to upper - 1.
  */
 

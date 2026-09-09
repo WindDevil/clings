@@ -2,7 +2,6 @@
  * clings exercise: 19_modern_c_library/02_tgmath
  * title: Type-generic math with tgmath.h
  * objective: Use sqrt with both double and float arguments through tgmath.h.
- * reference: C Primer Plus 第16章 16.10.3
  * hint: tgmath.h selects the correct real function from the argument type.
  */
 

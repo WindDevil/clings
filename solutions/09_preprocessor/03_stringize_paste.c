@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/03_stringize_paste
  * title: Stringizing and token pasting
  * objective: Use # to stringize and ## to paste tokens.
- * reference: 第三章 3.7 #运算符；3.8 ##运算符
  * hint: A second helper macro is needed to expand a macro before stringizing it.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/02_switch_case
  * title: switch and fallthrough
  * objective: Use intentional fallthrough and a default case.
- * reference: 第一章 1.7 switch、case 组合
  * hint: February has 29 days when leap is true.
  */
 

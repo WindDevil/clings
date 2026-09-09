@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/06_storage_scope
  * title: Storage classes and scope
  * objective: Observe the lifetime of a static variable and block scope.
- * reference: 第一章 1.1-1.3 auto、register、static
  * hint: ++counter increments first; counter++ returns the old value.
  */
 

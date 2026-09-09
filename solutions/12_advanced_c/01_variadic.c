@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/01_variadic
  * title: Variadic functions
  * objective: Read a variable number of int arguments with va_list.
- * reference: 第六章 函数；C 标准 stdarg.h
  * hint: The loop must consume exactly count arguments.
  */
 

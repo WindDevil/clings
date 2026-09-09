@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/03_out_of_bounds
  * title: Bounds checking
  * objective: Reject indices outside the logical array length.
- * reference: 第五章 5.3.4 内存越界
  * hint: An index is invalid when it is less than zero or greater than or equal to count.
  */
 

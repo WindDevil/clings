@@ -2,7 +2,6 @@
  * clings exercise: 09_preprocessor/04_conditional_compilation
  * title: Conditional compilation
  * objective: Select code at preprocessing time based on the language version.
- * reference: 第三章 3.2 条件编译
  * hint: C11 introduced __STDC_VERSION__ value 201112L.
  */
 

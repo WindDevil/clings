@@ -2,7 +2,6 @@
  * clings exercise: 15_string_functions/03_sprintf_snprintf
  * title: sprintf and snprintf
  * objective: Format text with snprintf and understand truncation.
- * reference: C Primer Plus 第11章 11.5.6
  * hint: snprintf returns the number of characters that would have been written.
  */
 

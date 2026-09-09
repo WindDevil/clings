@@ -2,7 +2,6 @@
  * clings exercise: 15_string_functions/02_strncpy_bounded
  * title: Bounded copying with strncpy
  * objective: Copy a string safely and always terminate the destination.
- * reference: C Primer Plus 第11章 11.5.5
  * hint: strncpy does not guarantee a terminating NUL when the source is too long.
  */
 

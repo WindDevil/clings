@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/03_main_args
  * title: argc, argv, and the program environment
  * objective: Work with the arguments passed to main.
- * reference: 第六章 函数；C 标准 5.1.2.2.1
  * hint: argv[0] is the program name; user arguments start at argv[1].
  */
 

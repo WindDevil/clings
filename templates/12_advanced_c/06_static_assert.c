@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/06_static_assert
  * title: Compile-time assertions
  * objective: Use _Static_assert to enforce assumptions at compile time.
- * reference: C11 标准 _Static_assert 资料
  * hint: A failed static assertion must make the build fail.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/07_while_do_while
  * title: while and do-while
  * objective: Distinguish entry-condition and exit-condition loops.
- * reference: C Primer Plus 第6章 6.2、6.8
  * hint: A do-while body always executes at least once.
  */
 

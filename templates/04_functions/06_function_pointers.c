@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/06_function_pointers
  * title: Function pointers and dispatch
  * objective: Store functions in variables and choose one at runtime.
- * reference: 第四章 4.7 函数指针
  * hint: Return the function that matches the operator character.
  */
 

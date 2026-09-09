@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/06_time_functions
  * title: Time arithmetic
  * objective: Use time_t and difftime.
- * reference: 标准库 time.h 资料
  * hint: difftime(end, start) returns end - start seconds.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/04_debug_assert
  * title: Assertions and defensive programming
  * objective: Use assert for programmer errors and return values for user errors.
- * reference: 第五章 内存管理；调试与测试资料
  * hint: A zero denominator is a normal error, so return -1 instead of dividing.
  */
 

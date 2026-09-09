@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/08_container_of
  * title: offsetof and container_of
  * objective: Recover an outer struct from a pointer to one of its members.
- * reference: 第一章 1.14 struct 关键字；1.5 sizeof
  * hint: Subtract the byte offset of the inner member.
  */
 

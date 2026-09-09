@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/08_vla
  * title: Variable-length arrays
  * objective: Create an array whose length is a runtime value.
- * reference: C Primer Plus 第10章 10.8
  * hint: A VLA is declared with a runtime expression: int values[n].
  */
 

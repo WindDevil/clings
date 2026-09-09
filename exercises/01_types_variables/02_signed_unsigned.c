@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/02_signed_unsigned
  * title: Signed and unsigned conversions
  * objective: Avoid the usual arithmetic conversion trap when comparing.
- * reference: 第一章 1.4 signed、unsigned 关键字
  * hint: A negative int converted to unsigned becomes a very large value.
  */
 

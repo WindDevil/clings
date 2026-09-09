@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/10_string_search
  * title: Searching strings
  * objective: Use strchr, strrchr, and strstr.
- * reference: 第五章 内存管理；标准库 string.h 资料
  * hint: strstr finds a substring, not just a single character.
  */
 

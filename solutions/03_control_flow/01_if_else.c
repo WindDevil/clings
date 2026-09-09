@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/01_if_else
  * title: if and else
  * objective: Write clear conditional branches.
- * reference: 第一章 1.6 if、else 组合
  * hint: Check for positive, then negative, then the remaining zero case.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/02_uninitialized
  * title: Initialize before use
  * objective: Give every local variable a defined initial value.
- * reference: 第五章 5.3.3 内存分配成功，但并未初始化
  * hint: Start result at -1 so the fallback path is well-defined.
  */
 

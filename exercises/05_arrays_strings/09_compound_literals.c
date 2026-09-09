@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/09_compound_literals
  * title: Compound literals
  * objective: Create a temporary struct value with a compound literal.
- * reference: C Primer Plus 第10章 10.9
  * hint: The syntax is (struct point){.x = 3, .y = 4}.
  */
 

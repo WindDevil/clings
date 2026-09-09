@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/09_default_argument_promotions
  * title: Default argument promotions
  * objective: Use the promoted types expected by variadic functions.
- * reference: C 专家编程 第8章
  * hint: char and short promote to int; float promotes to double.
  */
 

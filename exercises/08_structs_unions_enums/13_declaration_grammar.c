@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/13_declaration_grammar
  * title: Declaration grammar and function-pointer tables
  * objective: Read a typedef for an array of function pointers.
- * reference: C 专家编程 第3章
  * hint: operation_table is typedef int (*[3])(int, int).
  */
 

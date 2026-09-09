@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/01_declaration_definition
  * title: Declarations and definitions
  * objective: Use a forward declaration and an internal helper.
- * reference: 第六章 函数
  * hint: The declaration promises the signature; the definition supplies the body.
  */
 

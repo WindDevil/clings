@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/09_struct_array
  * title: Arrays of structs
  * objective: Traverse an array of structs and find the best element.
- * reference: C Primer Plus 第14章 14.4
  * hint: Use students[i].score for each element.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/07_align
  * title: alignof and alignas
  * objective: Query and request alignment.
- * reference: C11 标准 alignof/alignas 资料
  * hint: Double usually requires more alignment than int.
  */
 

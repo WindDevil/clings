@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/10_one_past_pointer
  * title: One-past pointer arithmetic
  * objective: Do not treat a pointer to a single object as an array.
- * reference: C 陷阱与缺陷 3.2
  * hint: For a single object, only the one-past pointer is valid; do not dereference it.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/06_dangling_wild
  * title: Dangling pointers and safe free
  * objective: Set a freed pointer to NULL to prevent accidental reuse.
- * reference: 第五章 5.1 什么是野指针；5.3.5 内存泄漏
  * hint: After free(*pointer), assign NULL through the pointer-to-pointer.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/05_string_ops
  * title: Implementing string operations
  * objective: Implement strlen, strcmp, and strcpy with pointers.
- * reference: 第四章 4.3 指针与数组；第六章 6.4.2 strlen
  * hint: The destination pointer must advance after each copied character.
  */
 

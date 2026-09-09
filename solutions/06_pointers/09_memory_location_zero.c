@@ -2,7 +2,6 @@
  * clings exercise: 06_pointers/09_memory_location_zero
  * title: Memory location zero
  * objective: Treat address zero as a null pointer, not as a valid object address.
- * reference: C 陷阱与缺陷 7.6
  * hint: NULL is the portable null pointer constant.
  */
 

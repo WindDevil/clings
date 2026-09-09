@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/03_pass_by_pointer
  * title: Pass by value and pass by pointer
  * objective: Modify caller-owned data through pointers.
- * reference: 第四章 4.6 数组参数与指针参数
  * hint: Save *a before overwriting it.
  */
 

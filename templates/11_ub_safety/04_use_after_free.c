@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/04_use_after_free
  * title: Use-after-free
  * objective: Clear a pointer after freeing its target.
- * reference: 第五章 5.3.6 内存已经被释放了，但是继续通过指针来使用
  * hint: Write NULL through the pointer-to-pointer after free.
  */
 

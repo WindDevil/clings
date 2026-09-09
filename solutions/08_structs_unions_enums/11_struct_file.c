@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/11_struct_file
  * title: Writing and reading structs
  * objective: Store a struct with fwrite and read it back with fread.
- * reference: C Primer Plus 第14章 14.8
  * hint: Use binary mode and compare the number of complete items written.
  */
 

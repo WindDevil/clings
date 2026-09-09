@@ -2,7 +2,6 @@
  * clings exercise: 15_string_functions/05_strtod
  * title: Converting strings to double
  * objective: Parse a double with strtod and reject trailing input.
- * reference: C Primer Plus 第11章 11.9
  * hint: Check errno, endptr, and the character after the number.
  */
 

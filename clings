@@ -416,7 +416,8 @@ def command_hint(args: argparse.Namespace) -> int:
         return 1
     print(f"{cyan(exercise.ident)} - {exercise.title}")
     print(f"objective: {exercise.objective}")
-    print(f"reference: {exercise.reference}")
+    if exercise.reference:
+        print(f"reference: {exercise.reference}")
     print(f"hint: {exercise.hint}")
     return 0
 

@@ -2,7 +2,6 @@
  * clings exercise: 19_modern_c_library/01_noreturn
  * title: _Noreturn functions
  * objective: Declare a function that never returns and observe its exit status.
- * reference: C Primer Plus 第16章 16.8
  * hint: The child process calls terminate_now and exits with status 7.
  */
 

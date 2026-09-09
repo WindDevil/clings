@@ -6,6 +6,11 @@ compile_commands.json
 *.obj
 *.out
 *.exe
+*.pdf
+*.epub
+*.mobi
+*.doc
+*.docx
 __pycache__/
 *.py[cod]
 *.dSYM/

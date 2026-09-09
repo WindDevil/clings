@@ -2,7 +2,6 @@
  * clings exercise: 13_translation_units/01_header_source_split
  * title: Header and source split
  * objective: Compile a program from a main file, a header, and an implementation file.
- * reference: C Primer Plus 第9章 9.4、第16章 16.5
  * hint: Declare add in the header and define it in math_utils.c.
  */
 

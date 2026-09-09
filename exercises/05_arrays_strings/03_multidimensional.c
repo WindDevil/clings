@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/03_multidimensional
  * title: Two-dimensional arrays
  * objective: Transpose a 3x3 matrix with nested loops.
- * reference: 第四章 4.5 多维数组与多级指针
  * hint: The transposed element at [row][column] comes from input[column][row].
  */
 

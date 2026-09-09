@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/09_arena_allocator
  * title: Arena allocator
  * objective: Implement a simple bump allocator with aligned allocations.
- * reference: C 专家编程 第7章；C 语言接口与实现 第6章
  * hint: Align each request to 8 bytes before bumping the used offset.
  */
 

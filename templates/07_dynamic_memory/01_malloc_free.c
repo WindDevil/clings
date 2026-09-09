@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/01_malloc_free
  * title: Allocate, initialize, and free
  * objective: Use malloc and free for a dynamically sized array.
- * reference: 第五章 5.3.5 内存泄漏；如何使用 malloc 函数
  * hint: Write fill into every element, not just the first.
  */
 

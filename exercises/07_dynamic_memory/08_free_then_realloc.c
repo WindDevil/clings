@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/08_free_then_realloc
  * title: Free then realloc
  * objective: Use realloc directly instead of freeing before growing an allocation.
- * reference: C 陷阱与缺陷 7.10
  * hint: free(values) followed by realloc(values, ...) uses a dangling pointer.
  */
 

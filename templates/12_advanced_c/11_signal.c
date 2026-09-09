@@ -2,7 +2,6 @@
  * clings exercise: 12_advanced_c/11_signal
  * title: Signals and sig_atomic_t
  * objective: Install a signal handler and use a sig_atomic_t flag.
- * reference: C 标准 signal.h 资料
  * hint: raise(SIGINT) invokes the installed handler synchronously.
  */
 

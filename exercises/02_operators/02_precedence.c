@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/02_precedence
  * title: Precedence and parentheses
  * objective: Use parentheses to express intent clearly.
- * reference: 第二章 2.9 运算符的优先级
  * hint: Multiplication binds more tightly than addition.
  */
 

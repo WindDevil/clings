@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/05_char_ascii
  * title: Characters and ASCII
  * objective: Work with char values and the ctype classification functions.
- * reference: 第一章 1.4 基本数据类型
  * hint: Lowercase letters live in a contiguous range only for the execution character set.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/06_safe_format
  * title: Bounded formatting with snprintf
  * objective: Format text into a fixed-size buffer without overflow.
- * reference: 第三章 3.1 宏定义；标准库 printf 资料
  * hint: Keep the space between the first and last name.
  */
 

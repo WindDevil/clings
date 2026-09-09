@@ -2,7 +2,6 @@
  * clings exercise: 07_dynamic_memory/10_allocation_stats
  * title: Allocation statistics
  * objective: Track outstanding allocations with wrapped malloc and free.
- * reference: C 专家编程 第7章
  * hint: Increment the free counter when a non-NULL pointer is freed.
  */
 

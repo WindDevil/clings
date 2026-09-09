@@ -2,7 +2,6 @@
  * clings exercise: 16_data_representation/01_base_conversion
  * title: Binary, octal, and hexadecimal input
  * objective: Parse a hexadecimal string with strtoul.
- * reference: C Primer Plus 第15章 15.2
  * hint: Base 16 accepts an optional 0x prefix.
  */
 

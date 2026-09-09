@@ -2,7 +2,6 @@
  * clings exercise: 05_arrays_strings/11_asymmetric_bounds
  * title: Asymmetric bounds
  * objective: Use the half-open interval [low, high).
- * reference: C 陷阱与缺陷 3.6
  * hint: The upper bound is exclusive: value < high.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/04_recursion
  * title: Recursion and base cases
  * objective: Write recursive functions with correct base cases.
- * reference: 第六章 6.4 函数递归
  * hint: factorial(n) = n * factorial(n - 1).
  */
 

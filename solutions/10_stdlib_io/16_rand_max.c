@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/16_rand_max
  * title: RAND_MAX portability
  * objective: Do not assume rand() returns a value below a fixed small bound.
- * reference: C 陷阱与缺陷 7.8
  * hint: The C standard only guarantees RAND_MAX >= 32767.
  */
 

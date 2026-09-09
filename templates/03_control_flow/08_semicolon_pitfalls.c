@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/08_semicolon_pitfalls
  * title: Semicolon and empty-statement traps
  * objective: Avoid accidentally ending an if or loop with a semicolon.
- * reference: C 陷阱与缺陷 2.3
  * hint: A semicolon after if creates an empty body.
  */
 

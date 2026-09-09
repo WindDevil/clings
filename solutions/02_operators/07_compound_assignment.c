@@ -2,7 +2,6 @@
  * clings exercise: 02_operators/07_compound_assignment
  * title: Compound assignment and comma
  * objective: Use +=, -=, *=, /=, %= and the comma operator.
- * reference: C Primer Plus 第5章 5.3、第6章 6.6-6.7
  * hint: The comma operator evaluates left to right and yields the right operand.
  */
 

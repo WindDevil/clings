@@ -2,7 +2,6 @@
  * clings exercise: 11_ub_safety/06_strict_aliasing
  * title: Type punning without strict-aliasing violations
  * objective: Reinterpret object representation with memcpy.
- * reference: 第四章 4.7.2 *(int*)&p；第五章 内存管理
  * hint: memcpy preserves the bit pattern; a cast to float converts the numeric value.
  */
 

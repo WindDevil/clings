@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/04_floating_point
  * title: Floating-point comparison
  * objective: Compare floating-point values with an epsilon.
- * reference: 第一章 1.6.2 float 与零值比较
  * hint: Exact equality is usually the wrong comparison for computed doubles.
  */
 

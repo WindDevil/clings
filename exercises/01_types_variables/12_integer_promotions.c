@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/12_integer_promotions
  * title: Integer promotions
  * objective: See that char operands are promoted to int in arithmetic expressions.
- * reference: C 专家编程 第8章
  * hint: sizeof(left + right) is sizeof(int) for char operands.
  */
 

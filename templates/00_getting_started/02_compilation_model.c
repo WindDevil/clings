@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/02_compilation_model
  * title: Preprocessing, compiling, and linking
  * objective: See how the preprocessor and the C standard version are exposed.
- * reference: 第三章 预处理；编译流程资料
  * hint: The preprocessor evaluates #if before the compiler sees the code.
  */
 

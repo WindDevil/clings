@@ -1,4 +1,4 @@
-"""Exercises for the precise gaps in C Traps and Pitfalls."""
+"""Additional exercises covering common C pitfalls."""
 
 from spec import ex, project
 
@@ -8,7 +8,7 @@ SPECS = [
         slug="08_assignment_vs_equality",
         title="Assignment versus equality",
         objective="Use == for comparison and recognize the = versus == trap.",
-        reference="C 陷阱与缺陷 1.1",
+        reference="",
         hint="A single = assigns; a double == compares.",
         code=r"""
 int is_equal(int left, int right)
@@ -42,7 +42,7 @@ CLINGS_CHECK_INT(compare_with_zero(5), 0);
         slug="09_maximal_munch",
         title="Lexical maximal munch",
         objective="Understand how the lexer greedily forms the longest token.",
-        reference="C 陷阱与缺陷 1.3",
+        reference="",
         hint="a+++b is tokenized as (a++) + b.",
         code=r"""
 int greedy_expression(int left, int right)
@@ -71,7 +71,7 @@ CLINGS_CHECK_INT(comment_expression(), 3);
         slug="10_octal_constants",
         title="Octal integer constants",
         objective="Recognize that a leading zero means base 8.",
-        reference="C 陷阱与缺陷 1.4",
+        reference="",
         hint="010 is 8, not 10; 0195 is not a valid C integer constant.",
         code=r"""
 #include <stdlib.h>
@@ -114,7 +114,7 @@ CLINGS_CHECK_INT(parse_c_integer("0195", &value), -1);
         slug="08_semicolon_pitfalls",
         title="Semicolon and empty-statement traps",
         objective="Avoid accidentally ending an if or loop with a semicolon.",
-        reference="C 陷阱与缺陷 2.3",
+        reference="",
         hint="A semicolon after if creates an empty body.",
         code=r"""
 int count_nonzero(const int *values, int count)
@@ -147,7 +147,7 @@ CLINGS_CHECK_INT(count_nonzero(zeros, 3), 0);
         slug="09_dangling_else",
         title="Dangling else",
         objective="Use braces to make else bind to the intended if.",
-        reference="C 陷阱与缺陷 2.5-2.6",
+        reference="",
         hint="Without braces, else binds to the nearest unmatched if.",
         code=r"""
 int classify(int x, int y)
@@ -179,7 +179,7 @@ CLINGS_CHECK_INT(classify(-1, 1), 2);
         slug="08_null_empty_string",
         title="NULL, empty string, and NUL",
         objective="Distinguish a null pointer, an empty string, and the NUL character.",
-        reference="C 陷阱与缺陷 3.5",
+        reference="",
         hint="NULL is a null pointer; \"\" is a valid empty string; '\\0' is NUL.",
         code=r"""
 #include <stddef.h>
@@ -213,7 +213,7 @@ CLINGS_CHECK_INT(is_empty_string(NULL), 0);
         slug="11_asymmetric_bounds",
         title="Asymmetric bounds",
         objective="Use the half-open interval [low, high).",
-        reference="C 陷阱与缺陷 3.6",
+        reference="",
         hint="The upper bound is exclusive: value < high.",
         code=r"""
 int in_range(int value, int low, int high)
@@ -253,7 +253,7 @@ CLINGS_CHECK_INT(loop_count(0, 5), 5);
         slug="07_main_return_value",
         title="main return values",
         objective="Return a defined success or failure status from a program.",
-        reference="C 陷阱与缺陷 3.10",
+        reference="",
         hint="EXIT_SUCCESS is 0 on hosted implementations; EXIT_FAILURE is nonzero.",
         code=r"""
 #include <stdlib.h>
@@ -279,7 +279,7 @@ CLINGS_CHECK_INT(exit_code_for(0), EXIT_FAILURE);
         slug="04_external_type_check",
         title="External type checking",
         objective="Keep declarations and definitions consistent across translation units.",
-        reference="C 陷阱与缺陷 4.5",
+        reference="",
         hint="The linker does not compare the types of extern declarations.",
         files={
             "value.h": r"""
@@ -319,7 +319,7 @@ int main(void)
         slug="11_macro_whitespace",
         title="Whitespace in macro definitions",
         objective="Remember that a space can turn a function-like macro into an object-like macro.",
-        reference="C 陷阱与缺陷 6.1",
+        reference="",
         hint="The ( must immediately follow the macro name.",
         code=r"""
 #define SQUARE(value) ((value) * (value))
@@ -346,7 +346,7 @@ CLINGS_CHECK_INT(SQUARE(3), 9);
         slug="12_macro_statement",
         title="Macros are not statements",
         objective="Use do { ... } while (0) for a statement-like macro.",
-        reference="C 陷阱与缺陷 6.3",
+        reference="",
         hint="A bare block macro breaks if/else syntax.",
         code=r"""
 #define SET_ZERO(pointer) do { *(pointer) = 0; } while (0)
@@ -381,7 +381,7 @@ CLINGS_CHECK_INT(value, 1);
         slug="13_macro_not_typedef",
         title="Macros are not type definitions",
         objective="Use typedef instead of an object-like macro for pointer types.",
-        reference="C 陷阱与缺陷 6.4",
+        reference="",
         hint="INT_POINTER a, b declares b as int, not int *.",
         code=r"""
 #include <stddef.h>
@@ -408,7 +408,7 @@ CLINGS_CHECK_INT((int)sizeof second, (int)sizeof(int *));
         slug="11_char_signedness",
         title="char signedness",
         objective="Use signed char and unsigned char explicitly when the sign matters.",
-        reference="C 陷阱与缺陷 7.4",
+        reference="",
         hint="Plain char may be signed or unsigned; signed char and unsigned char are explicit.",
         code=r"""
 int signed_char_value(signed char value)
@@ -437,7 +437,7 @@ CLINGS_CHECK_INT(unsigned_char_value((unsigned char)0xFF), 255);
         slug="09_memory_location_zero",
         title="Memory location zero",
         objective="Treat address zero as a null pointer, not as a valid object address.",
-        reference="C 陷阱与缺陷 7.6",
+        reference="",
         hint="NULL is the portable null pointer constant.",
         code=r"""
 #include <stddef.h>
@@ -471,7 +471,7 @@ CLINGS_CHECK_INT(null_is_zero(), 1);
         slug="10_one_past_pointer",
         title="One-past pointer arithmetic",
         objective="Do not treat a pointer to a single object as an array.",
-        reference="C 陷阱与缺陷 3.2",
+        reference="",
         hint="For a single object, only the one-past pointer is valid; do not dereference it.",
         code=r"""
 int one_past_offset(void)
@@ -505,7 +505,7 @@ CLINGS_CHECK_INT(single_object_value(), 42);
         slug="16_rand_max",
         title="RAND_MAX portability",
         objective="Do not assume rand() returns a value below a fixed small bound.",
-        reference="C 陷阱与缺陷 7.8",
+        reference="",
         hint="The C standard only guarantees RAND_MAX >= 32767.",
         code=r"""
 #include <stdlib.h>
@@ -538,7 +538,7 @@ CLINGS_CHECK(value >= 0 && value < 10);
         slug="08_free_then_realloc",
         title="Free then realloc",
         objective="Use realloc directly instead of freeing before growing an allocation.",
-        reference="C 陷阱与缺陷 7.10",
+        reference="",
         hint="free(values) followed by realloc(values, ...) uses a dangling pointer.",
         code=r"""
 #include <stdlib.h>
@@ -581,7 +581,7 @@ free(values);
         slug="08_standard_changes",
         title="C standard changes",
         objective="Detect the C standard version at compile time.",
-        reference="C 陷阱与缺陷 7.1",
+        reference="",
         hint="__STDC_VERSION__ is 201112L for C11 and 201710L for C17.",
         code=r"""
 int c_standard_year(void)
@@ -614,7 +614,7 @@ CLINGS_CHECK_INT(has_c11(), 1);
         slug="09_identifier_length",
         title="Identifier length",
         objective="Use long internal identifiers and rely on the standard minimum.",
-        reference="C 陷阱与缺陷 7.2",
+        reference="",
         hint="Modern C guarantees at least 31 significant external and 63 internal identifier characters.",
         code=r"""
 static int this_is_a_very_long_internal_identifier_name_for_c_traps(void)
@@ -642,7 +642,7 @@ CLINGS_CHECK_INT(long_identifier_value(), 42);
         slug="05_getchar_putchar",
         title="getchar and putchar",
         objective="Use the standard input/output character macros directly.",
-        reference="C 陷阱与缺陷 5.1；C Primer Plus 第8章",
+        reference="",
         hint="ungetc can push a character back onto stdin for a test.",
         code=r"""
 #include <stdio.h>
@@ -674,7 +674,7 @@ CLINGS_CHECK_INT(write_one_character('y'), 'y');
         slug="07_buffered_output_memory",
         title="Buffered output and memory allocation",
         objective="Combine malloc, setvbuf, output, fclose, and free.",
-        reference="C 陷阱与缺陷 5.3",
+        reference="",
         hint="The buffer passed to setvbuf must remain valid until the stream is closed.",
         code=r"""
 #include <stdio.h>

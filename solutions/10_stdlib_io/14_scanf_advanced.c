@@ -2,7 +2,6 @@
  * clings exercise: 10_stdlib_io/14_scanf_advanced
  * title: Advanced scanf input
  * objective: Use field width and a scanset in sscanf.
- * reference: C Primer Plus 第4章 4.4.5、第11章 11.2.4
  * hint: %3d reads at most three digits; %[abc] reads only a, b, and c.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/02_nested_structs
  * title: Nested structs
  * objective: Access a nested member through an outer struct pointer.
- * reference: 第一章 1.14 struct 关键字
  * hint: The address lives inside the person struct.
  */
 

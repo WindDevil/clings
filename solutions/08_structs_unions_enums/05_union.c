@@ -2,7 +2,6 @@
  * clings exercise: 08_structs_unions_enums/05_union
  * title: Unions share storage
  * objective: Compare union size with the size of its largest member.
- * reference: 第一章 1.15 union 关键字
  * hint: Every union member starts at the same address.
  */
 

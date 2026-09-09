@@ -2,7 +2,6 @@
  * clings exercise: 04_functions/08_tail_recursion
  * title: Tail recursion
  * objective: Rewrite a recursive sum using an accumulator.
- * reference: C Primer Plus 第9章 9.3.3
  * hint: The recursive call should be the last operation.
  */
 

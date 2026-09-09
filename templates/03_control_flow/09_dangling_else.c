@@ -2,7 +2,6 @@
  * clings exercise: 03_control_flow/09_dangling_else
  * title: Dangling else
  * objective: Use braces to make else bind to the intended if.
- * reference: C 陷阱与缺陷 2.5-2.6
  * hint: Without braces, else binds to the nearest unmatched if.
  */
 

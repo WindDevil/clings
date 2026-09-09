@@ -2,7 +2,6 @@
  * clings exercise: 01_types_variables/11_char_signedness
  * title: char signedness
  * objective: Use signed char and unsigned char explicitly when the sign matters.
- * reference: C 陷阱与缺陷 7.4
  * hint: Plain char may be signed or unsigned; signed char and unsigned char are explicit.
  */
 

@@ -2,7 +2,6 @@
  * clings exercise: 00_getting_started/09_identifier_length
  * title: Identifier length
  * objective: Use long internal identifiers and rely on the standard minimum.
- * reference: C 陷阱与缺陷 7.2
  * hint: Modern C guarantees at least 31 significant external and 63 internal identifier characters.
  */
 

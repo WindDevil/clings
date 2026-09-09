@@ -16,3 +16,4 @@ Run an exercise with:
 | `06_storage_scope` | Observe the lifetime of a static variable and block scope. | 第一章 1.1-1.3 auto、register、static |
 | `07_qualifiers` | Use const, volatile, restrict, extern, auto, and register. | 第一章 1.1-1.3 auto、register、static；1.11 const；1.12 volatile；1.13 extern |
 | `08_stdbool_stddef` | Use bool and size_t from the standard headers. | 第一章 1.4 基本数据类型；C99/C11 标准库 |
+| `09_long_double` | Use long double and compare its precision with double. | C Primer Plus 第3章 3.4.6 |

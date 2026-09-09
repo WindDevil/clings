@@ -13,7 +13,8 @@
 
 ## 特性
 
-- **102 个练习，13 个主题**：从 `Hello, C!` 到线程、原子操作和
+- **146 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
+  数据结构、文件 I/O、线程和原子操作。
   `_Generic`。
 - **自带测试框架**：不依赖 Catch2、GoogleTest 或第三方库。
 - **自带 CLI**：列出、运行、提示、查看答案、重置进度和监听文件变化。
@@ -98,20 +99,27 @@ make clean
 | 主题 | 练习数 | 主要内容 |
 | --- | ---: | --- |
 | `00_getting_started` | 6 | 程序结构、编译流程、`argc/argv`、断言、编译器诊断、注释/转义/续行 |
-| `01_types_variables` | 8 | 整数/浮点类型、符号、溢出、字符、存储类、作用域、限定符、`stdbool` |
-| `02_operators` | 6 | 算术、优先级、短路求值、位运算、移位、`sizeof` |
-| `03_control_flow` | 6 | `if`、`switch`、循环、`break/continue`、`goto`、状态机 |
-| `04_functions` | 7 | 声明/定义、参数、递归、`static`、函数指针、`void/return` |
-| `05_arrays_strings` | 7 | 数组、数组退化、多维数组、字符串、`snprintf`、分词 |
+| `01_types_variables` | 9 | 整数/浮点类型、符号、溢出、字符、存储类、作用域、限定符、`long double` |
+| `02_operators` | 7 | 算术、优先级、短路求值、位运算、移位、`sizeof`、复合赋值/逗号 |
+| `03_control_flow` | 7 | `if`、`switch`、循环、`break/continue`、`goto`、状态机、`while/do-while` |
+| `04_functions` | 8 | 声明/定义、参数、递归、尾递归、`static`、函数指针、`void/return` |
+| `05_arrays_strings` | 10 | 数组、数组退化、多维数组、字符串、`snprintf`、分词、VLA、复合字面量 |
 | `06_pointers` | 7 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、指向数组的指针 |
 | `07_dynamic_memory` | 7 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表 |
-| `08_structs_unions_enums` | 8 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、`container_of` |
-| `09_preprocessor` | 9 | 对象宏、函数宏、`#`/`##`、条件编译、头文件保护、变参宏、X-macro、`#pragma`、预定义宏 |
-| `10_stdlib_io` | 12 | `printf/scanf`、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、文件 I/O、`mem*`、字符串搜索、定宽整数、环境变量 |
+| `08_structs_unions_enums` | 12 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明 |
+| `09_preprocessor` | 10 | 对象宏、函数宏、`#`/`##`、条件编译、头文件保护、变参宏、X-macro、`#pragma`、`#undef/defined` |
+| `10_stdlib_io` | 15 | `printf/scanf`、高级格式化、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、文件 I/O、`mem*`、字符串搜索、定宽整数、环境变量、`ctype.h` |
 | `11_ub_safety` | 8 | 有符号溢出、未初始化、越界、释放后使用、序列点、严格别名、对齐、空指针 |
 | `12_advanced_c` | 11 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号 |
+| `13_translation_units` | 3 | 头文件/源文件分离、跨文件 `extern`、`static` 内部链接 |
+| `14_character_io` | 4 | `getc/putc`、`EOF/feof/ferror`、输入验证、`iso646.h` |
+| `15_string_functions` | 5 | `strcat/strncat`、`strncpy`、`sprintf/snprintf`、`fgets`、字符串排序、`strtod` |
+| `16_data_representation` | 4 | 进制转换、整数位表示、浮点位表示、位域与掩码 |
+| `17_data_structures` | 3 | 队列 ADT、二叉查找树、动态数组 |
+| `18_file_io_advanced` | 6 | `fprintf/fscanf`、`fgets/fputs`、`ungetc`、`fseek/ftell`、缓冲、二进制随机访问 |
+| `19_modern_c_library` | 4 | `_Noreturn`、`tgmath.h`、`atexit`、`atomic_flag` |
 
-总计 **102 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
+总计 **146 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
 和 [docs/knowledge-map.md](docs/knowledge-map.md)。
 
 ## 项目结构
@@ -132,6 +140,8 @@ make clean
 │   ├── specs_00_04.py         # 前五章练习规格
 │   ├── specs_05_08.py         # 中间四章练习规格
 │   ├── specs_09_12.py         # 后四章练习规格
+│   ├── specs_c_primer_existing.py # C Primer Plus 缺口（现有主题）
+│   ├── specs_c_primer_new.py  # C Primer Plus 缺口（新主题）
 │   ├── pdf_to_markdown.py     # PDF -> Markdown 转换器
 │   └── prepare_ref_books.py   # PV-Books C 书籍下载/转换器
 ├── docs/
@@ -141,6 +151,7 @@ make clean
 │   ├── book-coverage.md       # 《C 语言深度解剖》章节到练习的映射
 │   ├── reading-notes.md       # 20 本 C 参考书的阅读笔记
 │   ├── gap-analysis.md        # 尚未加入的知识点与优先级路线图
+│   ├── c-primer-plus-coverage.md # C Primer Plus 逐章覆盖核对
 │   └── reference/             # PDF 转换后的参考书
 ├── .ref/                      # 本地参考书库（已 gitignore）
 │   ├── PV-Books/              # PaleVerge/PV-Books 完整克隆

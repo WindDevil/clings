@@ -1,5 +1,12 @@
 # 参考书阅读后的覆盖缺口分析
 
+> 《C Primer Plus》本身的缺口已经在后续提交中补齐，逐章结果见
+> [c-primer-plus-coverage.md](c-primer-plus-coverage.md)。本文件保留的是
+> 超出《C Primer Plus》范围、面向真实 C 工程和系统编程的更大缺口。
+> 多翻译单元、标准库深度、字符串/文件 I/O、基础数据结构和现代 C 库
+> 已部分覆盖；剩余重点主要是分配器、POSIX 系统编程、安全/UB、链接/构建
+> 工具链、调试测试和并发网络。
+
 ## 1. `.ref` 中的参考材料
 
 已把 PV-Books 克隆到 `.ref/PV-Books`，并把筛选出的 C 书籍下载到

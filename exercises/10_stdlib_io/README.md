@@ -20,3 +20,6 @@ Run an exercise with:
 | `10_string_search` | Use strchr, strrchr, and strstr. | 第五章 内存管理；标准库 string.h 资料 |
 | `11_stdint_inttypes` | Use uint64_t and PRIu64 from stdint.h and inttypes.h. | 第一章 1.4 基本数据类型；C99 标准库 |
 | `12_environment` | Read and write environment variables with getenv and setenv. | 第五章 5.3.1.3 函数的入口校验；标准库 stdlib.h 资料 |
+| `13_printf_advanced` | Use width, zero padding, precision, and the * width argument. | C Primer Plus 第4章 4.4.3-4.4.6 |
+| `14_scanf_advanced` | Use field width and a scanset in sscanf. | C Primer Plus 第4章 4.4.5、第11章 11.2.4 |
+| `15_ctype_full` | Use isalnum and toupper with unsigned char casts. | C Primer Plus 第7章 7.2.2、第11章 11.7 |

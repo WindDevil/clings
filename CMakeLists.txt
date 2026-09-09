@@ -42,8 +42,8 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
   )
 endif()
 
-function(clings_add_target target source)
-  add_executable(${target} ${source})
+function(clings_add_target target)
+  add_executable(${target} ${ARGN})
   target_link_libraries(${target} PRIVATE clings_harness Threads::Threads)
   if(UNIX)
     target_link_libraries(${target} PRIVATE m)
@@ -65,6 +65,25 @@ foreach(source IN LISTS clings_solution_sources)
   add_test(NAME ${target} COMMAND ${target})
 endforeach()
 
+# Multi-file project solutions: one target per project directory.
+file(GLOB_RECURSE clings_project_solution_mains
+  RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/solutions"
+  "${CMAKE_CURRENT_SOURCE_DIR}/solutions/*/*/main.c"
+)
+foreach(main IN LISTS clings_project_solution_mains)
+  get_filename_component(project_dir "${main}" DIRECTORY)
+  file(GLOB project_sources
+    "${CMAKE_CURRENT_SOURCE_DIR}/solutions/${project_dir}/*.c"
+  )
+  string(REPLACE "/" "_" target "solution_${project_dir}")
+  clings_add_target(${target} ${project_sources})
+  target_include_directories(
+    ${target}
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/solutions/${project_dir}"
+  )
+  add_test(NAME ${target} COMMAND ${target})
+endforeach()
+
 # Exercises are intentionally excluded from the default build.  Build one with:
 #   cmake --build build --target exercise_01_types_variables_01_integer_types
 file(GLOB_RECURSE clings_exercise_sources
@@ -78,6 +97,28 @@ foreach(source IN LISTS clings_exercise_sources)
     ${target}
     EXCLUDE_FROM_ALL
     "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${source}"
+  )
+  target_link_libraries(${target} PRIVATE clings_harness Threads::Threads)
+  if(UNIX)
+    target_link_libraries(${target} PRIVATE m)
+  endif()
+endforeach()
+
+# Multi-file project exercises.
+file(GLOB_RECURSE clings_project_exercise_mains
+  RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/exercises"
+  "${CMAKE_CURRENT_SOURCE_DIR}/exercises/*/*/main.c"
+)
+foreach(main IN LISTS clings_project_exercise_mains)
+  get_filename_component(project_dir "${main}" DIRECTORY)
+  file(GLOB project_sources
+    "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${project_dir}/*.c"
+  )
+  string(REPLACE "/" "_" target "exercise_${project_dir}")
+  add_executable(${target} EXCLUDE_FROM_ALL ${project_sources})
+  target_include_directories(
+    ${target}
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${project_dir}"
   )
   target_link_libraries(${target} PRIVATE clings_harness Threads::Threads)
   if(UNIX)

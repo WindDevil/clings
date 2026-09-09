@@ -15,3 +15,6 @@ Run an exercise with:
 | `05_string_ops` | Implement strlen, strcmp, and strcpy with pointers. | 第四章 4.3 指针与数组；第六章 6.4.2 strlen |
 | `06_safe_format` | Format text into a fixed-size buffer without overflow. | 第三章 3.1 宏定义；标准库 printf 资料 |
 | `07_tokenize` | Split a string without modifying the caller's buffer. | 第五章 内存管理；标准库 string.h 资料 |
+| `08_vla` | Create an array whose length is a runtime value. | C Primer Plus 第10章 10.8 |
+| `09_compound_literals` | Create a temporary struct value with a compound literal. | C Primer Plus 第10章 10.9 |
+| `10_pointer_compatibility` | Pass a non-const array through a pointer-to-const. | C Primer Plus 第10章 10.6-10.7 |

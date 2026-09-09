@@ -11,6 +11,9 @@ modern testing workflow.
 > For topics that are **not yet covered**, including multi-translation-unit
 > linking, POSIX system programming, allocators, data structures, security,
 > and build/debug tooling, see [gap-analysis.md](gap-analysis.md).
+>
+> 《C Primer Plus》第 6 版的逐章覆盖情况见
+> [c-primer-plus-coverage.md](c-primer-plus-coverage.md)。
 
 ## 1. Program structure, translation, and tooling
 
@@ -214,3 +217,15 @@ modern testing workflow.
 | Build reproducibility | `Makefile`, `CMakePresets.json`, `Dockerfile`, CI |
 | Formatting and style | `.clang-format`, `.editorconfig`, `make format` |
 | Keeping code and answers in sync | `tools/generate_exercises.py`, `--check` in CI |
+
+## 15. C Primer Plus gap closure
+
+| Topic | Exercises |
+| --- | --- |
+| Multi-file translation units and linkage | `13_translation_units/01_header_source_split`, `02_extern_linkage`, `03_static_internal_linkage` |
+| Character I/O and validation | `14_character_io/01_getc_putc`, `02_eof_ferror`, `03_input_validation`, `04_iso646` |
+| String functions and conversion | `15_string_functions/01`-`05` |
+| Data representation and bit operations | `16_data_representation/01`-`04` |
+| Abstract data types and data structures | `17_data_structures/01`-`03` |
+| Advanced file I/O | `18_file_io_advanced/01`-`06` |
+| Modern C library features | `19_modern_c_library/01`-`04` |

@@ -17,3 +17,4 @@ Run an exercise with:
 | `07_x_macros` | Generate an enum and a string table from one list. | 第三章 3.1 宏定义；3.7 #运算符 |
 | `08_pragma_error_line` | Use diagnostics, line control, and packing pragmas. | 第三章 3.4 #error；3.5 #line；3.6.8 #pragma pack |
 | `09_std_macros` | Use __FILE__, __LINE__, __func__, and __STDC_VERSION__. | 第三章 3.1 宏定义；编译器预定义宏 |
+| `10_undef_defined` | Undefine a macro and test it with defined(). | C Primer Plus 第16章 16.6.1-16.6.2 |

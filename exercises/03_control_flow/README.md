@@ -14,3 +14,4 @@ Run an exercise with:
 | `04_break_continue` | Use break to stop early and continue to skip one iteration. | 第一章 1.8.1 break 与 continue 的区别 |
 | `05_goto_cleanup` | Use goto for a clear cleanup path in C. | 第一章 1.9 goto 关键字；第六章 函数设计 |
 | `06_state_machine` | Track state while scanning a string. | 第三章 3.2 条件编译；控制流综合练习 |
+| `07_while_do_while` | Distinguish entry-condition and exit-condition loops. | C Primer Plus 第6章 6.2、6.8 |

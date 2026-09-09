@@ -69,6 +69,10 @@ python3 tools/generate_exercises.py --check
 | `breaks` | 将正确代码转成初始练习的替换列表 |
 | `compile_fail` | 初始状态是否故意无法编译 |
 
+多文件项目练习使用 `project()`，其中 `files` 是文件名到完整内容的映射，
+`file_breaks` 是 `(文件名, 正确片段, 初始片段)` 替换列表。运行器会自动
+编译项目目录中的所有 `.c` 文件，并把该目录加入头文件搜索路径。
+
 ## 测试框架
 
 练习只需要包含 `include/clings/test.h`，并使用：

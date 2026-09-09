@@ -32,6 +32,10 @@ Markdown 位于 `.ref/books` 与 `.ref/markdown`；扫描版书籍的完整 OCR
 - 第 16 章预处理器和 C 库提示补充宏、条件编译、标准库深度。
 - 第 17 章高级数据表示提示新增动态数组、链表、队列、树、哈希表等练习。
 
+> 本轮已经按这些缺口新增 `13_translation_units` 至
+> `19_modern_c_library` 七个主题，逐章结果见
+> [c-primer-plus-coverage.md](c-primer-plus-coverage.md)。
+
 ### C 陷阱与缺陷
 
 路径：`.ref/markdown/C/C陷阱与缺陷.md`（扫描版，需 OCR）

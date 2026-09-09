@@ -61,6 +61,21 @@ def broken_code(spec: ExerciseSpec) -> str:
     return code
 
 
+def project_file(spec: ExerciseSpec, filename: str, content: str, learner: bool) -> str:
+    if learner:
+        for target, correct, broken in spec.file_breaks:
+            if target != filename:
+                continue
+            if correct not in content:
+                raise SystemExit(
+                    f"{spec.ident}/{filename}: break pattern not found:\n{correct}"
+                )
+            content = content.replace(correct, broken, 1)
+    if filename == "main.c":
+        return header(spec) + "\n" + content
+    return content
+
+
 def write(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
@@ -70,8 +85,16 @@ def load_specs() -> list[ExerciseSpec]:
     from specs_00_04 import SPECS as specs_00_04
     from specs_05_08 import SPECS as specs_05_08
     from specs_09_12 import SPECS as specs_09_12
+    from specs_c_primer_existing import SPECS as specs_c_primer_existing
+    from specs_c_primer_new import SPECS as specs_c_primer_new
 
-    specs = specs_00_04 + specs_05_08 + specs_09_12
+    specs = (
+        specs_00_04
+        + specs_05_08
+        + specs_09_12
+        + specs_c_primer_existing
+        + specs_c_primer_new
+    )
     seen: set[str] = set()
     for spec in specs:
         if spec.ident in seen:
@@ -94,6 +117,13 @@ TOPIC_TITLES = {
     "10_stdlib_io": "Standard Library and File I/O",
     "11_ub_safety": "Undefined Behavior, Safety, and Portability",
     "12_advanced_c": "Advanced C Features",
+    "13_translation_units": "Translation Units, Headers, and Linkage",
+    "14_character_io": "Character I/O and Input Validation",
+    "15_string_functions": "String Functions and Conversion",
+    "16_data_representation": "Data Representation and Bit Operations",
+    "17_data_structures": "Abstract Data Types and Data Structures",
+    "18_file_io_advanced": "Advanced File I/O",
+    "19_modern_c_library": "Modern C Library and Language Features",
 }
 
 
@@ -236,11 +266,24 @@ def main() -> int:
     specs = load_specs()
     generated: dict[Path, str] = {}
     for spec in specs:
-        correct = program(spec, spec.code)
-        learner = program(spec, broken_code(spec))
-        generated[EXERCISES_DIR / spec.topic / f"{spec.slug}.c"] = learner
-        generated[TEMPLATES_DIR / spec.topic / f"{spec.slug}.c"] = learner
-        generated[SOLUTIONS_DIR / spec.topic / f"{spec.slug}.c"] = correct
+        if spec.files is None:
+            correct = program(spec, spec.code)
+            learner = program(spec, broken_code(spec))
+            generated[EXERCISES_DIR / spec.topic / f"{spec.slug}.c"] = learner
+            generated[TEMPLATES_DIR / spec.topic / f"{spec.slug}.c"] = learner
+            generated[SOLUTIONS_DIR / spec.topic / f"{spec.slug}.c"] = correct
+            continue
+
+        for filename, content in spec.files.items():
+            generated[
+                EXERCISES_DIR / spec.topic / spec.slug / filename
+            ] = project_file(spec, filename, content, learner=True)
+            generated[
+                TEMPLATES_DIR / spec.topic / spec.slug / filename
+            ] = project_file(spec, filename, content, learner=True)
+            generated[
+                SOLUTIONS_DIR / spec.topic / spec.slug / filename
+            ] = project_file(spec, filename, content, learner=False)
 
     generated.update(topic_readme_contents(specs))
     generated[ROOT / "docs" / "curriculum.md"] = curriculum_content(specs)

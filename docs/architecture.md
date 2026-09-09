@@ -80,6 +80,22 @@ build/clings/<topic>/<exercise>.solution
 CMake 路径只默认构建 `solutions/`，并把它们注册为 CTest 测试；
 `exercises/` 使用 `EXCLUDE_FROM_ALL`，因为部分初始练习故意无法编译。
 
+## 项目型练习
+
+除了单文件练习，运行器还支持“项目型练习”：目录中包含 `main.c` 以及
+任意数量的 `.c`/`.h` 文件：
+
+```text
+exercises/13_translation_units/01_header_source_split/
+├── main.c
+├── math_utils.h
+└── math_utils.c
+```
+
+运行器会发现 `main.c`，编译同目录下所有 `.c` 文件，并把该目录加入
+`-I` 搜索路径。参考答案和模板使用同样的目录结构。生成器中的
+`project()` 规格用于创建这类练习。
+
 ## 目录约定
 
 - `exercises/`：学习者实际编辑的文件。

@@ -1,0 +1,14 @@
+/build/
+/.clings/
+/.ref/
+compile_commands.json
+*.o
+*.obj
+*.out
+*.exe
+__pycache__/
+*.py[cod]
+*.dSYM/
+.DS_Store
+*.swp
+*.swo

@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show toolchain
+        run: |
+          cc --version
+          python3 --version
+          ./clings doctor
+      - name: Verify solutions
+        run: ./clings verify
+      - name: Verify exercises start unsolved
+        run: ./clings selftest
+      - name: Check generated files
+        run: python3 tools/generate_exercises.py --check
+      - name: Configure CMake
+        run: cmake --preset default
+      - name: Build solutions with CMake
+        run: cmake --build --preset default
+      - name: Run CTest
+        run: ctest --preset default

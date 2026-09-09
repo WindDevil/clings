@@ -1,0 +1,26 @@
+/*
+ * clings exercise: 12_advanced_c/06_static_assert
+ * title: Compile-time assertions
+ * objective: Use _Static_assert to enforce assumptions at compile time.
+ * reference: C11 标准 _Static_assert 资料
+ * hint: A failed static assertion must make the build fail.
+ */
+
+#include "clings/test.h"
+
+#include <limits.h>
+
+/* TODO: restore the correct compile-time assumption. */
+_Static_assert(sizeof(int) >= 100, "int must be at least 16 bits");
+_Static_assert(CHAR_BIT == 8, "this course assumes 8-bit bytes");
+
+int static_asserts_passed(void)
+{
+    return 1;
+}
+
+int main(void)
+{
+    CLINGS_CHECK_INT(static_asserts_passed(), 1);
+    return clings_report();
+}

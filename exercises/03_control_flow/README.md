@@ -1,0 +1,16 @@
+# Control Flow
+
+Run an exercise with:
+
+```sh
+./clings run 01_if_else
+```
+
+| Exercise | Objective | Reference |
+| --- | --- | --- |
+| `01_if_else` | Write clear conditional branches. | 第一章 1.6 if、else 组合 |
+| `02_switch_case` | Use intentional fallthrough and a default case. | 第一章 1.7 switch、case 组合 |
+| `03_loops` | Get loop bounds and accumulators right. | 第一章 1.8 do、while、for |
+| `04_break_continue` | Use break to stop early and continue to skip one iteration. | 第一章 1.8.1 break 与 continue 的区别 |
+| `05_goto_cleanup` | Use goto for a clear cleanup path in C. | 第一章 1.9 goto 关键字；第六章 函数设计 |
+| `06_state_machine` | Track state while scanning a string. | 第三章 3.2 条件编译；控制流综合练习 |

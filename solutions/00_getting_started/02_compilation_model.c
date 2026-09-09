@@ -1,0 +1,33 @@
+/*
+ * clings exercise: 00_getting_started/02_compilation_model
+ * title: Preprocessing, compiling, and linking
+ * objective: See how the preprocessor and the C standard version are exposed.
+ * reference: 第三章 预处理；编译流程资料
+ * hint: The preprocessor evaluates #if before the compiler sees the code.
+ */
+
+#include "clings/test.h"
+
+#include <stdio.h>
+
+#if defined(__STDC__) && __STDC__
+#define CLINGS_IS_STANDARD_C 1
+#else
+#define CLINGS_IS_STANDARD_C 0
+#endif
+
+int standard_c_year(void)
+{
+#if defined(__STDC_VERSION__)
+    return (int)(__STDC_VERSION__ / 100L);
+#else
+    return 0;
+#endif
+}
+
+int main(void)
+{
+    CLINGS_CHECK_INT(CLINGS_IS_STANDARD_C, 1);
+    CLINGS_CHECK(standard_c_year() >= 2011);
+    return clings_report();
+}

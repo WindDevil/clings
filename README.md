@@ -13,7 +13,7 @@
 
 ## 特性
 
-- **167 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
+- **177 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
   数据结构、文件 I/O、线程和原子操作。
   `_Generic`。
 - **自带测试框架**：不依赖 Catch2、GoogleTest 或第三方库。
@@ -98,28 +98,28 @@ make clean
 
 | 主题 | 练习数 | 主要内容 |
 | --- | ---: | --- |
-| `00_getting_started` | 9 | 程序结构、编译流程、`argc/argv`、断言、编译器诊断、`main` 返回值、标准版本 |
-| `01_types_variables` | 11 | 整数/浮点类型、符号、溢出、字符、存储类、限定符、八进制常量、`char` 符号性 |
+| `00_getting_started` | 10 | 程序结构、编译流程、`argc/argv`、断言、编译器诊断、`main` 返回值、标准版本、实现定义行为 |
+| `01_types_variables` | 12 | 整数/浮点类型、符号、溢出、字符、存储类、限定符、八进制常量、`char` 符号性、整型提升 |
 | `02_operators` | 9 | 算术、优先级、短路求值、位运算、移位、`sizeof`、复合赋值、赋值/相等、最长匹配 |
 | `03_control_flow` | 9 | `if`、`switch`、循环、`break/continue`、`goto`、状态机、分号陷阱、悬挂 `else` |
-| `04_functions` | 8 | 声明/定义、参数、递归、尾递归、`static`、函数指针、`void/return` |
+| `04_functions` | 9 | 声明/定义、参数、递归、尾递归、`static`、函数指针、`void/return`、默认参数提升 |
 | `05_arrays_strings` | 11 | 数组、数组退化、多维数组、字符串、`snprintf`、分词、VLA、复合字面量、不对称边界 |
-| `06_pointers` | 10 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past |
-| `07_dynamic_memory` | 8 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc |
-| `08_structs_unions_enums` | 12 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明 |
+| `06_pointers` | 11 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past、`restrict` |
+| `07_dynamic_memory` | 10 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc、arena、分配统计 |
+| `08_structs_unions_enums` | 13 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明、函数指针表 |
 | `09_preprocessor` | 13 | 对象宏、函数宏、`#`/`##`、条件编译、头文件保护、变参宏、X-macro、宏空格/语句/类型陷阱 |
-| `10_stdlib_io` | 16 | `printf/scanf`、高级格式化、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h` |
+| `10_stdlib_io` | 17 | `printf/scanf`、高级格式化、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h`、varargs |
 | `11_ub_safety` | 8 | 有符号溢出、未初始化、越界、释放后使用、序列点、严格别名、对齐、空指针 |
-| `12_advanced_c` | 11 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号 |
-| `13_translation_units` | 4 | 头文件/源文件分离、跨文件 `extern`、`static` 内部链接、外部类型检查 |
+| `12_advanced_c` | 12 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号、栈帧 |
+| `13_translation_units` | 5 | 头文件/源文件分离、跨文件 `extern`、`static` 内部链接、外部类型检查、动态链接 |
 | `14_character_io` | 5 | `getc/putc`、`EOF/feof/ferror`、输入验证、`iso646.h`、`getchar/putchar` |
 | `15_string_functions` | 5 | `strcat/strncat`、`strncpy`、`sprintf/snprintf`、`fgets`、字符串排序、`strtod` |
-| `16_data_representation` | 4 | 进制转换、整数位表示、浮点位表示、位域与掩码 |
+| `16_data_representation` | 5 | 进制转换、整数位表示、浮点位表示、位域与掩码、端序 |
 | `17_data_structures` | 3 | 队列 ADT、二叉查找树、动态数组 |
 | `18_file_io_advanced` | 7 | `fprintf/fscanf`、`fgets/fputs`、`ungetc`、`fseek/ftell`、缓冲、二进制随机访问、缓冲输出+内存 |
 | `19_modern_c_library` | 4 | `_Noreturn`、`tgmath.h`、`atexit`、`atomic_flag` |
 
-总计 **167 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
+总计 **177 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
 和 [docs/knowledge-map.md](docs/knowledge-map.md)。
 
 ## 项目结构

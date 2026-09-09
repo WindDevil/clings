@@ -17,3 +17,4 @@ Run an exercise with:
 | `07_main_return_value` | Return a defined success or failure status from a program. | C 陷阱与缺陷 3.10 |
 | `08_standard_changes` | Detect the C standard version at compile time. | C 陷阱与缺陷 7.1 |
 | `09_identifier_length` | Use long internal identifiers and rely on the standard minimum. | C 陷阱与缺陷 7.2 |
+| `10_implementation_defined` | Observe implementation-defined char signedness and packing pragmas. | C 专家编程 第1章 |

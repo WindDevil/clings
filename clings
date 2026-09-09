@@ -44,6 +44,8 @@ DEFAULT_CFLAGS = [
     "-D_DEFAULT_SOURCE",
 ]
 DEFAULT_LDLIBS = ["-lm", "-pthread"]
+if sys.platform.startswith("linux"):
+    DEFAULT_LDLIBS.append("-ldl")
 
 
 @dataclass(frozen=True)

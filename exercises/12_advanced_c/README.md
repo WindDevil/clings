@@ -19,3 +19,4 @@ Run an exercise with:
 | `09_thread_local` | Use _Thread_local to give each thread its own object. | C11 标准 _Thread_local 资料；POSIX threads |
 | `10_complex` | Use double complex, I, conj, creal, and cimag. | C99 标准 complex.h 资料 |
 | `11_signal` | Install a signal handler and use a sig_atomic_t flag. | C 标准 signal.h 资料 |
+| `12_stack_frame` | Observe that nested function calls use distinct activation records. | C 专家编程 第6章 |

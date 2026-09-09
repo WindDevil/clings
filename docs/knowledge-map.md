@@ -259,3 +259,19 @@ exercises are distributed into the existing knowledge-domain topics:
 | 7.6 memory location zero | `06_pointers/09_memory_location_zero` |
 | 7.8 RAND_MAX | `10_stdlib_io/16_rand_max` |
 | 7.10 free then realloc | `07_dynamic_memory/08_free_then_realloc` |
+
+## 17. Expert C Programming gap closure
+
+| Book topic | Exercise |
+| --- | --- |
+| Implementation-defined behavior and pragmas | `00_getting_started/10_implementation_defined` |
+| Integer promotions | `01_types_variables/12_integer_promotions` |
+| Declaration grammar and function-pointer tables | `08_structs_unions_enums/13_declaration_grammar` |
+| Default argument promotions | `04_functions/09_default_argument_promotions` |
+| restrict and aliasing | `06_pointers/11_restrict_aliasing` |
+| Arena allocator | `07_dynamic_memory/09_arena_allocator` |
+| Allocation statistics | `07_dynamic_memory/10_allocation_stats` |
+| Dynamic linking | `13_translation_units/05_dynamic_linking` |
+| Endianness | `16_data_representation/05_endianness` |
+| Stack frames | `12_advanced_c/12_stack_frame` |
+| varargs and default promotions | `10_stdlib_io/17_printf_varargs` |

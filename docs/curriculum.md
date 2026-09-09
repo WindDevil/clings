@@ -5,7 +5,7 @@ corresponding section of *C语言深度解剖*.  The book is a deep-dive
 companion; the exercises also cover standard-library, tooling, and
 portability topics that are outside the book's original scope.
 
-Total exercises: **167** across **20** topics.
+Total exercises: **177** across **20** topics.
 
 ## 00_getting_started - Getting Started
 
@@ -20,6 +20,7 @@ Total exercises: **167** across **20** topics.
 | `00_getting_started/07_main_return_value` | Return a defined success or failure status from a program. | C 陷阱与缺陷 3.10 |
 | `00_getting_started/08_standard_changes` | Detect the C standard version at compile time. | C 陷阱与缺陷 7.1 |
 | `00_getting_started/09_identifier_length` | Use long internal identifiers and rely on the standard minimum. | C 陷阱与缺陷 7.2 |
+| `00_getting_started/10_implementation_defined` | Observe implementation-defined char signedness and packing pragmas. | C 专家编程 第1章 |
 
 ## 01_types_variables - Types, Variables, and Storage
 
@@ -36,6 +37,7 @@ Total exercises: **167** across **20** topics.
 | `01_types_variables/09_long_double` | Use long double and compare its precision with double. | C Primer Plus 第3章 3.4.6 |
 | `01_types_variables/10_octal_constants` | Recognize that a leading zero means base 8. | C 陷阱与缺陷 1.4 |
 | `01_types_variables/11_char_signedness` | Use signed char and unsigned char explicitly when the sign matters. | C 陷阱与缺陷 7.4 |
+| `01_types_variables/12_integer_promotions` | See that char operands are promoted to int in arithmetic expressions. | C 专家编程 第8章 |
 
 ## 02_operators - Operators and Expressions
 
@@ -77,6 +79,7 @@ Total exercises: **167** across **20** topics.
 | `04_functions/06_function_pointers` | Store functions in variables and choose one at runtime. | 第四章 4.7 函数指针 |
 | `04_functions/07_void_and_return` | Return early from a void function and return values from int functions. | 第一章 1.10 void 关键字；1.10 return 关键字 |
 | `04_functions/08_tail_recursion` | Rewrite a recursive sum using an accumulator. | C Primer Plus 第9章 9.3.3 |
+| `04_functions/09_default_argument_promotions` | Use the promoted types expected by variadic functions. | C 专家编程 第8章 |
 
 ## 05_arrays_strings - Arrays and Strings
 
@@ -108,6 +111,7 @@ Total exercises: **167** across **20** topics.
 | `06_pointers/08_null_empty_string` | Distinguish a null pointer, an empty string, and the NUL character. | C 陷阱与缺陷 3.5 |
 | `06_pointers/09_memory_location_zero` | Treat address zero as a null pointer, not as a valid object address. | C 陷阱与缺陷 7.6 |
 | `06_pointers/10_one_past_pointer` | Do not treat a pointer to a single object as an array. | C 陷阱与缺陷 3.2 |
+| `06_pointers/11_restrict_aliasing` | Use restrict to promise that two pointer parameters do not alias. | C 专家编程 第10章 |
 
 ## 07_dynamic_memory - Dynamic Memory and Data Structures
 
@@ -121,6 +125,8 @@ Total exercises: **167** across **20** topics.
 | `07_dynamic_memory/06_flexible_array` | Allocate a struct plus trailing data in one block. | 第一章 1.14.2 柔性数组 |
 | `07_dynamic_memory/07_linked_list` | Build, traverse, and free a linked list. | 第五章 内存管理；结构体与指针综合 |
 | `07_dynamic_memory/08_free_then_realloc` | Use realloc directly instead of freeing before growing an allocation. | C 陷阱与缺陷 7.10 |
+| `07_dynamic_memory/09_arena_allocator` | Implement a simple bump allocator with aligned allocations. | C 专家编程 第7章；C 语言接口与实现 第6章 |
+| `07_dynamic_memory/10_allocation_stats` | Track outstanding allocations with wrapped malloc and free. | C 专家编程 第7章 |
 
 ## 08_structs_unions_enums - Structs, Unions, Enums, and Bitfields
 
@@ -138,6 +144,7 @@ Total exercises: **167** across **20** topics.
 | `08_structs_unions_enums/10_struct_pass` | Compare struct value parameters with struct pointer parameters. | C Primer Plus 第14章 14.7 |
 | `08_structs_unions_enums/11_struct_file` | Store a struct with fwrite and read it back with fread. | C Primer Plus 第14章 14.8 |
 | `08_structs_unions_enums/12_complex_declarations` | Read and use a typedef for a function pointer and an array of function pointers. | C Primer Plus 第14章 14.13-14.14 |
+| `08_structs_unions_enums/13_declaration_grammar` | Read a typedef for an array of function pointers. | C 专家编程 第3章 |
 
 ## 09_preprocessor - Preprocessor and Macros
 
@@ -206,6 +213,7 @@ Total exercises: **167** across **20** topics.
 | `12_advanced_c/09_thread_local` | Use _Thread_local to give each thread its own object. | C11 标准 _Thread_local 资料；POSIX threads |
 | `12_advanced_c/10_complex` | Use double complex, I, conj, creal, and cimag. | C99 标准 complex.h 资料 |
 | `12_advanced_c/11_signal` | Install a signal handler and use a sig_atomic_t flag. | C 标准 signal.h 资料 |
+| `12_advanced_c/12_stack_frame` | Observe that nested function calls use distinct activation records. | C 专家编程 第6章 |
 
 ## 13_translation_units - Translation Units, Headers, and Linkage
 
@@ -215,6 +223,7 @@ Total exercises: **167** across **20** topics.
 | `13_translation_units/02_extern_linkage` | Declare a global variable in a header and define it in another file. | C Primer Plus 第12章 12.1.7、12.1.9 |
 | `13_translation_units/03_static_internal_linkage` | Keep a counter private to one translation unit with static. | C Primer Plus 第12章 12.1.8-12.1.9 |
 | `13_translation_units/04_external_type_check` | Keep declarations and definitions consistent across translation units. | C 陷阱与缺陷 4.5 |
+| `13_translation_units/05_dynamic_linking` | Load a symbol from a shared library at runtime. | C 专家编程 第5章 |
 
 ## 14_character_io - Character I/O and Input Validation
 
@@ -244,6 +253,7 @@ Total exercises: **167** across **20** topics.
 | `16_data_representation/02_integer_binary_representation` | Count set bits and convert sign-magnitude to two's complement. | C Primer Plus 第15章 15.1 |
 | `16_data_representation/03_float_binary_representation` | Inspect and reconstruct an IEEE-754 float with memcpy. | C Primer Plus 第15章 15.1.3 |
 | `16_data_representation/04_bitfield_portability` | Pack fields with bitfields and compare them with an explicit mask. | C Primer Plus 第15章 15.4 |
+| `16_data_representation/05_endianness` | Detect byte order and inspect an integer's first byte. | C 专家编程 第6章 |
 
 ## 17_data_structures - Abstract Data Types and Data Structures
 

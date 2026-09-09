@@ -16,3 +16,5 @@ Run an exercise with:
 | `06_flexible_array` | Allocate a struct plus trailing data in one block. | 第一章 1.14.2 柔性数组 |
 | `07_linked_list` | Build, traverse, and free a linked list. | 第五章 内存管理；结构体与指针综合 |
 | `08_free_then_realloc` | Use realloc directly instead of freeing before growing an allocation. | C 陷阱与缺陷 7.10 |
+| `09_arena_allocator` | Implement a simple bump allocator with aligned allocations. | C 专家编程 第7章；C 语言接口与实现 第6章 |
+| `10_allocation_stats` | Track outstanding allocations with wrapped malloc and free. | C 专家编程 第7章 |

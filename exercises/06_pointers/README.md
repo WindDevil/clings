@@ -18,3 +18,4 @@ Run an exercise with:
 | `08_null_empty_string` | Distinguish a null pointer, an empty string, and the NUL character. | C 陷阱与缺陷 3.5 |
 | `09_memory_location_zero` | Treat address zero as a null pointer, not as a valid object address. | C 陷阱与缺陷 7.6 |
 | `10_one_past_pointer` | Do not treat a pointer to a single object as an array. | C 陷阱与缺陷 3.2 |
+| `11_restrict_aliasing` | Use restrict to promise that two pointer parameters do not alias. | C 专家编程 第10章 |

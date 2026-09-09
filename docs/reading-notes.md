@@ -77,9 +77,10 @@ Markdown 位于 `.ref/books` 与 `.ref/markdown`；扫描版书籍的完整 OCR
   优化、可移植性。
 - 还讨论 `setjmp`、`volatile`、`const`、`restrict`、`inline`、`#pragma`、
   调用约定、字节序、对齐和动态链接。
-- 现有练习覆盖了数组/指针、链接基础、内存基础、volatile/restrict 等，
-  但调用约定、动态链接、链接器行为、运行时数据结构和类型提升还没有
-  系统练习。
+- 本轮已补：实现定义行为、整型提升、声明语法/函数指针表、默认参数
+  提升、restrict、arena 分配器、分配统计、动态链接、端序和栈帧。
+- 仍然偏工具/平台的内容：interpositioning、链接器报告、a.out/ELF 细节、
+  调用约定、完整 malloc 实现和 cache。
 - 逐章覆盖见
   [c-expert-programming-coverage.md](c-expert-programming-coverage.md)。
 

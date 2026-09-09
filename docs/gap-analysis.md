@@ -9,6 +9,9 @@
 >
 > 《C 陷阱与缺陷》中原来标为部分覆盖/未覆盖的条目也已拆回现有主题，
 > 逐节结果见 [c-traps-and-pitfalls-coverage.md](c-traps-and-pitfalls-coverage.md)。
+>
+> 《C 专家编程》的主要语言/运行时缺口也已拆回现有主题，逐章结果见
+> [c-expert-programming-coverage.md](c-expert-programming-coverage.md)。
 
 ## 1. `.ref` 中的参考材料
 

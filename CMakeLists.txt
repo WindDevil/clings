@@ -44,7 +44,10 @@ endif()
 
 function(clings_add_target target)
   add_executable(${target} ${ARGN})
-  target_link_libraries(${target} PRIVATE clings_harness Threads::Threads)
+  target_link_libraries(
+    ${target}
+    PRIVATE clings_harness Threads::Threads ${CMAKE_DL_LIBS}
+  )
   if(UNIX)
     target_link_libraries(${target} PRIVATE m)
   endif()
@@ -99,6 +102,9 @@ foreach(source IN LISTS clings_exercise_sources)
     "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${source}"
   )
   target_link_libraries(${target} PRIVATE clings_harness Threads::Threads)
+  if(CMAKE_DL_LIBS)
+    target_link_libraries(${target} PRIVATE ${CMAKE_DL_LIBS})
+  endif()
   if(UNIX)
     target_link_libraries(${target} PRIVATE m)
   endif()
@@ -121,6 +127,9 @@ foreach(main IN LISTS clings_project_exercise_mains)
     PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${project_dir}"
   )
   target_link_libraries(${target} PRIVATE clings_harness Threads::Threads)
+  if(CMAKE_DL_LIBS)
+    target_link_libraries(${target} PRIVATE ${CMAKE_DL_LIBS})
+  endif()
   if(UNIX)
     target_link_libraries(${target} PRIVATE m)
   endif()

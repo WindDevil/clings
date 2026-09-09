@@ -20,3 +20,4 @@ Run an exercise with:
 | `10_struct_pass` | Compare struct value parameters with struct pointer parameters. | C Primer Plus 第14章 14.7 |
 | `11_struct_file` | Store a struct with fwrite and read it back with fread. | C Primer Plus 第14章 14.8 |
 | `12_complex_declarations` | Read and use a typedef for a function pointer and an array of function pointers. | C Primer Plus 第14章 14.13-14.14 |
+| `13_declaration_grammar` | Read a typedef for an array of function pointers. | C 专家编程 第3章 |

@@ -19,3 +19,4 @@ Run an exercise with:
 | `09_long_double` | Use long double and compare its precision with double. | C Primer Plus 第3章 3.4.6 |
 | `10_octal_constants` | Recognize that a leading zero means base 8. | C 陷阱与缺陷 1.4 |
 | `11_char_signedness` | Use signed char and unsigned char explicitly when the sign matters. | C 陷阱与缺陷 7.4 |
+| `12_integer_promotions` | See that char operands are promoted to int in arithmetic expressions. | C 专家编程 第8章 |

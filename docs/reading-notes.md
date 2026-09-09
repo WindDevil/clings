@@ -69,14 +69,19 @@ Markdown 位于 `.ref/books` 与 `.ref/markdown`；扫描版书籍的完整 OCR
 
 ### C 专家编程
 
-路径：`.ref/markdown/Algorithms/C专家编程.md`（扫描版，需 OCR）
+路径：`.ref/markdown/Algorithms/C专家编程.md`（已 OCR）
 
+- 本轮已用 Tesseract `chi_sim+eng` 对 307 页扫描版完成 OCR，OCR 文本在
+  `.ref/ocr/Algorithms/C专家编程.txt`。
 - 重点包括声明语法、数组和指针、链接、内存、预处理器、ANSI C、
   优化、可移植性。
 - 还讨论 `setjmp`、`volatile`、`const`、`restrict`、`inline`、`#pragma`、
   调用约定、字节序、对齐和动态链接。
-- 这些内容中，`volatile`/`restrict`/`inline` 的基础已经补入，
-  但调用约定、动态链接、链接器行为、可移植性还没有练习。
+- 现有练习覆盖了数组/指针、链接基础、内存基础、volatile/restrict 等，
+  但调用约定、动态链接、链接器行为、运行时数据结构和类型提升还没有
+  系统练习。
+- 逐章覆盖见
+  [c-expert-programming-coverage.md](c-expert-programming-coverage.md)。
 
 ### 狂人 C 程序员入门必备
 

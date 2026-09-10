@@ -9,7 +9,7 @@ Total exercises: **177** across **20** topics.
 | Exercise | Objective |
 | --- | --- |
 | `00_getting_started/01_hello_world` | Understand the minimal C program and formatted output. |
-| `00_getting_started/02_compilation_model` | See how the preprocessor and the C standard version are exposed. |
+| `00_getting_started/02_compilation_model` | Include the standard header that declares INT_MAX. |
 | `00_getting_started/03_main_args` | Work with the arguments passed to main. |
 | `00_getting_started/04_debug_assert` | Use assert for programmer errors and return values for user errors. |
 | `00_getting_started/05_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |

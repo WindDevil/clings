@@ -37,39 +37,25 @@ CLINGS_CHECK_STR(buffer, "Hello, C!");
     ex(
         topic="00_getting_started",
         slug="02_compilation_model",
-        title="Preprocessing, compiling, and linking",
-        objective="See how the preprocessor and the C standard version are exposed.",
+        title="Headers and declarations",
+        objective="Include the standard header that declares INT_MAX.",
         reference="",
-        hint="The check requires C11 or newer and compares the result with __STDC_VERSION__.",
+        hint="The compiler needs a declaration before use; add the header for integer limits.",
         code=r"""
-#include <stdio.h>
+#include <limits.h>
 
-#if defined(__STDC__) && __STDC__
-#define CLINGS_IS_STANDARD_C 1
-#else
-#define CLINGS_IS_STANDARD_C 0
-#endif
-
-int standard_c_year(void)
+int largest_int(void)
 {
-#if defined(__STDC_VERSION__)
-    return (int)(__STDC_VERSION__ / 100L);
-#else
-    return 0;
-#endif
+    return INT_MAX;
 }
 """,
         tests=r"""
-CLINGS_CHECK_INT(CLINGS_IS_STANDARD_C, 1);
-CLINGS_CHECK(standard_c_year() >= 2011);
-#if defined(__STDC_VERSION__)
-CLINGS_CHECK_INT(standard_c_year(), (int)(__STDC_VERSION__ / 100L));
-#endif
+CLINGS_CHECK_INT(largest_int(), INT_MAX);
 """,
         breaks=[
             (
-                "return (int)(__STDC_VERSION__ / 100L);",
-                "/* TODO: return the standard year, not a placeholder. */\n    return 0;",
+                "#include <limits.h>\n\n",
+                "/* TODO: include the header that declares INT_MAX. */\n",
             )
         ],
     ),

@@ -4,7 +4,7 @@ from spec import ex
 
 SPECS = [
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="09_long_double",
         title="long double",
         objective="Use long double and compare its precision with double.",
@@ -35,7 +35,7 @@ CLINGS_CHECK_INT(long_double_has_extra_precision(), 1);
         ],
     ),
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="07_compound_assignment",
         title="Compound assignment and comma",
         objective="Use +=, -=, *=, /=, %= and the comma operator.",
@@ -71,7 +71,7 @@ CLINGS_CHECK_INT(comma_sum(2, 3), 7);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="07_while_do_while",
         title="while and do-while",
         objective="Distinguish entry-condition and exit-condition loops.",
@@ -112,7 +112,7 @@ CLINGS_CHECK_INT(count_do_while(3), 3);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="08_tail_recursion",
         title="Tail recursion",
         objective="Rewrite a recursive sum using an accumulator.",
@@ -142,7 +142,7 @@ CLINGS_CHECK_INT(sum_tail_wrapper(10), 55);
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="07_vla",
         title="Variable-length arrays",
         objective="Create an array whose length is a runtime value.",
@@ -175,7 +175,7 @@ CLINGS_CHECK_INT(sum_vla(10), 55);
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="08_compound_literals",
         title="Compound literals",
         objective="Create a temporary struct value with a compound literal.",
@@ -209,7 +209,7 @@ CLINGS_CHECK_INT(point_sum((struct point){1, 2}), 3);
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="09_pointer_compatibility",
         title="Pointer compatibility and const",
         objective="Pass a non-const array through a pointer-to-const.",
@@ -248,7 +248,7 @@ CLINGS_CHECK_INT(sum_const(const_values, 3), 15);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="09_struct_array",
         title="Arrays of structs",
         objective="Traverse an array of structs and find the best element.",
@@ -300,7 +300,7 @@ CLINGS_CHECK_STR(best_student(students, 3)->name, "Grace");
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="10_struct_pass",
         title="Passing structs by value and by pointer",
         objective="Compare struct value parameters with struct pointer parameters.",
@@ -339,7 +339,7 @@ CLINGS_CHECK_INT(point.y, 2);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="11_struct_file",
         title="Writing and reading structs",
         objective="Store a struct with fwrite and read it back with fread.",
@@ -396,7 +396,7 @@ remove(path);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="12_complex_declarations",
         title="Complex declarations and function-pointer tables",
         objective="Read and use a typedef for a function pointer and an array of function pointers.",
@@ -438,7 +438,7 @@ CLINGS_CHECK_INT(use_operation_table(), 7);
         ],
     ),
     ex(
-        topic="09_preprocessor",
+        topic="01_preprocessor",
         slug="06_undef_defined",
         title="#undef and defined",
         objective="Undefine a macro and test it with defined().",
@@ -483,7 +483,7 @@ CLINGS_CHECK_INT(after_undef(), 0);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="12_printf_advanced",
         title="Advanced printf formatting",
         objective="Use width, zero padding, precision, and the * width argument.",
@@ -525,7 +525,7 @@ CLINGS_CHECK_STR(buffer, "   42");
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="13_scanf_advanced",
         title="Advanced scanf input",
         objective="Use field width and a scanset in sscanf.",
@@ -566,7 +566,7 @@ CLINGS_CHECK_INT(parse_set("xyz", buffer, sizeof buffer), -1);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="14_ctype_full",
         title="ctype.h classification and conversion",
         objective="Use isalnum and toupper with unsigned char casts.",

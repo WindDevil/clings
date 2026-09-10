@@ -7,7 +7,7 @@ SPECS = [
     # 05_arrays_strings
     # ------------------------------------------------------------------
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="01_array_basics",
         title="Array traversal",
         objective="Iterate over an array and compute a sum and maximum.",
@@ -48,7 +48,7 @@ CLINGS_CHECK_INT(array_max(values, 4), 7);
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="02_array_decay",
         title="Array-to-pointer decay",
         objective="See how an array parameter becomes a pointer.",
@@ -80,7 +80,7 @@ CLINGS_CHECK_INT(parameter_is_pointer(values), 1);
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="03_multidimensional",
         title="Two-dimensional arrays",
         objective="Transpose a 3x3 matrix with nested loops.",
@@ -118,7 +118,7 @@ CLINGS_CHECK_INT(output[1][2], 8);
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="04_string_literals",
         title="String literals and mutable strings",
         objective="Scan a const string and modify a mutable char array.",
@@ -168,7 +168,7 @@ CLINGS_CHECK_STR(text, "heLLo");
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="05_string_ops",
         title="Implementing string operations",
         objective="Implement strlen, strcmp, and strcpy with pointers.",
@@ -220,7 +220,7 @@ CLINGS_CHECK_STR(my_strcpy(buffer, "copy me"), "copy me");
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="06_tokenize",
         title="Tokenizing with strtok_r",
         objective="Split a string without modifying the caller's buffer.",
@@ -270,7 +270,7 @@ CLINGS_CHECK_INT(count_tokens(""), 0);
     # 06_pointers
     # ------------------------------------------------------------------
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="01_pointer_basics",
         title="Dereference and address-of",
         objective="Read and write through pointers.",
@@ -302,7 +302,7 @@ CLINGS_CHECK_INT(value, 42);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="02_null_and_const",
         title="NULL and const correctness",
         objective="Check for NULL and respect pointer-to-const.",
@@ -343,7 +343,7 @@ CLINGS_CHECK_INT(value, 9);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="03_pointer_arithmetic",
         title="Pointer arithmetic",
         objective="Walk an array with pointers and return a pointer into it.",
@@ -388,7 +388,7 @@ CLINGS_CHECK(find_value(values, 4, 99) == NULL);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="04_pointer_to_pointer",
         title="Pointers to pointers",
         objective="Let a function allocate and update a caller-owned pointer.",
@@ -432,7 +432,7 @@ CLINGS_CHECK(slot == &value);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="05_void_pointer",
         title="Generic byte-level swap",
         objective="Use void pointers and unsigned char for type-agnostic code.",
@@ -474,7 +474,7 @@ CLINGS_CHECK_INT(y == 1.5, 1);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="06_dangling_wild",
         title="Dangling pointers and safe free",
         objective="Set a freed pointer to NULL to prevent accidental reuse.",
@@ -510,7 +510,7 @@ CLINGS_CHECK_INT(is_null(value), 1);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="07_pointer_to_array",
         title="Pointers to arrays and &array",
         objective="Distinguish a pointer to an array from a pointer to its first element.",
@@ -552,7 +552,7 @@ CLINGS_CHECK_INT(pointer_to_array_difference(), (int)(sizeof(int) * 4));
     # 07_dynamic_memory
     # ------------------------------------------------------------------
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="01_malloc_free",
         title="Allocate, initialize, and free",
         objective="Use malloc and free for a dynamically sized array.",
@@ -595,7 +595,7 @@ destroy_array(values);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="02_calloc",
         title="Zero-initialized allocation",
         objective="Use calloc when every byte must start as zero.",
@@ -626,7 +626,7 @@ free(values);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="03_realloc",
         title="Growing an allocation",
         objective="Use realloc safely and initialize only the new elements.",
@@ -668,7 +668,7 @@ free(values);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="04_memory_leak",
         title="Detecting a memory leak",
         objective="Pair every allocation with a matching free.",
@@ -736,7 +736,7 @@ CLINGS_CHECK_INT(outstanding(), 0);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="05_buffer_bounds",
         title="Respecting buffer bounds",
         objective="Copy at most dest_size - 1 bytes and always terminate.",
@@ -773,7 +773,7 @@ CLINGS_CHECK_INT(buffer[4], 'X');
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="06_flexible_array",
         title="Flexible array members",
         objective="Allocate a struct plus trailing data in one block.",
@@ -822,7 +822,7 @@ packet_destroy(packet);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="07_linked_list",
         title="A singly linked list",
         objective="Build, traverse, and free a linked list.",
@@ -889,7 +889,7 @@ list_free(head);
     # 08_structs_unions_enums
     # ------------------------------------------------------------------
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="01_struct_basics",
         title="Defining and using structs",
         objective="Create a struct value and access its members through a pointer.",
@@ -927,7 +927,7 @@ CLINGS_CHECK_INT(point_sum(&point), 7);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="02_nested_structs",
         title="Nested structs",
         objective="Access a nested member through an outer struct pointer.",
@@ -965,7 +965,7 @@ CLINGS_CHECK_STR(person.address.city, "Shenzhen");
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="03_padding_alignment",
         title="Padding and alignment",
         objective="Observe padding and member offsets with offsetof.",
@@ -1003,7 +1003,7 @@ CLINGS_CHECK_INT((int)sizeof(struct padded) % (int)sizeof(int), 0);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="04_bitfields",
         title="Bitfields",
         objective="Store several small flags in one struct.",
@@ -1065,7 +1065,7 @@ CLINGS_CHECK_INT(flag_enabled(&permissions, 9), -1);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="05_union",
         title="Unions share storage",
         objective="Compare union size with the size of its largest member.",
@@ -1103,7 +1103,7 @@ CLINGS_CHECK_INT(members_share_address(&word), 1);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="06_enum",
         title="Enums",
         objective="Use an enum for a small closed set of values.",
@@ -1150,7 +1150,7 @@ CLINGS_CHECK_INT(color_is_valid(99), 0);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="07_typedef_designated",
         title="typedef and designated initializers",
         objective="Use a typedef and initialize members by name.",
@@ -1182,7 +1182,7 @@ CLINGS_CHECK_INT(point.y, 4);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="08_container_of",
         title="offsetof and container_of",
         objective="Recover an outer struct from a pointer to one of its members.",

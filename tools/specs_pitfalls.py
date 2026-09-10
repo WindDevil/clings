@@ -4,7 +4,7 @@ from spec import ex, project
 
 SPECS = [
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="08_assignment_vs_equality",
         title="Assignment versus equality",
         objective="Use == for comparison and recognize the = versus == trap.",
@@ -38,7 +38,7 @@ CLINGS_CHECK_INT(compare_with_zero(5), 0);
         ],
     ),
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="09_maximal_munch",
         title="Lexical maximal munch",
         objective="Understand how the lexer greedily forms the longest token.",
@@ -67,7 +67,7 @@ CLINGS_CHECK_INT(comment_expression(), 3);
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="10_octal_constants",
         title="Octal integer constants",
         objective="Recognize that a leading zero means base 8.",
@@ -110,7 +110,7 @@ CLINGS_CHECK_INT(parse_c_integer("0195", &value), -1);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="08_semicolon_pitfalls",
         title="Semicolon and empty-statement traps",
         objective="Avoid accidentally ending an if or loop with a semicolon.",
@@ -143,7 +143,7 @@ CLINGS_CHECK_INT(count_nonzero(zeros, 3), 0);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="09_dangling_else",
         title="Dangling else",
         objective="Use braces to make else bind to the intended if.",
@@ -175,7 +175,7 @@ CLINGS_CHECK_INT(classify(-1, 1), 2);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="08_null_empty_string",
         title="NULL, empty string, and NUL",
         objective="Distinguish a null pointer, an empty string, and the NUL character.",
@@ -209,7 +209,7 @@ CLINGS_CHECK_INT(is_empty_string(NULL), 0);
         ],
     ),
     ex(
-        topic="05_arrays_strings",
+        topic="08_arrays_strings",
         slug="10_asymmetric_bounds",
         title="Asymmetric bounds",
         objective="Use the half-open interval [low, high).",
@@ -249,7 +249,7 @@ CLINGS_CHECK_INT(loop_count(0, 5), 5);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="10_main_return_value",
         title="main return values",
         objective="Return a defined success or failure status from a program.",
@@ -273,7 +273,7 @@ CLINGS_CHECK_INT(exit_code_for(0), 1);
         ],
     ),
     project(
-        topic="13_translation_units",
+        topic="17_translation_units",
         slug="04_external_type_check",
         title="External type checking",
         objective="Keep declarations and definitions consistent across translation units.",
@@ -313,7 +313,7 @@ int main(void)
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="06_macro_whitespace",
         title="Whitespace in macro definitions",
         objective="Remember that a space can turn a function-like macro into an object-like macro.",
@@ -340,7 +340,7 @@ CLINGS_CHECK_INT(SQUARE(3), 9);
         compile_fail=True,
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="07_macro_statement",
         title="Macros are not statements",
         objective="Use do { ... } while (0) for a statement-like macro.",
@@ -375,7 +375,7 @@ CLINGS_CHECK_INT(value, 1);
         compile_fail=True,
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="08_macro_not_typedef",
         title="Macros are not type definitions",
         objective="Use typedef instead of an object-like macro for pointer types.",
@@ -402,7 +402,7 @@ CLINGS_CHECK_INT((int)sizeof second, (int)sizeof(int *));
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="11_char_signedness",
         title="char signedness",
         objective="Use signed char and unsigned char explicitly when the sign matters.",
@@ -431,7 +431,7 @@ CLINGS_CHECK_INT(unsigned_char_value((unsigned char)0xFF), 255);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="09_memory_location_zero",
         title="Memory location zero",
         objective="Treat address zero as a null pointer, not as a valid object address.",
@@ -465,7 +465,7 @@ CLINGS_CHECK_INT(null_is_zero(), 1);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="10_one_past_pointer",
         title="One-past pointer arithmetic",
         objective="Do not treat a pointer to a single object as an array.",
@@ -499,7 +499,7 @@ CLINGS_CHECK_INT(single_object_value(), 42);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="15_rand_max",
         title="RAND_MAX portability",
         objective="Do not assume rand() returns a value below a fixed small bound.",
@@ -532,7 +532,7 @@ CLINGS_CHECK(value >= 0 && value < 10);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="08_free_then_realloc",
         title="Free then realloc",
         objective="Use realloc directly instead of freeing before growing an allocation.",
@@ -575,7 +575,7 @@ free(values);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="09_standard_changes",
         title="C standard changes",
         objective="Detect the C standard version at compile time.",
@@ -608,7 +608,7 @@ CLINGS_CHECK_INT(has_c11(), 1);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="10_identifier_length",
         title="Identifier length",
         objective="Use long internal identifiers and rely on the standard minimum.",
@@ -636,7 +636,7 @@ CLINGS_CHECK_INT(long_identifier_value(), 42);
         ],
     ),
     ex(
-        topic="14_character_io",
+        topic="13_character_io",
         slug="05_getchar_putchar",
         title="getchar and putchar",
         objective="Use the standard input/output character macros directly.",
@@ -668,7 +668,7 @@ CLINGS_CHECK_INT(write_one_character('y'), 'y');
         ],
     ),
     ex(
-        topic="18_file_io_advanced",
+        topic="14_file_io",
         slug="07_buffered_output_memory",
         title="Buffered output and memory allocation",
         objective="Combine malloc, setvbuf, output, fclose, and free.",
@@ -722,7 +722,7 @@ remove(path);
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="09_macro_side_effects",
         title="Macro side effects",
         objective="See that a function-like macro can evaluate its argument more than once.",

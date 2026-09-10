@@ -9,7 +9,7 @@
 
 ## 特性
 
-- **182 个练习，21 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
+- **182 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
   数据结构、文件 I/O、线程和原子操作。
   `_Generic`。
 - **自带测试框架**：不依赖 Catch2、GoogleTest 或第三方库。
@@ -47,7 +47,7 @@ sudo apt install build-essential python3
 
 # 运行指定练习（支持完整 ID、目录名或唯一后缀）
 ./clings run 01_printf
-./clings run 01_types_variables/01_integer_types
+./clings run 03_types_variables/01_integer_types
 
 # 查看提示
 ./clings hint 01_printf
@@ -93,27 +93,26 @@ make clean
 
 | 主题 | 练习数 | 主要内容 |
 | --- | ---: | --- |
-| `00_getting_started` | 9 | `printf`、`scanf`、字符数组、`snprintf`/`sscanf`、`#include`、词法元素、编译器诊断 |
-| `01_types_variables` | 12 | 整数/浮点类型、符号、溢出、字符、存储类、限定符、八进制常量、`char` 符号性、整型提升 |
-| `02_operators` | 9 | 算术、优先级、短路求值、位运算、移位、`sizeof`、复合赋值、赋值/相等、最长匹配 |
-| `03_control_flow` | 9 | `if`、`switch`、循环、`break/continue`、`goto`、状态机、分号陷阱、悬挂 `else` |
-| `04_functions` | 10 | 声明/定义、参数、递归、尾递归、`static`、函数指针、`void/return`、默认参数提升、`main` 返回值 |
-| `05_arrays_strings` | 10 | 数组、数组退化、多维数组、字符串、分词、VLA、复合字面量、不对称边界 |
-| `06_pointers` | 11 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past、`restrict` |
-| `07_dynamic_memory` | 10 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc、arena、分配统计 |
-| `08_structs_unions_enums` | 13 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明、函数指针表 |
-| `09_preprocessor` | 6 | `#include`、条件编译、头文件保护、`#pragma`/`#error`/`#line`、`#undef`/`defined` |
-| `10_stdlib_io` | 16 | `printf` 格式进阶、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h`、varargs |
-| `11_ub_safety` | 11 | 有符号溢出、未初始化、越界、释放后使用、序列点、严格别名、对齐、空指针、标准版本、标识符长度、实现定义行为 |
-| `12_advanced_c` | 12 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号、栈帧 |
-| `13_translation_units` | 5 | 头文件/源文件分离、跨文件 `extern`、`static` 内部链接、外部类型检查、动态链接 |
-| `14_character_io` | 5 | `getc/putc`、`EOF/feof/ferror`、输入验证、`iso646.h`、`getchar/putchar` |
-| `15_string_functions` | 6 | `strcat/strncat`、`strncpy`、`sprintf/snprintf`、`fgets`、字符串排序、`strtod`、`argc/argv` |
-| `16_data_representation` | 5 | 进制转换、整数位表示、浮点位表示、位域与掩码、端序 |
-| `17_data_structures` | 3 | 队列 ADT、二叉查找树、动态数组 |
-| `18_file_io_advanced` | 7 | `fprintf/fscanf`、`fgets/fputs`、`ungetc`、`fseek/ftell`、缓冲、二进制随机访问、缓冲输出+内存 |
+| `00_basics` | 9 | `printf`、`scanf`、字符数组、`snprintf`/`sscanf`、`#include`、词法元素、编译器诊断 |
+| `01_preprocessor` | 6 | `#include`、条件编译、头文件保护、`#pragma`/`#error`/`#line`、`#undef`/`defined` |
+| `02_macros` | 10 | 对象宏、函数宏、参数括号、`#`/`##`、变参宏、X-macro、宏空格、宏语句、宏与 typedef、宏副作用、`assert` |
+| `03_types_variables` | 12 | 整数/浮点类型、符号、溢出、字符、存储类、限定符、八进制常量、`char` 符号性、整型提升 |
+| `04_operators` | 9 | 算术、优先级、短路求值、位运算、移位、`sizeof`、复合赋值、赋值/相等、最长匹配 |
+| `05_control_flow` | 9 | `if`、`switch`、循环、`break/continue`、`goto`、状态机、分号陷阱、悬挂 `else` |
+| `06_functions` | 10 | 声明/定义、参数、递归、尾递归、`static`、函数指针、`void/return`、默认参数提升、`main` 返回值 |
+| `07_pointers` | 11 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past、`restrict` |
+| `08_arrays_strings` | 16 | 数组、数组退化、多维数组、字符串、分词、VLA、复合字面量、不对称边界、字符串函数、`argc/argv` |
+| `09_dynamic_memory` | 10 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc、arena、分配统计 |
+| `10_aggregates` | 13 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明、函数指针表 |
+| `11_data_representation` | 5 | 进制转换、整数位表示、浮点位表示、位域与掩码、端序 |
+| `12_standard_library` | 15 | `printf` 格式进阶、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h`、varargs |
+| `13_character_io` | 5 | `getc/putc`、`EOF/feof/ferror`、输入验证、`iso646.h`、`getchar/putchar` |
+| `14_file_io` | 7 | `fprintf/fscanf`、`fgets/fputs`、`ungetc`、`fseek/ftell`、缓冲、二进制随机访问、缓冲输出+内存 |
+| `15_ub_safety` | 11 | 有符号溢出、未初始化、越界、释放后使用、序列点、严格别名、对齐、空指针、标准版本、标识符长度、实现定义行为 |
+| `16_data_structures` | 3 | 队列 ADT、二叉查找树、动态数组 |
+| `17_translation_units` | 5 | 头文件/源文件分离、跨文件 `extern`、`static` 内部链接、外部类型检查、动态链接 |
+| `18_advanced_c` | 12 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号、栈帧 |
 | `19_modern_c_library` | 4 | `_Noreturn`、`tgmath.h`、`atexit`、`atomic_flag` |
-| `20_macros` | 10 | 对象宏、函数宏、参数括号、`#`/`##`、变参宏、X-macro、宏空格、宏语句、宏与 typedef、宏副作用、`assert` |
 
 总计 **182 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
 和 [docs/knowledge-map.md](docs/knowledge-map.md)。
@@ -124,9 +123,9 @@ make clean
 .
 ├── clings                     # 零依赖 Python CLI
 ├── exercises/                 # 你要修改的练习
-│   ├── 00_getting_started/
+│   ├── 00_basics/
 │   ├── ...
-│   └── 12_advanced_c/
+│   └── 19_modern_c_library/
 ├── solutions/                 # 参考答案（与 exercises 同结构）
 ├── templates/                 # 原始练习，用于 ./clings reset
 ├── include/clings/test.h      # 自带测试框架
@@ -183,7 +182,7 @@ CMake 默认只构建 `solutions/` 中的答案，并把它们注册为 CTest �
 要单独构建某个练习：
 
 ```sh
-cmake --build build/cmake --target exercise_01_types_variables_01_integer_types
+cmake --build build/cmake --target exercise_03_types_variables_01_integer_types
 ```
 
 ### 方式四：Docker
@@ -207,15 +206,15 @@ docker run --rm -it -v "$PWD:/clings" clings ./clings list
 
 ```sh
 CC=clang ./clings verify
-CFLAGS="-fsanitize=address,undefined" ./clings run 06_pointers/03_pointer_arithmetic
+CFLAGS="-fsanitize=address,undefined" ./clings run 07_pointers/03_pointer_arithmetic
 ```
 
 如果安装了 `valgrind`、`clang-tidy` 或 `cppcheck`，建议对内存和指针主题
 额外运行：
 
 ```sh
-valgrind ./build/clings/07_dynamic_memory/01_malloc_free.exercise
-clang-tidy exercises/07_dynamic_memory/01_malloc_free.c -- -std=c17 -Iinclude
+valgrind ./build/clings/09_dynamic_memory/01_malloc_free.exercise
+clang-tidy exercises/09_dynamic_memory/01_malloc_free.c -- -std=c17 -Iinclude
 ```
 
 ## 添加新练习

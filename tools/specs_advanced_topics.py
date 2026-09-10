@@ -4,7 +4,7 @@ from spec import ex
 
 SPECS = [
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="11_implementation_defined",
         title="Implementation-defined behavior",
         objective="Observe implementation-defined char signedness and packing pragmas.",
@@ -48,7 +48,7 @@ CLINGS_CHECK_INT(packed_size(), (int)(sizeof(char) + sizeof(int)));
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="12_integer_promotions",
         title="Integer promotions",
         objective="See that char operands are promoted to int in arithmetic expressions.",
@@ -82,7 +82,7 @@ CLINGS_CHECK_INT(unsigned_char_promotion(), 256);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="09_default_argument_promotions",
         title="Default argument promotions",
         objective="Use the promoted types expected by variadic functions.",
@@ -127,7 +127,7 @@ CLINGS_CHECK_INT(sum_double_promoted(2, 1.5f, 2.5f) == 4.0, 1);
         ],
     ),
     ex(
-        topic="08_structs_unions_enums",
+        topic="10_aggregates",
         slug="13_declaration_grammar",
         title="Declaration grammar and function-pointer tables",
         objective="Read a typedef for an array of function pointers.",
@@ -179,7 +179,7 @@ CLINGS_CHECK_INT(declaration_demo(), 7);
         ],
     ),
     ex(
-        topic="06_pointers",
+        topic="07_pointers",
         slug="11_restrict_aliasing",
         title="restrict and aliasing contracts",
         objective="Use restrict to promise that two pointer parameters do not alias.",
@@ -215,7 +215,7 @@ CLINGS_CHECK_INT(restrict_demo(), 55);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="09_arena_allocator",
         title="Arena allocator",
         objective="Implement a simple bump allocator with aligned allocations.",
@@ -274,7 +274,7 @@ CLINGS_CHECK(arena_alloc(&arena, 100) == NULL);
         ],
     ),
     ex(
-        topic="07_dynamic_memory",
+        topic="09_dynamic_memory",
         slug="10_allocation_stats",
         title="Allocation statistics",
         objective="Track outstanding allocations with wrapped malloc and free.",
@@ -327,7 +327,7 @@ CLINGS_CHECK_INT(outstanding_allocations(), 0);
         ],
     ),
     ex(
-        topic="13_translation_units",
+        topic="17_translation_units",
         slug="05_dynamic_linking",
         title="Dynamic linking with dlopen",
         objective="Load a symbol from a shared library at runtime.",
@@ -372,7 +372,7 @@ CLINGS_CHECK_INT(dynamic_strlen(), 5);
         ],
     ),
     ex(
-        topic="16_data_representation",
+        topic="11_data_representation",
         slug="05_endianness",
         title="Endianness",
         objective="Detect byte order and inspect an integer's first byte.",
@@ -413,7 +413,7 @@ if (is_little_endian()) {
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="12_stack_frame",
         title="Stack frames",
         objective="Observe that nested function calls use distinct activation records.",

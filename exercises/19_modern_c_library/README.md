@@ -1,4 +1,4 @@
-# Modern C Library and Language Features
+# Modern C Library
 
 Run an exercise with:
 

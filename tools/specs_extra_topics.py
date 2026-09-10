@@ -7,7 +7,7 @@ SPECS = [
     # 13_translation_units
     # ------------------------------------------------------------------
     project(
-        topic="13_translation_units",
+        topic="17_translation_units",
         slug="01_header_source_split",
         title="Header and source split",
         objective="Compile a program from a main file, a header, and an implementation file.",
@@ -51,7 +51,7 @@ int main(void)
         ],
     ),
     project(
-        topic="13_translation_units",
+        topic="17_translation_units",
         slug="02_extern_linkage",
         title="External linkage across files",
         objective="Declare a global variable in a header and define it in another file.",
@@ -91,7 +91,7 @@ int main(void)
         ],
     ),
     project(
-        topic="13_translation_units",
+        topic="17_translation_units",
         slug="03_static_internal_linkage",
         title="Internal linkage and file-scope state",
         objective="Keep a counter private to one translation unit with static.",
@@ -148,7 +148,7 @@ int main(void)
     # 14_character_io
     # ------------------------------------------------------------------
     ex(
-        topic="14_character_io",
+        topic="13_character_io",
         slug="01_getc_putc",
         title="getc and putc",
         objective="Copy a stream one character at a time with getc and putc.",
@@ -191,7 +191,7 @@ fclose(output);
         ],
     ),
     ex(
-        topic="14_character_io",
+        topic="13_character_io",
         slug="02_eof_ferror",
         title="EOF, feof, and ferror",
         objective="Read until EOF and distinguish end-of-file from an error.",
@@ -235,7 +235,7 @@ fclose(file);
         ],
     ),
     ex(
-        topic="14_character_io",
+        topic="13_character_io",
         slug="03_input_validation",
         title="Input validation",
         objective="Reject input with trailing characters or out-of-range values.",
@@ -275,7 +275,7 @@ CLINGS_CHECK_INT(read_choice("abc", &choice), -1);
         ],
     ),
     ex(
-        topic="14_character_io",
+        topic="13_character_io",
         slug="04_iso646",
         title="iso646.h alternative spellings",
         objective="Use and/or/not from iso646.h.",
@@ -307,8 +307,8 @@ CLINGS_CHECK_INT(is_yes("n"), 0);
     # 15_string_functions
     # ------------------------------------------------------------------
     ex(
-        topic="15_string_functions",
-        slug="01_strcat_strncat",
+        topic="08_arrays_strings",
+        slug="11_strcat_strncat",
         title="strcat and strncat",
         objective="Append a string while respecting the destination size.",
         reference="",
@@ -344,8 +344,8 @@ CLINGS_CHECK_STR(small, "Hello w");
         ],
     ),
     ex(
-        topic="15_string_functions",
-        slug="02_strncpy_bounded",
+        topic="08_arrays_strings",
+        slug="12_strncpy_bounded",
         title="Bounded copying with strncpy",
         objective="Copy a string safely and always terminate the destination.",
         reference="",
@@ -382,8 +382,8 @@ CLINGS_CHECK_INT(copy_bounded(buffer, 0, "x"), -1);
         ],
     ),
     ex(
-        topic="15_string_functions",
-        slug="03_sprintf_snprintf",
+        topic="08_arrays_strings",
+        slug="13_sprintf_snprintf",
         title="sprintf and snprintf",
         objective="Format text with snprintf and understand truncation.",
         reference="",
@@ -413,8 +413,8 @@ CLINGS_CHECK_STR(small, "Ada:3");
         ],
     ),
     ex(
-        topic="15_string_functions",
-        slug="04_fgets_fputs_sort",
+        topic="08_arrays_strings",
+        slug="14_fgets_fputs_sort",
         title="fgets, fputs, and sorting strings",
         objective="Read a line with fgets and sort an array of strings.",
         reference="",
@@ -464,8 +464,8 @@ CLINGS_CHECK_STR(values[2], "pear");
         ],
     ),
     ex(
-        topic="15_string_functions",
-        slug="05_strtod",
+        topic="08_arrays_strings",
+        slug="15_strtod",
         title="Converting strings to double",
         objective="Parse a double with strtod and reject trailing input.",
         reference="",
@@ -506,7 +506,7 @@ CLINGS_CHECK_INT(parse_double("", &value), -1);
     # 16_data_representation
     # ------------------------------------------------------------------
     ex(
-        topic="16_data_representation",
+        topic="11_data_representation",
         slug="01_base_conversion",
         title="Binary, octal, and hexadecimal input",
         objective="Parse a hexadecimal string with strtoul.",
@@ -543,7 +543,7 @@ CLINGS_CHECK_INT(parse_hex("xyz", &value), -1);
         ],
     ),
     ex(
-        topic="16_data_representation",
+        topic="11_data_representation",
         slug="02_integer_binary_representation",
         title="Integer bit patterns",
         objective="Count set bits and convert sign-magnitude to two's complement.",
@@ -580,7 +580,7 @@ CLINGS_CHECK_INT(sign_magnitude_to_twos_complement(0x80000001u), 0xFFFFFFFFu);
         ],
     ),
     ex(
-        topic="16_data_representation",
+        topic="11_data_representation",
         slug="03_float_binary_representation",
         title="Floating-point bit patterns",
         objective="Inspect and reconstruct an IEEE-754 float with memcpy.",
@@ -616,7 +616,7 @@ CLINGS_CHECK_INT(bits_to_float(0x3f800000u) == 1.0f, 1);
         ],
     ),
     ex(
-        topic="16_data_representation",
+        topic="11_data_representation",
         slug="04_bitfield_portability",
         title="Bitfields and explicit masks",
         objective="Pack fields with bitfields and compare them with an explicit mask.",
@@ -654,7 +654,7 @@ CLINGS_CHECK_INT(pack_flags(0, 1, 15), 62);
     # 17_data_structures
     # ------------------------------------------------------------------
     ex(
-        topic="17_data_structures",
+        topic="16_data_structures",
         slug="01_queue_adt",
         title="Queue ADT",
         objective="Implement a fixed-capacity circular queue.",
@@ -729,7 +729,7 @@ CLINGS_CHECK_INT(value, 2);
         ],
     ),
     ex(
-        topic="17_data_structures",
+        topic="16_data_structures",
         slug="02_binary_search_tree",
         title="Binary search tree",
         objective="Insert into and search a binary search tree.",
@@ -809,7 +809,7 @@ free_tree(root);
         ],
     ),
     ex(
-        topic="17_data_structures",
+        topic="16_data_structures",
         slug="03_dynamic_vector",
         title="Dynamic array/vector",
         objective="Grow a dynamic array and preserve existing elements.",
@@ -871,7 +871,7 @@ vector_free(&vector);
     # 18_file_io_advanced
     # ------------------------------------------------------------------
     ex(
-        topic="18_file_io_advanced",
+        topic="14_file_io",
         slug="01_fprintf_fscanf",
         title="fprintf and fscanf",
         objective="Write formatted data to a file and read it back.",
@@ -923,7 +923,7 @@ remove(path);
         ],
     ),
     ex(
-        topic="18_file_io_advanced",
+        topic="14_file_io",
         slug="02_fgets_fputs",
         title="fgets and fputs",
         objective="Copy a text file line by line.",
@@ -970,7 +970,7 @@ fclose(output);
         ],
     ),
     ex(
-        topic="18_file_io_advanced",
+        topic="14_file_io",
         slug="03_getc_putc_ungetc",
         title="getc, putc, and ungetc",
         objective="Peek at a character and put it back into the stream.",
@@ -1007,7 +1007,7 @@ fclose(file);
         ],
     ),
     ex(
-        topic="18_file_io_advanced",
+        topic="14_file_io",
         slug="04_fseek_ftell",
         title="Random access with fseek and ftell",
         objective="Seek to a byte offset and report the resulting position.",
@@ -1046,7 +1046,7 @@ fclose(file);
         ],
     ),
     ex(
-        topic="18_file_io_advanced",
+        topic="14_file_io",
         slug="05_fflush_setvbuf",
         title="Stream buffering",
         objective="Configure full buffering and flush a stream.",
@@ -1083,7 +1083,7 @@ fclose(file);
         ],
     ),
     ex(
-        topic="18_file_io_advanced",
+        topic="14_file_io",
         slug="06_binary_random_access",
         title="Binary random access",
         objective="Read a specific struct record from a binary file.",

@@ -7,7 +7,7 @@ SPECS = [
     # 00_getting_started
     # ------------------------------------------------------------------
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="01_printf",
         title="Print with printf",
         objective="Use printf to print a line of text.",
@@ -32,7 +32,7 @@ CLINGS_CHECK_INT(print_greeting(), 10);
         ],
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="02_printf_values",
         title="Print a value",
         objective="Use printf with %d to print an integer value.",
@@ -57,7 +57,7 @@ CLINGS_CHECK_INT(print_value(42), 3);
         ],
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="03_scanf",
         title="Read with scanf",
         objective="Read an integer from stdin with scanf.",
@@ -105,7 +105,7 @@ remove(invalid_path);
         compile_fail=True,
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="04_char_array",
         title="Character arrays",
         objective="Store text in a char array and access its characters.",
@@ -136,7 +136,7 @@ CLINGS_CHECK_INT(last_character(), 'o');
         ],
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="05_snprintf",
         title="Safe formatting with snprintf",
         objective="Write formatted text into a fixed-size buffer.",
@@ -164,7 +164,7 @@ CLINGS_CHECK_STR(buffer, "Hello, C");
         ],
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="06_sscanf",
         title="Safe parsing with sscanf",
         objective="Parse values from a string with sscanf.",
@@ -200,7 +200,7 @@ CLINGS_CHECK_INT(parse_invalid(), -1);
         ],
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="07_include_header",
         title="Include a header",
         objective="Include the standard header that declares toupper.",
@@ -225,8 +225,8 @@ CLINGS_CHECK_INT(uppercase_a(), 'A');
         ],
     ),
     ex(
-        topic="15_string_functions",
-        slug="06_main_args",
+        topic="08_arrays_strings",
+        slug="16_main_args",
         title="argc, argv, and the program environment",
         objective="Work with the arguments passed to main.",
         reference="",
@@ -266,7 +266,7 @@ CLINGS_CHECK_INT(find_arg(3, argv, "missing"), -1);
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="10_assert_macro",
         title="Assertions and defensive programming",
         objective="Use assert for programmer errors and return values for user errors.",
@@ -300,7 +300,7 @@ CLINGS_CHECK_INT(checked_divide(10, 0, &out), -1);
         ],
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="09_compiler_diagnostics",
         title="Read compiler diagnostics",
         objective="Fix a format-string warning that the compiler reports.",
@@ -326,7 +326,7 @@ CLINGS_CHECK_INT(print_number(42), 3);
         compile_fail=True,
     ),
     ex(
-        topic="00_getting_started",
+        topic="00_basics",
         slug="08_lexical_elements",
         title="Comments, line continuation, and escapes",
         objective="Recognize comments, backslash-newline continuation, and escape sequences.",
@@ -370,7 +370,7 @@ CLINGS_CHECK_INT(comment_is_ignored(), 3);
     # 01_types_variables
     # ------------------------------------------------------------------
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="01_integer_types",
         title="Integer types and ranges",
         objective="Use sizeof, CHAR_BIT, INT_MIN, and INT_MAX correctly.",
@@ -403,7 +403,7 @@ CLINGS_CHECK_INT(long_can_hold_int((long)INT_MAX + 1L), 0);
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="02_signed_unsigned",
         title="Signed and unsigned conversions",
         objective="Avoid the usual arithmetic conversion trap when comparing.",
@@ -438,7 +438,7 @@ CLINGS_CHECK_INT(compare_int_unsigned(2, 9u), -1);
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="03_overflow",
         title="Unsigned wrap and checked signed addition",
         objective="Understand modulo wrap and avoid signed integer overflow.",
@@ -478,7 +478,7 @@ CLINGS_CHECK_INT(out, 5);
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="04_floating_point",
         title="Floating-point comparison",
         objective="Compare floating-point values with an epsilon.",
@@ -505,7 +505,7 @@ CLINGS_CHECK_INT(nearly_equal(-1.0, -1.0, 0.0), 1);
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="05_char_ascii",
         title="Characters and ASCII",
         objective="Work with char values and the ctype classification functions.",
@@ -539,7 +539,7 @@ CLINGS_CHECK_INT(to_upper_ascii('!'), '!');
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="06_storage_scope",
         title="Storage classes and scope",
         objective="Observe the lifetime of a static variable and block scope.",
@@ -573,7 +573,7 @@ CLINGS_CHECK_INT(next_counter(), 3);
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="07_qualifiers",
         title="Type qualifiers and storage-class specifiers",
         objective="Use const, volatile, restrict, extern, auto, and register.",
@@ -633,7 +633,7 @@ CLINGS_CHECK_INT(auto_value(), 5);
         ],
     ),
     ex(
-        topic="01_types_variables",
+        topic="03_types_variables",
         slug="08_stdbool_stddef",
         title="stdbool.h and stddef.h",
         objective="Use bool and size_t from the standard headers.",
@@ -670,7 +670,7 @@ CLINGS_CHECK_INT(size_of_int(), sizeof(int));
     # 02_operators
     # ------------------------------------------------------------------
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="01_arithmetic",
         title="Integer arithmetic",
         objective="Practice integer division, modulo, and truncation.",
@@ -706,7 +706,7 @@ CLINGS_CHECK_INT(average_floor(2, 3), 2);
         ],
     ),
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="02_precedence",
         title="Precedence and parentheses",
         objective="Use parentheses to express intent clearly.",
@@ -736,7 +736,7 @@ CLINGS_CHECK_INT(parenthesized(1, 1, 0), 0);
         ],
     ),
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="03_short_circuit",
         title="Short-circuit evaluation",
         objective="Observe that && and || may not evaluate their right operand.",
@@ -782,7 +782,7 @@ CLINGS_CHECK_INT(touch_count(), 1);
         ],
     ),
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="04_bitwise",
         title="Bitwise set, clear, toggle, and test",
         objective="Use masks and bitwise operators safely.",
@@ -824,7 +824,7 @@ CLINGS_CHECK_INT(test_bit(0x8u, 2u), 0);
         ],
     ),
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="05_shifts",
         title="Shift operators and masks",
         objective="Build masks and avoid shifting by the width of the type.",
@@ -855,7 +855,7 @@ CLINGS_CHECK_INT(shift_left_safe(1u, 32u), 0u);
         ],
     ),
     ex(
-        topic="02_operators",
+        topic="04_operators",
         slug="06_sizeof_incdec",
         title="sizeof and increment operators",
         objective="Distinguish sizeof expressions from increment side effects.",
@@ -898,7 +898,7 @@ CLINGS_CHECK_INT(value, 7);
     # 03_control_flow
     # ------------------------------------------------------------------
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="01_if_else",
         title="if and else",
         objective="Write clear conditional branches.",
@@ -936,7 +936,7 @@ CLINGS_CHECK_INT(max_of(-1, -2), -1);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="02_switch_case",
         title="switch and fallthrough",
         objective="Use intentional fallthrough and a default case.",
@@ -981,7 +981,7 @@ CLINGS_CHECK_INT(days_in_month(13, 0), -1);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="03_loops",
         title="for and while loops",
         objective="Get loop bounds and accumulators right.",
@@ -1020,7 +1020,7 @@ CLINGS_CHECK_INT(factorial(5), 120);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="04_break_continue",
         title="break and continue",
         objective="Use break to stop early and continue to skip one iteration.",
@@ -1064,7 +1064,7 @@ CLINGS_CHECK_INT(sum_positive((const int[]){-1, -2}, 2), 0);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="05_goto_cleanup",
         title="goto for single-exit cleanup",
         objective="Use goto for a clear cleanup path in C.",
@@ -1120,7 +1120,7 @@ CLINGS_CHECK_INT(parse_and_sum(values, 4, NULL), -1);
         ],
     ),
     ex(
-        topic="03_control_flow",
+        topic="05_control_flow",
         slug="06_state_machine",
         title="A small state machine",
         objective="Track state while scanning a string.",
@@ -1160,7 +1160,7 @@ CLINGS_CHECK_INT(count_words("  a\tb\n c  "), 3);
     # 04_functions
     # ------------------------------------------------------------------
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="01_declaration_definition",
         title="Declarations and definitions",
         objective="Use a forward declaration and an internal helper.",
@@ -1191,7 +1191,7 @@ CLINGS_CHECK_INT(square_then_add(-2, 1), 5);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="02_parameters_return",
         title="Parameters and return values",
         objective="Return values through parameters and clamp a range.",
@@ -1249,7 +1249,7 @@ CLINGS_CHECK_INT(maximum, 9);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="03_pass_by_pointer",
         title="Pass by value and pass by pointer",
         objective="Modify caller-owned data through pointers.",
@@ -1291,7 +1291,7 @@ CLINGS_CHECK_INT(values[2], 4);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="04_recursion",
         title="Recursion and base cases",
         objective="Write recursive functions with correct base cases.",
@@ -1323,7 +1323,7 @@ CLINGS_CHECK_INT(fibonacci(8), 21);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="05_static_inline",
         title="Internal linkage and inline helpers",
         objective="Use static functions and file-scope state.",
@@ -1362,7 +1362,7 @@ CLINGS_CHECK_INT(add_one_calls(), 2);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="06_function_pointers",
         title="Function pointers and dispatch",
         objective="Store functions in variables and choose one at runtime.",
@@ -1405,7 +1405,7 @@ CLINGS_CHECK_INT(choose_operation('*')(4, 5), 20);
         ],
     ),
     ex(
-        topic="04_functions",
+        topic="06_functions",
         slug="07_void_and_return",
         title="void functions and return statements",
         objective="Return early from a void function and return values from int functions.",

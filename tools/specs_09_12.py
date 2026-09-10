@@ -7,7 +7,7 @@ SPECS = [
     # 09_preprocessor
     # ------------------------------------------------------------------
     ex(
-        topic="09_preprocessor",
+        topic="01_preprocessor",
         slug="01_include_standard",
         title="#include with a standard header",
         objective="Include the standard header that declares fixed-width integer types.",
@@ -32,7 +32,7 @@ CLINGS_CHECK_INT(largest_int32(), INT32_MAX);
         ],
     ),
     project(
-        topic="09_preprocessor",
+        topic="01_preprocessor",
         slug="02_include_user",
         title="#include with a user header",
         objective="Include a local header so its macro is visible.",
@@ -67,7 +67,7 @@ int main(void)
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="01_object_macro",
         title="Object-like macros",
         objective="Use a named compile-time constant.",
@@ -99,7 +99,7 @@ CLINGS_CHECK_INT(version(), 2);
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="02_function_macro",
         title="Function-like macros",
         objective="Protect macro arguments and the whole expansion with parentheses.",
@@ -132,7 +132,7 @@ CLINGS_CHECK_INT(MIN(2, 3) * 2, 4);
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="03_stringize_paste",
         title="Stringizing and token pasting",
         objective="Use # to stringize and ## to paste tokens.",
@@ -170,7 +170,7 @@ CLINGS_CHECK_INT(concatenated_value(), 42);
         ],
     ),
     ex(
-        topic="09_preprocessor",
+        topic="01_preprocessor",
         slug="03_conditional_compilation",
         title="Conditional compilation",
         objective="Select code at preprocessing time based on the language version.",
@@ -199,7 +199,7 @@ CLINGS_CHECK_INT(has_c11(), 1);
         ],
     ),
     ex(
-        topic="09_preprocessor",
+        topic="01_preprocessor",
         slug="04_include_guards",
         title="Include guards",
         objective="Prevent multiple inclusion with a preprocessor guard.",
@@ -239,7 +239,7 @@ CLINGS_CHECK_INT(guarded_value(), 42);
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="04_variadic_macros",
         title="Variadic macros",
         objective="Forward a variable argument list to a variadic function.",
@@ -276,7 +276,7 @@ CLINGS_CHECK_INT(SUM(0), 0);
         ],
     ),
     ex(
-        topic="20_macros",
+        topic="02_macros",
         slug="05_x_macros",
         title="X-macros",
         objective="Generate an enum and a string table from one list.",
@@ -310,7 +310,7 @@ CLINGS_CHECK_STR(color_names[COLOR_BLUE], "BLUE");
         ],
     ),
     ex(
-        topic="09_preprocessor",
+        topic="01_preprocessor",
         slug="05_pragma_error_line",
         title="#error, #line, and #pragma pack",
         objective="Use diagnostics, line control, and packing pragmas.",
@@ -356,7 +356,7 @@ CLINGS_CHECK_INT(line_number(), 1000);
     # 10_stdlib_io
     # ------------------------------------------------------------------
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="01_printf_formats",
         title="printf format specifiers",
         objective="Match each conversion specifier to its argument type.",
@@ -386,7 +386,7 @@ CLINGS_CHECK_STR(buffer, "42 3.50 ok");
         compile_fail=True,
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="02_strtol_errno",
         title="Robust integer parsing",
         objective="Use strtol, errno, and the end pointer to validate input.",
@@ -431,7 +431,7 @@ CLINGS_CHECK_INT(parse_int("99999999999999999999", &out), -1);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="03_qsort_bsearch",
         title="qsort and bsearch",
         objective="Use comparison callbacks for sorting and searching.",
@@ -477,7 +477,7 @@ CLINGS_CHECK(find_int(values, 4, 99) == NULL);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="04_math_functions",
         title="The math library",
         objective="Use hypot and other functions from math.h.",
@@ -503,7 +503,7 @@ CLINGS_CHECK_INT(distance(1.0, 1.0, 1.0, 1.0) == 0.0, 1);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="05_time_functions",
         title="Time arithmetic",
         objective="Use time_t and difftime.",
@@ -529,7 +529,7 @@ CLINGS_CHECK_INT(seconds_between(250, 100), -150);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="06_random",
         title="Pseudo-random numbers",
         objective="Seed the generator and bound its output.",
@@ -566,7 +566,7 @@ CLINGS_CHECK_INT(random_bounded(0), 0);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="07_file_io",
         title="Text file I/O",
         objective="Write and read a text file with fopen, fputs, and fread.",
@@ -617,7 +617,7 @@ remove(path);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="08_memory_functions",
         title="memcpy, memmove, memset, and memcmp",
         objective="Use the byte-oriented memory functions correctly.",
@@ -667,7 +667,7 @@ CLINGS_CHECK_STR(buffer, "aabcd");
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="09_string_search",
         title="Searching strings",
         objective="Use strchr, strrchr, and strstr.",
@@ -707,7 +707,7 @@ CLINGS_CHECK(find_substring(text, "xyz") == NULL);
         ],
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="10_stdint_inttypes",
         title="Fixed-width integers and format macros",
         objective="Use uint64_t and PRIu64 from stdint.h and inttypes.h.",
@@ -745,7 +745,7 @@ CLINGS_CHECK_INT(low_32_bits(UINT64_C(0x1122334455667788)), 0x55667788u);
         compile_fail=True,
     ),
     ex(
-        topic="10_stdlib_io",
+        topic="12_standard_library",
         slug="11_environment",
         title="Environment variables",
         objective="Read and write environment variables with getenv and setenv.",
@@ -789,7 +789,7 @@ unsetenv(name);
     # 11_ub_safety
     # ------------------------------------------------------------------
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="01_signed_overflow",
         title="Avoid signed integer overflow",
         objective="Detect overflow before performing signed addition.",
@@ -823,7 +823,7 @@ CLINGS_CHECK_INT(out, 42);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="02_uninitialized",
         title="Initialize before use",
         objective="Give every local variable a defined initial value.",
@@ -852,7 +852,7 @@ CLINGS_CHECK_INT(initialized_or_default(7), 7);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="03_out_of_bounds",
         title="Bounds checking",
         objective="Reject indices outside the logical array length.",
@@ -883,7 +883,7 @@ CLINGS_CHECK_INT(get_or_default(values, 3, -1, 123), 123);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="04_use_after_free",
         title="Use-after-free",
         objective="Clear a pointer after freeing its target.",
@@ -919,7 +919,7 @@ CLINGS_CHECK_INT(is_null(value), 1);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="05_sequence_points",
         title="Sequence points",
         objective="Avoid unsequenced reads and writes of the same object.",
@@ -950,7 +950,7 @@ CLINGS_CHECK_INT(value, 7);
         compile_fail=True,
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="06_strict_aliasing",
         title="Type punning without strict-aliasing violations",
         objective="Reinterpret object representation with memcpy.",
@@ -978,7 +978,7 @@ CLINGS_CHECK_INT(bits_to_float(0x00000000u) == 0.0f, 1);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="07_alignment",
         title="Alignment requirements",
         objective="Query alignment with alignof and keep members aligned.",
@@ -1015,7 +1015,7 @@ CLINGS_CHECK_INT(second_member_is_aligned(), 1);
         ],
     ),
     ex(
-        topic="11_ub_safety",
+        topic="15_ub_safety",
         slug="08_null_pointer",
         title="Null pointer checks",
         objective="Never dereference a null pointer.",
@@ -1045,7 +1045,7 @@ CLINGS_CHECK_INT(dereference_or_default(NULL, -1), -1);
     # 12_advanced_c
     # ------------------------------------------------------------------
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="01_variadic",
         title="Variadic functions",
         objective="Read a variable number of int arguments with va_list.",
@@ -1081,7 +1081,7 @@ CLINGS_CHECK_INT(sum_variadic(5, 10, 20, 30, 40, 50), 150);
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="02_setjmp_longjmp",
         title="setjmp and longjmp",
         objective="Use non-local jumps for a simple error path.",
@@ -1124,7 +1124,7 @@ CLINGS_CHECK_INT(run_checked(-1, &out), -1);
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="03_pthreads",
         title="POSIX threads and a mutex",
         objective="Create threads and protect shared state with a mutex.",
@@ -1180,7 +1180,7 @@ CLINGS_CHECK_INT(run_threads(), 2000);
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="04_atomics",
         title="C11 atomics",
         objective="Use atomic_int for lock-free counter updates.",
@@ -1225,7 +1225,7 @@ CLINGS_CHECK_INT(atomic_counter_get(&counter), 8);
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="05_generic",
         title="_Generic selection",
         objective="Choose an expression based on the type of a value.",
@@ -1250,7 +1250,7 @@ CLINGS_CHECK_STR(type_name(1L), "other");
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="06_static_assert",
         title="Compile-time assertions",
         objective="Use _Static_assert to enforce assumptions at compile time.",
@@ -1279,7 +1279,7 @@ CLINGS_CHECK_INT(static_asserts_passed(), 1);
         compile_fail=True,
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="07_align",
         title="alignof and alignas",
         objective="Query and request alignment.",
@@ -1310,7 +1310,7 @@ CLINGS_CHECK(align_of_double() >= align_of_int());
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="08_anonymous_union",
         title="Anonymous structs and unions",
         objective="Access anonymous union members directly through the outer struct.",
@@ -1353,7 +1353,7 @@ CLINGS_CHECK_INT(variant_real(&real_value) == 3.5, 1);
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="09_thread_local",
         title="Thread-local storage",
         objective="Use _Thread_local to give each thread its own object.",
@@ -1393,7 +1393,7 @@ CLINGS_CHECK_INT(thread_local_demo(), 7);
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="10_complex",
         title="Complex numbers",
         objective="Use double complex, I, conj, creal, and cimag.",
@@ -1438,7 +1438,7 @@ CLINGS_CHECK_INT(imaginary_part(conjugated) == -4.0, 1);
         ],
     ),
     ex(
-        topic="12_advanced_c",
+        topic="18_advanced_c",
         slug="11_signal",
         title="Signals and sig_atomic_t",
         objective="Install a signal handler and use a sig_atomic_t flag.",

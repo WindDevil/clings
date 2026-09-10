@@ -86,7 +86,7 @@ CMake 路径只默认构建 `solutions/`，并把它们注册为 CTest 测试；
 任意数量的 `.c`/`.h` 文件：
 
 ```text
-exercises/13_translation_units/01_header_source_split/
+exercises/17_translation_units/01_header_source_split/
 ├── main.c
 ├── math_utils.h
 └── math_utils.c

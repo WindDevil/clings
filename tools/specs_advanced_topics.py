@@ -4,8 +4,8 @@ from spec import ex
 
 SPECS = [
     ex(
-        topic="00_getting_started",
-        slug="10_implementation_defined",
+        topic="11_ub_safety",
+        slug="11_implementation_defined",
         title="Implementation-defined behavior",
         objective="Observe implementation-defined char signedness and packing pragmas.",
         reference="",

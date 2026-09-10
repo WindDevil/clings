@@ -13,3 +13,4 @@ Run an exercise with:
 | `03_sprintf_snprintf` | Format text with snprintf and understand truncation. |
 | `04_fgets_fputs_sort` | Read a line with fgets and sort an array of strings. |
 | `05_strtod` | Parse a double with strtod and reject trailing input. |
+| `06_main_args` | Work with the arguments passed to main. |

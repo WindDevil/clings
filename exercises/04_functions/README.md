@@ -17,3 +17,4 @@ Run an exercise with:
 | `07_void_and_return` | Return early from a void function and return values from int functions. |
 | `08_tail_recursion` | Rewrite a recursive sum using an accumulator. |
 | `09_default_argument_promotions` | Use the promoted types expected by variadic functions. |
+| `10_main_return_value` | Return a defined success or failure status from a program. |

@@ -16,3 +16,6 @@ Run an exercise with:
 | `06_strict_aliasing` | Reinterpret object representation with memcpy. |
 | `07_alignment` | Query alignment with alignof and keep members aligned. |
 | `08_null_pointer` | Never dereference a null pointer. |
+| `09_standard_changes` | Detect the C standard version at compile time. |
+| `10_identifier_length` | Use long internal identifiers and rely on the standard minimum. |
+| `11_implementation_defined` | Observe implementation-defined char signedness and packing pragmas. |

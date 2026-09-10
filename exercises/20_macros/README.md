@@ -17,3 +17,4 @@ Run an exercise with:
 | `07_macro_statement` | Use do { ... } while (0) for a statement-like macro. |
 | `08_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. |
 | `09_macro_side_effects` | See that a function-like macro can evaluate its argument more than once. |
+| `10_assert_macro` | Use assert for programmer errors and return values for user errors. |

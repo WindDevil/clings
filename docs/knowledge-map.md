@@ -7,11 +7,11 @@ Every row points to at least one exercise.
 
 | Knowledge point | Exercises | Notes |
 | --- | --- | --- |
-| Minimal C program, `main`, return value | `00_getting_started/01_hello_world`, `00_getting_started/03_main_args` | A C program is a collection of declarations and definitions. |
-| Preprocessing, compiling, assembling, linking | `00_getting_started/02_compilation_model` | `__STDC__`, `__STDC_VERSION__`, conditional compilation. |
-| `argc`, `argv`, program environment | `00_getting_started/03_main_args` | `argv[0]` is the program name; arguments start at `argv[1]`. |
-| Assertions and defensive checks | `00_getting_started/04_debug_assert` | `assert` for programmer errors; return codes for recoverable errors. |
-| Reading compiler diagnostics | `00_getting_started/05_compiler_diagnostics`, `10_stdlib_io/01_printf_formats` | Format-string diagnostics, `-Wformat`, `-Werror`. |
+| Minimal C program, `main`, return value | `00_getting_started/01_printf`, `15_string_functions/06_main_args` | A C program is a collection of declarations and definitions. |
+| Preprocessing, compiling, assembling, linking | `00_getting_started/07_include_header`, `09_preprocessor/*` | `#include`, declarations, conditional compilation. |
+| `argc`, `argv`, program environment | `15_string_functions/06_main_args` | `argv[0]` is the program name; arguments start at `argv[1]`. |
+| Assertions and defensive checks | `20_macros/10_assert_macro` | `assert` for programmer errors; return codes for recoverable errors. |
+| Reading compiler diagnostics | `00_getting_started/09_compiler_diagnostics`, `10_stdlib_io/01_printf_formats` | Format-string diagnostics, `-Wformat`, `-Werror`. |
 | Build systems and project layout | README, `Makefile`, `CMakeLists.txt`, `CMakePresets.json` | CLI, Make, CMake, CTest, Docker. |
 | Testing workflow | `./clings verify`, `./clings selftest`, `include/clings/test.h` | Dependency-free assertion harness. |
 
@@ -20,7 +20,7 @@ Every row points to at least one exercise.
 | Knowledge point | Exercises | Notes |
 | --- | --- | --- |
 | Comments, identifiers, keywords | all exercises | Lexical and keyword usage across the exercises. |
-| Comments, line continuation, escapes | `00_getting_started/06_lexical_elements` | `/* ... */`, backslash-newline, `\n`, `\t`, `\"`. |
+| Comments, line continuation, escapes | `00_getting_started/08_lexical_elements` | `/* ... */`, backslash-newline, `\n`, `\t`, `\"`. |
 | Character constants and string literals | `01_types_variables/05_char_ascii`, `05_arrays_strings/04_string_literals` | `char`, ASCII, mutable arrays vs immutable literals. |
 | Integer types and ranges | `01_types_variables/01_integer_types` | `sizeof`, `CHAR_BIT`, `INT_MIN`, `INT_MAX`. |
 | Signed and unsigned | `01_types_variables/02_signed_unsigned`, `11_ub_safety/01_signed_overflow` | Usual arithmetic conversions and overflow. |
@@ -68,8 +68,8 @@ Every row points to at least one exercise.
 | Pass by value vs pass by pointer | `04_functions/03_pass_by_pointer` | C passes everything by value; pointers let you modify caller storage. |
 | Recursion and base cases | `04_functions/04_recursion` | Factorial and Fibonacci. |
 | Internal linkage, `static`, `inline` | `04_functions/05_static_inline` | File-scope state and helper functions. |
-| Function pointers and callbacks | `04_functions/06_function_pointers`, `10_stdlib_io/04_qsort_bsearch` | Dispatch tables and `qsort` comparators. |
-| Variadic functions | `12_advanced_c/01_variadic`, `09_preprocessor/06_variadic_macros` | `stdarg.h`, `va_list`, variadic macros. |
+| Function pointers and callbacks | `04_functions/06_function_pointers`, `10_stdlib_io/03_qsort_bsearch` | Dispatch tables and `qsort` comparators. |
+| Variadic functions | `12_advanced_c/01_variadic`, `20_macros/04_variadic_macros` | `stdarg.h`, `va_list`, variadic macros. |
 | Non-local jumps | `12_advanced_c/02_setjmp_longjmp` | `setjmp`/`longjmp` error paths. |
 | `void` functions and `return` | `04_functions/07_void_and_return` | Bare `return;`, early return, and value return. |
 
@@ -82,8 +82,8 @@ Every row points to at least one exercise.
 | Multidimensional arrays | `05_arrays_strings/03_multidimensional` | Row-major layout and nested indexing. |
 | String literals vs `char` arrays | `05_arrays_strings/04_string_literals` | Literals are not modifiable; arrays are. |
 | `strlen`, `strcmp`, `strcpy` | `05_arrays_strings/05_string_ops` | Reimplement the classic pointer algorithms. |
-| Bounded formatting | `05_arrays_strings/06_safe_format` | `snprintf` returns the full length even when truncated. |
-| Tokenization | `05_arrays_strings/07_tokenize` | `strtok_r` and non-destructive splitting. |
+| Bounded formatting | `00_getting_started/05_snprintf` | `snprintf` writes formatted text into a fixed-size buffer. |
+| Tokenization | `05_arrays_strings/06_tokenize` | `strtok_r` and non-destructive splitting. |
 | Buffer bounds | `07_dynamic_memory/05_buffer_bounds` | Always reserve space for the terminating NUL. |
 
 ## 7. Pointers and the object model
@@ -137,31 +137,31 @@ Every row points to at least one exercise.
 | Function-like macros | `09_preprocessor/02_function_macro` | Parenthesize parameters and the whole expansion. |
 | Stringizing `#` | `09_preprocessor/03_stringize_paste` | Use a helper macro for expansion. |
 | Token pasting `##` | `09_preprocessor/03_stringize_paste` | Build identifiers at preprocessing time. |
-| Conditional compilation | `09_preprocessor/04_conditional_compilation`, `00_getting_started/02_compilation_model` | `#if`, `#ifdef`, `__STDC_VERSION__`. |
-| Include guards | `09_preprocessor/05_include_guards` | Prevent repeated declarations. |
-| Variadic macros | `09_preprocessor/06_variadic_macros` | `__VA_ARGS__` and variadic functions. |
-| X-macros | `09_preprocessor/07_x_macros` | Generate enums and string tables from one list. |
-| `#error`, `#line`, `#pragma pack` | `09_preprocessor/08_pragma_error_line` | Diagnostics, line control, and packing. |
-| Macros and macro hygiene | `20_macros/01`-`09` | Object-like macros, function-like macros, parentheses, `#`, `##`, variadic macros, X-macros, macro statements, macro-vs-typedef, macro side effects. |
+| Conditional compilation | `09_preprocessor/03_conditional_compilation`, `09_preprocessor/04_include_guards` | `#if`, `#ifdef`, `#ifndef`. |
+| Include guards | `09_preprocessor/04_include_guards` | Prevent repeated declarations. |
+| Variadic macros | `20_macros/04_variadic_macros` | `__VA_ARGS__` and variadic functions. |
+| X-macros | `20_macros/05_x_macros` | Generate enums and string tables from one list. |
+| `#error`, `#line`, `#pragma pack` | `09_preprocessor/05_pragma_error_line` | Diagnostics, line control, and packing. |
+| Macros and macro hygiene | `20_macros/01`-`10` | Object-like macros, function-like macros, parentheses, `#`, `##`, variadic macros, X-macros, macro statements, macro-vs-typedef, macro side effects, `assert`. |
 
 ## 11. Standard library and I/O
 
 | Knowledge point | Exercises | Notes |
 | --- | --- | --- |
 | Formatted output | `10_stdlib_io/01_printf_formats` | Match specifiers to argument types. |
-| Formatted input | `10_stdlib_io/02_scanf_parse` | `sscanf`, return value, literal separators. |
-| Numeric parsing | `10_stdlib_io/03_strtol_errno` | `strtol`, `errno`, `endptr`, range checks. |
-| Sorting and searching | `10_stdlib_io/04_qsort_bsearch` | Comparison callbacks. |
-| Math library | `10_stdlib_io/05_math_functions` | `hypot`, floating-point functions, `-lm`. |
-| Time library | `10_stdlib_io/06_time_functions` | `time_t`, `difftime`. |
-| Random numbers | `10_stdlib_io/07_random` | `srand`, `rand`, bounded ranges. |
-| Text file I/O | `10_stdlib_io/08_file_io` | `fopen`, `fputs`, `fread`, `fclose`. |
+| Formatted input | `00_getting_started/06_sscanf` | `sscanf`, return value, literal separators. |
+| Numeric parsing | `10_stdlib_io/02_strtol_errno` | `strtol`, `errno`, `endptr`, range checks. |
+| Sorting and searching | `10_stdlib_io/03_qsort_bsearch` | Comparison callbacks. |
+| Math library | `10_stdlib_io/04_math_functions` | `hypot`, floating-point functions, `-lm`. |
+| Time library | `10_stdlib_io/05_time_functions` | `time_t`, `difftime`. |
+| Random numbers | `10_stdlib_io/06_random` | `srand`, `rand`, bounded ranges. |
+| Text file I/O | `10_stdlib_io/07_file_io` | `fopen`, `fputs`, `fread`, `fclose`. |
 | `ctype.h` | `01_types_variables/05_char_ascii` | Character classification. |
-| `memcpy`, `memmove`, `memset`, `memcmp` | `10_stdlib_io/09_memory_functions` | Byte-oriented memory operations and overlap. |
-| `strchr`, `strrchr`, `strstr` | `10_stdlib_io/10_string_search` | Character and substring search. |
-| Fixed-width integers and format macros | `10_stdlib_io/11_stdint_inttypes` | `uint64_t`, `PRIu64`, `inttypes.h`. |
-| Environment variables | `10_stdlib_io/12_environment` | `getenv`, `setenv`, and cleanup. |
-| `errno` and error reporting | `10_stdlib_io/03_strtol_errno`, `10_stdlib_io/08_file_io` | Check return values and error state. |
+| `memcpy`, `memmove`, `memset`, `memcmp` | `10_stdlib_io/08_memory_functions` | Byte-oriented memory operations and overlap. |
+| `strchr`, `strrchr`, `strstr` | `10_stdlib_io/09_string_search` | Character and substring search. |
+| Fixed-width integers and format macros | `10_stdlib_io/10_stdint_inttypes` | `uint64_t`, `PRIu64`, `inttypes.h`. |
+| Environment variables | `10_stdlib_io/11_environment` | `getenv`, `setenv`, and cleanup. |
+| `errno` and error reporting | `10_stdlib_io/02_strtol_errno`, `10_stdlib_io/07_file_io` | Check return values and error state. |
 
 ## 12. Undefined behavior, safety, and portability
 
@@ -197,7 +197,7 @@ Every row points to at least one exercise.
 
 | Skill | Where it is practiced |
 | --- | --- |
-| Reading compiler diagnostics | Every exercise; especially `00_getting_started/05_compiler_diagnostics` |
+| Reading compiler diagnostics | Every exercise; especially `00_getting_started/09_compiler_diagnostics` |
 | Writing small tests | Every exercise's `main` |
 | Debugging with GDB | README, `make doctor`, `./clings watch` |
 | Using sanitizers | README, `CFLAGS="-fsanitize=address,undefined"` |

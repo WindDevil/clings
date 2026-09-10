@@ -143,7 +143,7 @@ CLINGS_CHECK_INT(sum_tail_wrapper(10), 55);
     ),
     ex(
         topic="05_arrays_strings",
-        slug="08_vla",
+        slug="07_vla",
         title="Variable-length arrays",
         objective="Create an array whose length is a runtime value.",
         reference="",
@@ -176,7 +176,7 @@ CLINGS_CHECK_INT(sum_vla(10), 55);
     ),
     ex(
         topic="05_arrays_strings",
-        slug="09_compound_literals",
+        slug="08_compound_literals",
         title="Compound literals",
         objective="Create a temporary struct value with a compound literal.",
         reference="",
@@ -210,7 +210,7 @@ CLINGS_CHECK_INT(point_sum((struct point){1, 2}), 3);
     ),
     ex(
         topic="05_arrays_strings",
-        slug="10_pointer_compatibility",
+        slug="09_pointer_compatibility",
         title="Pointer compatibility and const",
         objective="Pass a non-const array through a pointer-to-const.",
         reference="",
@@ -484,7 +484,7 @@ CLINGS_CHECK_INT(after_undef(), 0);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="13_printf_advanced",
+        slug="12_printf_advanced",
         title="Advanced printf formatting",
         objective="Use width, zero padding, precision, and the * width argument.",
         reference="",
@@ -526,7 +526,7 @@ CLINGS_CHECK_STR(buffer, "   42");
     ),
     ex(
         topic="10_stdlib_io",
-        slug="14_scanf_advanced",
+        slug="13_scanf_advanced",
         title="Advanced scanf input",
         objective="Use field width and a scanset in sscanf.",
         reference="",
@@ -567,7 +567,7 @@ CLINGS_CHECK_INT(parse_set("xyz", buffer, sizeof buffer), -1);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="15_ctype_full",
+        slug="14_ctype_full",
         title="ctype.h classification and conversion",
         objective="Use isalnum and toupper with unsigned char casts.",
         reference="",

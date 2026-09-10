@@ -387,38 +387,7 @@ CLINGS_CHECK_STR(buffer, "42 3.50 ok");
     ),
     ex(
         topic="10_stdlib_io",
-        slug="02_scanf_parse",
-        title="Parsing with scanf",
-        objective="Parse a comma-separated pair with sscanf.",
-        reference="",
-        hint="The literal comma in the format must match the input.",
-        code=r"""
-#include <stdio.h>
-
-int parse_pair(const char *input, int *first, int *second)
-{
-    return sscanf(input, "%d,%d", first, second) == 2 ? 0 : -1;
-}
-""",
-        tests=r"""
-int first = 0;
-int second = 0;
-
-CLINGS_CHECK_INT(parse_pair("3,4", &first, &second), 0);
-CLINGS_CHECK_INT(first, 3);
-CLINGS_CHECK_INT(second, 4);
-CLINGS_CHECK_INT(parse_pair("3 4", &first, &second), -1);
-""",
-        breaks=[
-            (
-                'return sscanf(input, "%d,%d", first, second) == 2 ? 0 : -1;',
-                '/* TODO: parse the comma separator. */\n    return sscanf(input, "%d %d", first, second) == 2 ? 0 : -1;',
-            )
-        ],
-    ),
-    ex(
-        topic="10_stdlib_io",
-        slug="03_strtol_errno",
+        slug="02_strtol_errno",
         title="Robust integer parsing",
         objective="Use strtol, errno, and the end pointer to validate input.",
         reference="",
@@ -463,7 +432,7 @@ CLINGS_CHECK_INT(parse_int("99999999999999999999", &out), -1);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="04_qsort_bsearch",
+        slug="03_qsort_bsearch",
         title="qsort and bsearch",
         objective="Use comparison callbacks for sorting and searching.",
         reference="",
@@ -509,7 +478,7 @@ CLINGS_CHECK(find_int(values, 4, 99) == NULL);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="05_math_functions",
+        slug="04_math_functions",
         title="The math library",
         objective="Use hypot and other functions from math.h.",
         reference="",
@@ -535,7 +504,7 @@ CLINGS_CHECK_INT(distance(1.0, 1.0, 1.0, 1.0) == 0.0, 1);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="06_time_functions",
+        slug="05_time_functions",
         title="Time arithmetic",
         objective="Use time_t and difftime.",
         reference="",
@@ -561,7 +530,7 @@ CLINGS_CHECK_INT(seconds_between(250, 100), -150);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="07_random",
+        slug="06_random",
         title="Pseudo-random numbers",
         objective="Seed the generator and bound its output.",
         reference="",
@@ -598,7 +567,7 @@ CLINGS_CHECK_INT(random_bounded(0), 0);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="08_file_io",
+        slug="07_file_io",
         title="Text file I/O",
         objective="Write and read a text file with fopen, fputs, and fread.",
         reference="",
@@ -649,7 +618,7 @@ remove(path);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="09_memory_functions",
+        slug="08_memory_functions",
         title="memcpy, memmove, memset, and memcmp",
         objective="Use the byte-oriented memory functions correctly.",
         reference="",
@@ -699,7 +668,7 @@ CLINGS_CHECK_STR(buffer, "aabcd");
     ),
     ex(
         topic="10_stdlib_io",
-        slug="10_string_search",
+        slug="09_string_search",
         title="Searching strings",
         objective="Use strchr, strrchr, and strstr.",
         reference="",
@@ -739,7 +708,7 @@ CLINGS_CHECK(find_substring(text, "xyz") == NULL);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="11_stdint_inttypes",
+        slug="10_stdint_inttypes",
         title="Fixed-width integers and format macros",
         objective="Use uint64_t and PRIu64 from stdint.h and inttypes.h.",
         reference="",
@@ -777,7 +746,7 @@ CLINGS_CHECK_INT(low_32_bits(UINT64_C(0x1122334455667788)), 0x55667788u);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="12_environment",
+        slug="11_environment",
         title="Environment variables",
         objective="Read and write environment variables with getenv and setenv.",
         reference="",

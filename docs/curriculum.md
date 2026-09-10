@@ -2,22 +2,21 @@
 
 This map connects each topic to the exercises that teach it.
 
-Total exercises: **179** across **21** topics.
+Total exercises: **182** across **21** topics.
 
 ## 00_getting_started - Getting Started
 
 | Exercise | Objective |
 | --- | --- |
-| `00_getting_started/01_hello_world` | Understand the minimal C program and formatted output. |
-| `00_getting_started/02_compilation_model` | Include the standard header that declares INT_MAX. |
-| `00_getting_started/03_main_args` | Work with the arguments passed to main. |
-| `00_getting_started/04_debug_assert` | Use assert for programmer errors and return values for user errors. |
-| `00_getting_started/05_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |
-| `00_getting_started/06_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. |
-| `00_getting_started/07_main_return_value` | Return a defined success or failure status from a program. |
-| `00_getting_started/08_standard_changes` | Detect the C standard version at compile time. |
-| `00_getting_started/09_identifier_length` | Use long internal identifiers and rely on the standard minimum. |
-| `00_getting_started/10_implementation_defined` | Observe implementation-defined char signedness and packing pragmas. |
+| `00_getting_started/01_printf` | Use printf to print a line of text. |
+| `00_getting_started/02_printf_values` | Use printf with %d to print an integer value. |
+| `00_getting_started/03_scanf` | Read an integer from stdin with scanf. |
+| `00_getting_started/04_char_array` | Store text in a char array and access its characters. |
+| `00_getting_started/05_snprintf` | Write formatted text into a fixed-size buffer. |
+| `00_getting_started/06_sscanf` | Parse values from a string with sscanf. |
+| `00_getting_started/07_include_header` | Include the standard header that declares toupper. |
+| `00_getting_started/08_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. |
+| `00_getting_started/09_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |
 
 ## 01_types_variables - Types, Variables, and Storage
 
@@ -77,6 +76,7 @@ Total exercises: **179** across **21** topics.
 | `04_functions/07_void_and_return` | Return early from a void function and return values from int functions. |
 | `04_functions/08_tail_recursion` | Rewrite a recursive sum using an accumulator. |
 | `04_functions/09_default_argument_promotions` | Use the promoted types expected by variadic functions. |
+| `04_functions/10_main_return_value` | Return a defined success or failure status from a program. |
 
 ## 05_arrays_strings - Arrays and Strings
 
@@ -87,12 +87,11 @@ Total exercises: **179** across **21** topics.
 | `05_arrays_strings/03_multidimensional` | Transpose a 3x3 matrix with nested loops. |
 | `05_arrays_strings/04_string_literals` | Scan a const string and modify a mutable char array. |
 | `05_arrays_strings/05_string_ops` | Implement strlen, strcmp, and strcpy with pointers. |
-| `05_arrays_strings/06_safe_format` | Format text into a fixed-size buffer without overflow. |
-| `05_arrays_strings/07_tokenize` | Split a string without modifying the caller's buffer. |
-| `05_arrays_strings/08_vla` | Create an array whose length is a runtime value. |
-| `05_arrays_strings/09_compound_literals` | Create a temporary struct value with a compound literal. |
-| `05_arrays_strings/10_pointer_compatibility` | Pass a non-const array through a pointer-to-const. |
-| `05_arrays_strings/11_asymmetric_bounds` | Use the half-open interval [low, high). |
+| `05_arrays_strings/06_tokenize` | Split a string without modifying the caller's buffer. |
+| `05_arrays_strings/07_vla` | Create an array whose length is a runtime value. |
+| `05_arrays_strings/08_compound_literals` | Create a temporary struct value with a compound literal. |
+| `05_arrays_strings/09_pointer_compatibility` | Pass a non-const array through a pointer-to-const. |
+| `05_arrays_strings/10_asymmetric_bounds` | Use the half-open interval [low, high). |
 
 ## 06_pointers - Pointers and Memory Layout
 
@@ -159,21 +158,20 @@ Total exercises: **179** across **21** topics.
 | Exercise | Objective |
 | --- | --- |
 | `10_stdlib_io/01_printf_formats` | Match each conversion specifier to its argument type. |
-| `10_stdlib_io/02_scanf_parse` | Parse a comma-separated pair with sscanf. |
-| `10_stdlib_io/03_strtol_errno` | Use strtol, errno, and the end pointer to validate input. |
-| `10_stdlib_io/04_qsort_bsearch` | Use comparison callbacks for sorting and searching. |
-| `10_stdlib_io/05_math_functions` | Use hypot and other functions from math.h. |
-| `10_stdlib_io/06_time_functions` | Use time_t and difftime. |
-| `10_stdlib_io/07_random` | Seed the generator and bound its output. |
-| `10_stdlib_io/08_file_io` | Write and read a text file with fopen, fputs, and fread. |
-| `10_stdlib_io/09_memory_functions` | Use the byte-oriented memory functions correctly. |
-| `10_stdlib_io/10_string_search` | Use strchr, strrchr, and strstr. |
-| `10_stdlib_io/11_stdint_inttypes` | Use uint64_t and PRIu64 from stdint.h and inttypes.h. |
-| `10_stdlib_io/12_environment` | Read and write environment variables with getenv and setenv. |
-| `10_stdlib_io/13_printf_advanced` | Use width, zero padding, precision, and the * width argument. |
-| `10_stdlib_io/14_scanf_advanced` | Use field width and a scanset in sscanf. |
-| `10_stdlib_io/15_ctype_full` | Use isalnum and toupper with unsigned char casts. |
-| `10_stdlib_io/16_rand_max` | Do not assume rand() returns a value below a fixed small bound. |
+| `10_stdlib_io/02_strtol_errno` | Use strtol, errno, and the end pointer to validate input. |
+| `10_stdlib_io/03_qsort_bsearch` | Use comparison callbacks for sorting and searching. |
+| `10_stdlib_io/04_math_functions` | Use hypot and other functions from math.h. |
+| `10_stdlib_io/05_time_functions` | Use time_t and difftime. |
+| `10_stdlib_io/06_random` | Seed the generator and bound its output. |
+| `10_stdlib_io/07_file_io` | Write and read a text file with fopen, fputs, and fread. |
+| `10_stdlib_io/08_memory_functions` | Use the byte-oriented memory functions correctly. |
+| `10_stdlib_io/09_string_search` | Use strchr, strrchr, and strstr. |
+| `10_stdlib_io/10_stdint_inttypes` | Use uint64_t and PRIu64 from stdint.h and inttypes.h. |
+| `10_stdlib_io/11_environment` | Read and write environment variables with getenv and setenv. |
+| `10_stdlib_io/12_printf_advanced` | Use width, zero padding, precision, and the * width argument. |
+| `10_stdlib_io/13_scanf_advanced` | Use field width and a scanset in sscanf. |
+| `10_stdlib_io/14_ctype_full` | Use isalnum and toupper with unsigned char casts. |
+| `10_stdlib_io/15_rand_max` | Do not assume rand() returns a value below a fixed small bound. |
 
 ## 11_ub_safety - Undefined Behavior, Safety, and Portability
 
@@ -187,6 +185,9 @@ Total exercises: **179** across **21** topics.
 | `11_ub_safety/06_strict_aliasing` | Reinterpret object representation with memcpy. |
 | `11_ub_safety/07_alignment` | Query alignment with alignof and keep members aligned. |
 | `11_ub_safety/08_null_pointer` | Never dereference a null pointer. |
+| `11_ub_safety/09_standard_changes` | Detect the C standard version at compile time. |
+| `11_ub_safety/10_identifier_length` | Use long internal identifiers and rely on the standard minimum. |
+| `11_ub_safety/11_implementation_defined` | Observe implementation-defined char signedness and packing pragmas. |
 
 ## 12_advanced_c - Advanced C Features
 
@@ -234,6 +235,7 @@ Total exercises: **179** across **21** topics.
 | `15_string_functions/03_sprintf_snprintf` | Format text with snprintf and understand truncation. |
 | `15_string_functions/04_fgets_fputs_sort` | Read a line with fgets and sort an array of strings. |
 | `15_string_functions/05_strtod` | Parse a double with strtod and reject trailing input. |
+| `15_string_functions/06_main_args` | Work with the arguments passed to main. |
 
 ## 16_data_representation - Data Representation and Bit Operations
 
@@ -287,6 +289,7 @@ Total exercises: **179** across **21** topics.
 | `20_macros/07_macro_statement` | Use do { ... } while (0) for a statement-like macro. |
 | `20_macros/08_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. |
 | `20_macros/09_macro_side_effects` | See that a function-like macro can evaluate its argument more than once. |
+| `20_macros/10_assert_macro` | Use assert for programmer errors and return values for user errors. |
 
 ## Cross-cutting knowledge checklist
 

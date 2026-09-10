@@ -221,35 +221,7 @@ CLINGS_CHECK_STR(my_strcpy(buffer, "copy me"), "copy me");
     ),
     ex(
         topic="05_arrays_strings",
-        slug="06_safe_format",
-        title="Bounded formatting with snprintf",
-        objective="Format text into a fixed-size buffer without overflow.",
-        reference="",
-        hint="Keep the space between the first and last name.",
-        code=r"""
-#include <stdio.h>
-
-int format_name(char *buffer, size_t size, const char *first, const char *last)
-{
-    return snprintf(buffer, size, "%s %s", first, last);
-}
-""",
-        tests=r"""
-char buffer[8];
-
-CLINGS_CHECK_INT(format_name(buffer, sizeof buffer, "Ada", "Lovelace"), 12);
-CLINGS_CHECK_STR(buffer, "Ada Lov");
-""",
-        breaks=[
-            (
-                'return snprintf(buffer, size, "%s %s", first, last);',
-                '/* TODO: include the separator between the two names. */\n    return snprintf(buffer, size, "%s%s", first, last);',
-            )
-        ],
-    ),
-    ex(
-        topic="05_arrays_strings",
-        slug="07_tokenize",
+        slug="06_tokenize",
         title="Tokenizing with strtok_r",
         objective="Split a string without modifying the caller's buffer.",
         reference="",

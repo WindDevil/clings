@@ -3,18 +3,17 @@
 Run an exercise with:
 
 ```sh
-./clings run 01_hello_world
+./clings run 01_printf
 ```
 
 | Exercise | Objective |
 | --- | --- |
-| `01_hello_world` | Understand the minimal C program and formatted output. |
-| `02_compilation_model` | Include the standard header that declares INT_MAX. |
-| `03_main_args` | Work with the arguments passed to main. |
-| `04_debug_assert` | Use assert for programmer errors and return values for user errors. |
-| `05_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |
-| `06_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. |
-| `07_main_return_value` | Return a defined success or failure status from a program. |
-| `08_standard_changes` | Detect the C standard version at compile time. |
-| `09_identifier_length` | Use long internal identifiers and rely on the standard minimum. |
-| `10_implementation_defined` | Observe implementation-defined char signedness and packing pragmas. |
+| `01_printf` | Use printf to print a line of text. |
+| `02_printf_values` | Use printf with %d to print an integer value. |
+| `03_scanf` | Read an integer from stdin with scanf. |
+| `04_char_array` | Store text in a char array and access its characters. |
+| `05_snprintf` | Write formatted text into a fixed-size buffer. |
+| `06_sscanf` | Parse values from a string with sscanf. |
+| `07_include_header` | Include the standard header that declares toupper. |
+| `08_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. |
+| `09_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |

@@ -8,60 +8,225 @@ SPECS = [
     # ------------------------------------------------------------------
     ex(
         topic="00_getting_started",
-        slug="01_hello_world",
-        title="Hello, C!",
-        objective="Understand the minimal C program and formatted output.",
+        slug="01_printf",
+        title="Print with printf",
+        objective="Use printf to print a line of text.",
         reference="",
-        hint="Use snprintf(buffer, size, ...) and the exact string from the test.",
+        hint="printf returns the number of characters printed, including the newline.",
         code=r"""
 #include <stdio.h>
 
-int print_greeting(char *buffer, size_t size)
+int print_greeting(void)
 {
-    return snprintf(buffer, size, "Hello, C!");
+    return printf("Hello, C!\n");
 }
 """,
         tests=r"""
+CLINGS_CHECK_INT(print_greeting(), 10);
+""",
+        breaks=[
+            (
+                'return printf("Hello, C!\\n");',
+                '/* TODO: print Hello, C! followed by a newline. */\n    return printf("Hello, world!\\n");',
+            )
+        ],
+    ),
+    ex(
+        topic="00_getting_started",
+        slug="02_printf_values",
+        title="Print a value",
+        objective="Use printf with %d to print an integer value.",
+        reference="",
+        hint="Use %d for an int argument and include the newline in the format string.",
+        code=r"""
+#include <stdio.h>
+
+int print_value(int value)
+{
+    return printf("%d\n", value);
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(print_value(42), 3);
+""",
+        breaks=[
+            (
+                'return printf("%d\\n", value);',
+                '/* TODO: print the integer value. */\n    return printf("value\\n");',
+            )
+        ],
+    ),
+    ex(
+        topic="00_getting_started",
+        slug="03_scanf",
+        title="Read with scanf",
+        objective="Read an integer from stdin with scanf.",
+        reference="",
+        hint="scanf needs the address of the variable: &value.",
+        code=r"""
+#include <stdio.h>
+
+int read_number(void)
+{
+    int value = 0;
+    if (scanf("%d", &value) != 1) {
+        return -1;
+    }
+    return value;
+}
+""",
+        tests=r"""
+const char *valid_path = "/tmp/clings_scanf_valid.txt";
+const char *invalid_path = "/tmp/clings_scanf_invalid.txt";
+
+FILE *file = fopen(valid_path, "w");
+CLINGS_CHECK(file != NULL);
+fputs("42", file);
+fclose(file);
+CLINGS_CHECK(freopen(valid_path, "r", stdin) != NULL);
+CLINGS_CHECK_INT(read_number(), 42);
+
+file = fopen(invalid_path, "w");
+CLINGS_CHECK(file != NULL);
+fputs("abc", file);
+fclose(file);
+CLINGS_CHECK(freopen(invalid_path, "r", stdin) != NULL);
+CLINGS_CHECK_INT(read_number(), -1);
+
+remove(valid_path);
+remove(invalid_path);
+""",
+        breaks=[
+            (
+                'if (scanf("%d", &value) != 1) {',
+                '/* TODO: scanf needs the address of value. */\n    if (scanf("%d", value) != 1) {',
+            )
+        ],
+        compile_fail=True,
+    ),
+    ex(
+        topic="00_getting_started",
+        slug="04_char_array",
+        title="Character arrays",
+        objective="Store text in a char array and access its characters.",
+        reference="",
+        hint="Array indexes start at 0; sizeof(\"hello\") includes the terminating NUL.",
+        code=r"""
+char text[] = "hello";
+
+char first_character(void)
+{
+    return text[0];
+}
+
+char last_character(void)
+{
+    return text[4];
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(first_character(), 'h');
+CLINGS_CHECK_INT(last_character(), 'o');
+""",
+        breaks=[
+            (
+                "return text[4];",
+                "/* TODO: return the last visible character, not the NUL terminator. */\n    return text[5];",
+            )
+        ],
+    ),
+    ex(
+        topic="00_getting_started",
+        slug="05_snprintf",
+        title="Safe formatting with snprintf",
+        objective="Write formatted text into a fixed-size buffer.",
+        reference="",
+        hint="snprintf takes the buffer size and returns the number of characters it would write.",
+        code=r"""
+#include <stdio.h>
+
 char buffer[32];
 
-CLINGS_CHECK_INT(print_greeting(buffer, sizeof buffer), 9);
-CLINGS_CHECK_STR(buffer, "Hello, C!");
-""",
-        breaks=[
-            (
-                'return snprintf(buffer, size, "Hello, C!");',
-                '/* TODO: write the greeting into buffer. */\n    return snprintf(buffer, size, "Hello, world!");',
-            )
-        ],
-    ),
-    ex(
-        topic="00_getting_started",
-        slug="02_compilation_model",
-        title="Headers and declarations",
-        objective="Include the standard header that declares INT_MAX.",
-        reference="",
-        hint="The compiler needs a declaration before use; add the header for integer limits.",
-        code=r"""
-#include <limits.h>
-
-int largest_int(void)
+int format_greeting(void)
 {
-    return INT_MAX;
+    return snprintf(buffer, 32, "Hello, %s", "C");
 }
 """,
         tests=r"""
-CLINGS_CHECK_INT(largest_int(), INT_MAX);
+CLINGS_CHECK_INT(format_greeting(), 8);
+CLINGS_CHECK_STR(buffer, "Hello, C");
 """,
         breaks=[
             (
-                "#include <limits.h>\n\n",
-                "/* TODO: include the header that declares INT_MAX. */\n",
+                'return snprintf(buffer, 32, "Hello, %s", "C");',
+                '/* TODO: format the greeting with the name C. */\n    return snprintf(buffer, 32, "Hello, %s", "world");',
             )
         ],
     ),
     ex(
         topic="00_getting_started",
-        slug="03_main_args",
+        slug="06_sscanf",
+        title="Safe parsing with sscanf",
+        objective="Parse values from a string with sscanf.",
+        reference="",
+        hint="The literal comma in the format must match the input string.",
+        code=r"""
+#include <stdio.h>
+
+int first;
+int second;
+
+int parse_pair(void)
+{
+    return sscanf("3,4", "%d,%d", &first, &second) == 2 ? 0 : -1;
+}
+
+int parse_invalid(void)
+{
+    return sscanf("3 4", "%d,%d", &first, &second) == 2 ? 0 : -1;
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(parse_pair(), 0);
+CLINGS_CHECK_INT(first, 3);
+CLINGS_CHECK_INT(second, 4);
+CLINGS_CHECK_INT(parse_invalid(), -1);
+""",
+        breaks=[
+            (
+                'sscanf("3,4", "%d,%d", &first, &second)',
+                '/* TODO: match the comma in the input. */\n    sscanf("3 4", "%d,%d", &first, &second)',
+            )
+        ],
+    ),
+    ex(
+        topic="00_getting_started",
+        slug="07_include_header",
+        title="Include a header",
+        objective="Include the standard header that declares toupper.",
+        reference="",
+        hint="The compiler needs a declaration before use; add the header for character functions.",
+        code=r"""
+#include <ctype.h>
+
+int uppercase_a(void)
+{
+    return toupper('a');
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(uppercase_a(), 'A');
+""",
+        breaks=[
+            (
+                "#include <ctype.h>\n\n",
+                "/* TODO: include the header that declares toupper. */\n",
+            )
+        ],
+    ),
+    ex(
+        topic="15_string_functions",
+        slug="06_main_args",
         title="argc, argv, and the program environment",
         objective="Work with the arguments passed to main.",
         reference="",
@@ -101,8 +266,8 @@ CLINGS_CHECK_INT(find_arg(3, argv, "missing"), -1);
         ],
     ),
     ex(
-        topic="00_getting_started",
-        slug="04_debug_assert",
+        topic="20_macros",
+        slug="10_assert_macro",
         title="Assertions and defensive programming",
         objective="Use assert for programmer errors and return values for user errors.",
         reference="",
@@ -136,36 +301,33 @@ CLINGS_CHECK_INT(checked_divide(10, 0, &out), -1);
     ),
     ex(
         topic="00_getting_started",
-        slug="05_compiler_diagnostics",
+        slug="09_compiler_diagnostics",
         title="Read compiler diagnostics",
         objective="Fix a format-string warning that the compiler reports.",
         reference="",
-        hint="size_t has its own length modifier; do not use %d for it.",
+        hint="Use %d to print an int; %s expects a string.",
         code=r"""
 #include <stdio.h>
 
-int format_size(char *buffer, size_t size, size_t value)
+int print_number(int value)
 {
-    return snprintf(buffer, size, "%zu", value);
+    return printf("%d\n", value);
 }
 """,
         tests=r"""
-char buffer[32];
-
-CLINGS_CHECK_INT(format_size(buffer, sizeof buffer, 123), 3);
-CLINGS_CHECK_STR(buffer, "123");
+CLINGS_CHECK_INT(print_number(42), 3);
 """,
         breaks=[
             (
-                'return snprintf(buffer, size, "%zu", value);',
-                '/* TODO: use the correct conversion specifier for size_t. */\n    return snprintf(buffer, size, "%d", value);',
+                'return printf("%d\\n", value);',
+                '/* TODO: use the conversion specifier for an int. */\n    return printf("%s\\n", value);',
             )
         ],
         compile_fail=True,
     ),
     ex(
         topic="00_getting_started",
-        slug="06_lexical_elements",
+        slug="08_lexical_elements",
         title="Comments, line continuation, and escapes",
         objective="Recognize comments, backslash-newline continuation, and escape sequences.",
         reference="",

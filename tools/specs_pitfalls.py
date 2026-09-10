@@ -210,7 +210,7 @@ CLINGS_CHECK_INT(is_empty_string(NULL), 0);
     ),
     ex(
         topic="05_arrays_strings",
-        slug="11_asymmetric_bounds",
+        slug="10_asymmetric_bounds",
         title="Asymmetric bounds",
         objective="Use the half-open interval [low, high).",
         reference="",
@@ -249,28 +249,26 @@ CLINGS_CHECK_INT(loop_count(0, 5), 5);
         ],
     ),
     ex(
-        topic="00_getting_started",
-        slug="07_main_return_value",
+        topic="04_functions",
+        slug="10_main_return_value",
         title="main return values",
         objective="Return a defined success or failure status from a program.",
         reference="",
-        hint="EXIT_SUCCESS is 0 on hosted implementations; EXIT_FAILURE is nonzero.",
+        hint="Return 0 for success and 1 for failure.",
         code=r"""
-#include <stdlib.h>
-
 int exit_code_for(int success)
 {
-    return success ? EXIT_SUCCESS : EXIT_FAILURE;
+    return success ? 0 : 1;
 }
 """,
         tests=r"""
-CLINGS_CHECK_INT(exit_code_for(1), EXIT_SUCCESS);
-CLINGS_CHECK_INT(exit_code_for(0), EXIT_FAILURE);
+CLINGS_CHECK_INT(exit_code_for(1), 0);
+CLINGS_CHECK_INT(exit_code_for(0), 1);
 """,
         breaks=[
             (
-                "return success ? EXIT_SUCCESS : EXIT_FAILURE;",
-                "/* TODO: return success for success and failure otherwise. */\n    return success ? EXIT_FAILURE : EXIT_SUCCESS;",
+                "return success ? 0 : 1;",
+                "/* TODO: return 0 for success and 1 for failure. */\n    return success ? 1 : 0;",
             )
         ],
     ),
@@ -502,7 +500,7 @@ CLINGS_CHECK_INT(single_object_value(), 42);
     ),
     ex(
         topic="10_stdlib_io",
-        slug="16_rand_max",
+        slug="15_rand_max",
         title="RAND_MAX portability",
         objective="Do not assume rand() returns a value below a fixed small bound.",
         reference="",
@@ -577,8 +575,8 @@ free(values);
         ],
     ),
     ex(
-        topic="00_getting_started",
-        slug="08_standard_changes",
+        topic="11_ub_safety",
+        slug="09_standard_changes",
         title="C standard changes",
         objective="Detect the C standard version at compile time.",
         reference="",
@@ -610,8 +608,8 @@ CLINGS_CHECK_INT(has_c11(), 1);
         ],
     ),
     ex(
-        topic="00_getting_started",
-        slug="09_identifier_length",
+        topic="11_ub_safety",
+        slug="10_identifier_length",
         title="Identifier length",
         objective="Use long internal identifiers and rely on the standard minimum.",
         reference="",

@@ -7,35 +7,33 @@
 
 #include "clings/test.h"
 
-int first_even(const int *values, int count)
+int first_multiple_of_three(int limit)
 {
-    for (int i = 0; i < count; ++i) {
-        if (values[i] % 2 == 0) {
-            return values[i];
+    for (int value = 1; value <= limit; ++value) {
+        if (value % 3 == 0) {
+            return value;
         }
     }
     return -1;
 }
 
-int sum_positive(const int *values, int count)
+int sum_skipping_multiples_of_three(int limit)
 {
     int sum = 0;
-    for (int i = 0; i < count; ++i) {
-        if (values[i] <= 0) {
+    for (int value = 1; value <= limit; ++value) {
+        if (value % 3 == 0) {
             /* TODO: skip this value, do not stop the loop. */
             break;
         }
-        sum += values[i];
+        sum += value;
     }
     return sum;
 }
 
 int main(void)
 {
-    const int values[] = {1, -3, 4, 5, -6};
-
-    CLINGS_CHECK_INT(first_even(values, 5), 4);
-    CLINGS_CHECK_INT(sum_positive(values, 5), 10);
-    CLINGS_CHECK_INT(sum_positive((const int[]){-1, -2}, 2), 0);
+    CLINGS_CHECK_INT(first_multiple_of_three(10), 3);
+    CLINGS_CHECK_INT(sum_skipping_multiples_of_three(5), 12);
+    CLINGS_CHECK_INT(sum_skipping_multiples_of_three(0), 0);
     return clings_report();
 }

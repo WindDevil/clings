@@ -28,7 +28,7 @@ Every row points to at least one exercise.
 | Floating-point types | `03_types_variables/04_floating_point` | Epsilon comparison, `fabs`, representation limits. |
 | Character classification | `03_types_variables/05_char_ascii` | ASCII assumptions and portable `ctype.h` usage. |
 | `const`, `enum`, `#define` constants | `03_types_variables/06_storage_scope`, `01_preprocessor/01_object_macro`, `10_aggregates/06_enum` | Three ways to express named constants. |
-| `auto`, `register`, `static`, scope, lifetime | `03_types_variables/06_storage_scope`, `06_functions/05_static_inline` | File scope, block scope, static storage duration. |
+| `auto`, `register`, `static`, scope, lifetime | `03_types_variables/06_storage_scope`, `06_functions/04_static_inline` | File scope, block scope, static storage duration. |
 | `const`, `volatile`, `restrict`, `extern`, `auto`, `register` | `03_types_variables/07_qualifiers` | Type qualifiers and storage-class specifiers. |
 | `stdbool.h` and `stddef.h` | `03_types_variables/08_stdbool_stddef` | `bool`, `size_t`, and standard typedefs. |
 | `typedef` and type aliases | `10_aggregates/07_typedef_designated` | `typedef` is not a macro. |
@@ -56,8 +56,8 @@ Every row points to at least one exercise.
 | `switch`, `case`, `default`, fallthrough | `05_control_flow/02_switch_case` | Intentional fallthrough should be visible. |
 | `for`, `while`, `do-while` | `05_control_flow/03_loops` | Loop bounds and accumulator initialization. |
 | `break` and `continue` | `05_control_flow/04_break_continue` | Early exit vs skipping one iteration. |
-| `goto` and single-exit cleanup | `05_control_flow/05_goto_cleanup` | A common C resource-cleanup pattern. |
-| State machines | `05_control_flow/06_state_machine` | Track a small amount of state while scanning input. |
+| `goto` and single-exit cleanup | `09_dynamic_memory/11_goto_cleanup` | A common C resource-cleanup pattern. |
+| State machines | `08_arrays_strings/17_state_machine` | Track a small amount of state while scanning input. |
 
 ## 5. Functions, linkage, and scope
 
@@ -65,13 +65,13 @@ Every row points to at least one exercise.
 | --- | --- | --- |
 | Declarations and definitions | `06_functions/01_declaration_definition` | A prototype and a definition can be separated. |
 | Parameters and return values | `06_functions/02_parameters_return` | Output parameters, `void`, and range clamping. |
-| Pass by value vs pass by pointer | `06_functions/03_pass_by_pointer` | C passes everything by value; pointers let you modify caller storage. |
-| Recursion and base cases | `06_functions/04_recursion` | Factorial and Fibonacci. |
-| Internal linkage, `static`, `inline` | `06_functions/05_static_inline` | File-scope state and helper functions. |
-| Function pointers and callbacks | `06_functions/06_function_pointers`, `12_standard_library/03_qsort_bsearch` | Dispatch tables and `qsort` comparators. |
+| Pass by value vs pass by pointer | `07_pointers/12_pass_by_pointer` | C passes everything by value; pointers let you modify caller storage. |
+| Recursion and base cases | `06_functions/03_recursion` | Factorial and Fibonacci. |
+| Internal linkage, `static`, `inline` | `06_functions/04_static_inline` | File-scope state and helper functions. |
+| Function pointers and callbacks | `07_pointers/13_function_pointers`, `12_standard_library/03_qsort_bsearch` | Dispatch tables and `qsort` comparators. |
 | Variadic functions | `18_advanced_c/01_variadic`, `02_macros/04_variadic_macros` | `stdarg.h`, `va_list`, variadic macros. |
 | Non-local jumps | `18_advanced_c/02_setjmp_longjmp` | `setjmp`/`longjmp` error paths. |
-| `void` functions and `return` | `06_functions/07_void_and_return` | Bare `return;`, early return, and value return. |
+| `void` functions and `return` | `06_functions/05_void_and_return` | Bare `return;`, early return, and value return. |
 
 ## 6. Arrays and strings
 
@@ -113,7 +113,7 @@ Every row points to at least one exercise.
 | Buffer bounds | `09_dynamic_memory/05_buffer_bounds` | Logical bounds vs allocated size. |
 | Flexible array members | `09_dynamic_memory/06_flexible_array` | One allocation for a header plus payload. |
 | Linked lists | `09_dynamic_memory/07_linked_list` | Nodes, traversal, and full cleanup. |
-| Ownership and cleanup paths | `05_control_flow/05_goto_cleanup`, `09_dynamic_memory/04_memory_leak` | Single-exit cleanup and leak detection. |
+| Ownership and cleanup paths | `09_dynamic_memory/11_goto_cleanup`, `09_dynamic_memory/04_memory_leak` | Single-exit cleanup and leak detection. |
 
 ## 9. Structs, unions, enums, and bitfields
 

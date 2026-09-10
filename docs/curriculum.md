@@ -54,7 +54,7 @@ Total exercises: **182** across **20** topics.
 | `03_types_variables/04_floating_point` | Compare floating-point values with an epsilon. |
 | `03_types_variables/05_char_ascii` | Work with char values and the ctype classification functions. |
 | `03_types_variables/06_storage_scope` | Observe the lifetime of a static variable and block scope. |
-| `03_types_variables/07_qualifiers` | Use const, volatile, restrict, extern, auto, and register. |
+| `03_types_variables/07_qualifiers` | Use const, volatile, extern, auto, and register. |
 | `03_types_variables/08_stdbool_stddef` | Use bool and size_t from the standard headers. |
 | `03_types_variables/09_long_double` | Use long double and compare its precision with double. |
 | `03_types_variables/10_octal_constants` | Recognize that a leading zero means base 8. |
@@ -83,11 +83,9 @@ Total exercises: **182** across **20** topics.
 | `05_control_flow/02_switch_case` | Use intentional fallthrough and a default case. |
 | `05_control_flow/03_loops` | Get loop bounds and accumulators right. |
 | `05_control_flow/04_break_continue` | Use break to stop early and continue to skip one iteration. |
-| `05_control_flow/05_goto_cleanup` | Use goto for a clear cleanup path in C. |
-| `05_control_flow/06_state_machine` | Track state while scanning a string. |
-| `05_control_flow/07_while_do_while` | Distinguish entry-condition and exit-condition loops. |
-| `05_control_flow/08_semicolon_pitfalls` | Avoid accidentally ending an if or loop with a semicolon. |
-| `05_control_flow/09_dangling_else` | Use braces to make else bind to the intended if. |
+| `05_control_flow/05_while_do_while` | Distinguish entry-condition and exit-condition loops. |
+| `05_control_flow/06_semicolon_pitfalls` | Avoid accidentally ending an if or loop with a semicolon. |
+| `05_control_flow/07_dangling_else` | Use braces to make else bind to the intended if. |
 
 ## 06_functions - Functions and Scope
 
@@ -95,14 +93,11 @@ Total exercises: **182** across **20** topics.
 | --- | --- |
 | `06_functions/01_declaration_definition` | Use a forward declaration and an internal helper. |
 | `06_functions/02_parameters_return` | Return values through parameters and clamp a range. |
-| `06_functions/03_pass_by_pointer` | Modify caller-owned data through pointers. |
-| `06_functions/04_recursion` | Write recursive functions with correct base cases. |
-| `06_functions/05_static_inline` | Use static functions and file-scope state. |
-| `06_functions/06_function_pointers` | Store functions in variables and choose one at runtime. |
-| `06_functions/07_void_and_return` | Return early from a void function and return values from int functions. |
-| `06_functions/08_tail_recursion` | Rewrite a recursive sum using an accumulator. |
-| `06_functions/09_default_argument_promotions` | Use the promoted types expected by variadic functions. |
-| `06_functions/10_main_return_value` | Return a defined success or failure status from a program. |
+| `06_functions/03_recursion` | Write recursive functions with correct base cases. |
+| `06_functions/04_static_inline` | Use static functions and file-scope state. |
+| `06_functions/05_void_and_return` | Return early from a void function and return values from int functions. |
+| `06_functions/06_tail_recursion` | Rewrite a recursive sum using an accumulator. |
+| `06_functions/07_main_return_value` | Return a defined success or failure status from a program. |
 
 ## 07_pointers - Pointers
 
@@ -119,6 +114,8 @@ Total exercises: **182** across **20** topics.
 | `07_pointers/09_memory_location_zero` | Treat address zero as a null pointer, not as a valid object address. |
 | `07_pointers/10_one_past_pointer` | Do not treat a pointer to a single object as an array. |
 | `07_pointers/11_restrict_aliasing` | Use restrict to promise that two pointer parameters do not alias. |
+| `07_pointers/12_pass_by_pointer` | Modify caller-owned data through pointers. |
+| `07_pointers/13_function_pointers` | Store functions in variables and choose one at runtime. |
 
 ## 08_arrays_strings - Arrays and Strings
 
@@ -140,6 +137,7 @@ Total exercises: **182** across **20** topics.
 | `08_arrays_strings/14_fgets_fputs_sort` | Read a line with fgets and sort an array of strings. |
 | `08_arrays_strings/15_strtod` | Parse a double with strtod and reject trailing input. |
 | `08_arrays_strings/16_main_args` | Work with the arguments passed to main. |
+| `08_arrays_strings/17_state_machine` | Track state while scanning a string. |
 
 ## 09_dynamic_memory - Dynamic Memory
 
@@ -155,6 +153,7 @@ Total exercises: **182** across **20** topics.
 | `09_dynamic_memory/08_free_then_realloc` | Use realloc directly instead of freeing before growing an allocation. |
 | `09_dynamic_memory/09_arena_allocator` | Implement a simple bump allocator with aligned allocations. |
 | `09_dynamic_memory/10_allocation_stats` | Track outstanding allocations with wrapped malloc and free. |
+| `09_dynamic_memory/11_goto_cleanup` | Use goto for a clear cleanup path in C. |
 
 ## 10_aggregates - Structs, Unions, Enums, and Bitfields
 
@@ -203,6 +202,7 @@ Total exercises: **182** across **20** topics.
 | `12_standard_library/13_scanf_advanced` | Use field width and a scanset in sscanf. |
 | `12_standard_library/14_ctype_full` | Use isalnum and toupper with unsigned char casts. |
 | `12_standard_library/15_rand_max` | Do not assume rand() returns a value below a fixed small bound. |
+| `12_standard_library/16_default_argument_promotions` | Use the promoted types expected by variadic functions. |
 
 ## 13_character_io - Character I/O
 

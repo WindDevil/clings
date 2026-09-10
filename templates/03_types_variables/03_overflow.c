@@ -14,24 +14,23 @@ unsigned wrap_add(unsigned a, unsigned b)
     return a + b;
 }
 
-int safe_add_int(int a, int b, int *out)
+int add_overflows(int a, int b)
 {
     /* TODO: detect overflow before doing the addition. */
-    if (0) {
-        return -1;
-    }
-    *out = a + b;
     return 0;
+}
+
+long add_wide(int a, int b)
+{
+    return (long)a + (long)b;
 }
 
 int main(void)
 {
-    int out = 0;
-
     CLINGS_CHECK_INT(wrap_add(UINT_MAX, 1u), 0);
-    CLINGS_CHECK_INT(safe_add_int(INT_MAX, 1, &out), -1);
-    CLINGS_CHECK_INT(safe_add_int(INT_MIN, -1, &out), -1);
-    CLINGS_CHECK_INT(safe_add_int(2, 3, &out), 0);
-    CLINGS_CHECK_INT(out, 5);
+    CLINGS_CHECK_INT(add_overflows(INT_MAX, 1), 1);
+    CLINGS_CHECK_INT(add_overflows(INT_MIN, -1), 1);
+    CLINGS_CHECK_INT(add_overflows(2, 3), 0);
+    CLINGS_CHECK_INT(add_wide(2, 3), 5);
     return clings_report();
 }

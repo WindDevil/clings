@@ -23,3 +23,4 @@ Run an exercise with:
 | `13_scanf_advanced` | Use field width and a scanset in sscanf. |
 | `14_ctype_full` | Use isalnum and toupper with unsigned char casts. |
 | `15_rand_max` | Do not assume rand() returns a value below a fixed small bound. |
+| `16_default_argument_promotions` | Use the promoted types expected by variadic functions. |

@@ -82,8 +82,8 @@ CLINGS_CHECK_INT(unsigned_char_promotion(), 256);
         ],
     ),
     ex(
-        topic="06_functions",
-        slug="09_default_argument_promotions",
+        topic="12_standard_library",
+        slug="16_default_argument_promotions",
         title="Default argument promotions",
         objective="Use the promoted types expected by variadic functions.",
         reference="",

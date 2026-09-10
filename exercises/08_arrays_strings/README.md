@@ -24,3 +24,4 @@ Run an exercise with:
 | `14_fgets_fputs_sort` | Read a line with fgets and sort an array of strings. |
 | `15_strtod` | Parse a double with strtod and reject trailing input. |
 | `16_main_args` | Work with the arguments passed to main. |
+| `17_state_machine` | Track state while scanning a string. |

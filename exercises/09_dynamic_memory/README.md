@@ -18,3 +18,4 @@ Run an exercise with:
 | `08_free_then_realloc` | Use realloc directly instead of freeing before growing an allocation. |
 | `09_arena_allocator` | Implement a simple bump allocator with aligned allocations. |
 | `10_allocation_stats` | Track outstanding allocations with wrapped malloc and free. |
+| `11_goto_cleanup` | Use goto for a clear cleanup path in C. |

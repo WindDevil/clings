@@ -98,14 +98,14 @@ make clean
 | `02_macros` | 10 | 对象宏、函数宏、参数括号、`#`/`##`、变参宏、X-macro、宏空格、宏语句、宏与 typedef、宏副作用、`assert` |
 | `03_types_variables` | 12 | 整数/浮点类型、符号、溢出、字符、存储类、限定符、八进制常量、`char` 符号性、整型提升 |
 | `04_operators` | 9 | 算术、优先级、短路求值、位运算、移位、`sizeof`、复合赋值、赋值/相等、最长匹配 |
-| `05_control_flow` | 9 | `if`、`switch`、循环、`break/continue`、`goto`、状态机、分号陷阱、悬挂 `else` |
-| `06_functions` | 10 | 声明/定义、参数、递归、尾递归、`static`、函数指针、`void/return`、默认参数提升、`main` 返回值 |
-| `07_pointers` | 11 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past、`restrict` |
-| `08_arrays_strings` | 16 | 数组、数组退化、多维数组、字符串、分词、VLA、复合字面量、不对称边界、字符串函数、`argc/argv` |
-| `09_dynamic_memory` | 10 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc、arena、分配统计 |
+| `05_control_flow` | 7 | `if`、`switch`、循环、`break/continue`、分号陷阱、悬挂 `else` |
+| `06_functions` | 7 | 声明/定义、参数、递归、尾递归、`static`、`void/return`、`main` 返回值 |
+| `07_pointers` | 13 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past、`restrict`、传参、函数指针 |
+| `08_arrays_strings` | 17 | 数组、数组退化、多维数组、字符串、分词、VLA、复合字面量、不对称边界、字符串函数、`argc/argv`、状态机 |
+| `09_dynamic_memory` | 11 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc、arena、分配统计、`goto` 清理 |
 | `10_aggregates` | 13 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明、函数指针表 |
 | `11_data_representation` | 5 | 进制转换、整数位表示、浮点位表示、位域与掩码、端序 |
-| `12_standard_library` | 15 | `printf` 格式进阶、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h`、varargs |
+| `12_standard_library` | 16 | `printf` 格式进阶、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h`、varargs、默认参数提升 |
 | `13_character_io` | 5 | `getc/putc`、`EOF/feof/ferror`、输入验证、`iso646.h`、`getchar/putchar` |
 | `14_file_io` | 7 | `fprintf/fscanf`、`fgets/fputs`、`ungetc`、`fseek/ftell`、缓冲、二进制随机访问、缓冲输出+内存 |
 | `15_ub_safety` | 11 | 有符号溢出、未初始化、越界、释放后使用、序列点、严格别名、对齐、空指针、标准版本、标识符长度、实现定义行为 |

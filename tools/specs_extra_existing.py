@@ -72,7 +72,7 @@ CLINGS_CHECK_INT(comma_sum(2, 3), 7);
     ),
     ex(
         topic="05_control_flow",
-        slug="07_while_do_while",
+        slug="05_while_do_while",
         title="while and do-while",
         objective="Distinguish entry-condition and exit-condition loops.",
         reference="",
@@ -113,7 +113,7 @@ CLINGS_CHECK_INT(count_do_while(3), 3);
     ),
     ex(
         topic="06_functions",
-        slug="08_tail_recursion",
+        slug="06_tail_recursion",
         title="Tail recursion",
         objective="Rewrite a recursive sum using an accumulator.",
         reference="",

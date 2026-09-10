@@ -14,7 +14,7 @@ Run an exercise with:
 | `04_floating_point` | Compare floating-point values with an epsilon. |
 | `05_char_ascii` | Work with char values and the ctype classification functions. |
 | `06_storage_scope` | Observe the lifetime of a static variable and block scope. |
-| `07_qualifiers` | Use const, volatile, restrict, extern, auto, and register. |
+| `07_qualifiers` | Use const, volatile, extern, auto, and register. |
 | `08_stdbool_stddef` | Use bool and size_t from the standard headers. |
 | `09_long_double` | Use long double and compare its precision with double. |
 | `10_octal_constants` | Recognize that a leading zero means base 8. |

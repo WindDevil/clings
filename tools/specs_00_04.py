@@ -452,28 +452,33 @@ unsigned wrap_add(unsigned a, unsigned b)
     return a + b;
 }
 
-int safe_add_int(int a, int b, int *out)
+int add_overflows(int a, int b)
 {
-    if ((b > 0 && a > INT_MAX - b) || (b < 0 && a < INT_MIN - b)) {
-        return -1;
+    if (b > 0 && a > INT_MAX - b) {
+        return 1;
     }
-    *out = a + b;
+    if (b < 0 && a < INT_MIN - b) {
+        return 1;
+    }
     return 0;
+}
+
+long add_wide(int a, int b)
+{
+    return (long)a + (long)b;
 }
 """,
         tests=r"""
-int out = 0;
-
 CLINGS_CHECK_INT(wrap_add(UINT_MAX, 1u), 0);
-CLINGS_CHECK_INT(safe_add_int(INT_MAX, 1, &out), -1);
-CLINGS_CHECK_INT(safe_add_int(INT_MIN, -1, &out), -1);
-CLINGS_CHECK_INT(safe_add_int(2, 3, &out), 0);
-CLINGS_CHECK_INT(out, 5);
+CLINGS_CHECK_INT(add_overflows(INT_MAX, 1), 1);
+CLINGS_CHECK_INT(add_overflows(INT_MIN, -1), 1);
+CLINGS_CHECK_INT(add_overflows(2, 3), 0);
+CLINGS_CHECK_INT(add_wide(2, 3), 5);
 """,
         breaks=[
             (
-                "if ((b > 0 && a > INT_MAX - b) || (b < 0 && a < INT_MIN - b)) {",
-                "/* TODO: detect overflow before doing the addition. */\n    if (0) {",
+                "if (b > 0 && a > INT_MAX - b) {\n        return 1;\n    }\n    if (b < 0 && a < INT_MIN - b) {\n        return 1;\n    }",
+                "/* TODO: detect overflow before doing the addition. */",
             )
         ],
     ),
@@ -576,26 +581,23 @@ CLINGS_CHECK_INT(next_counter(), 3);
         topic="03_types_variables",
         slug="07_qualifiers",
         title="Type qualifiers and storage-class specifiers",
-        objective="Use const, volatile, restrict, extern, auto, and register.",
+        objective="Use const, volatile, extern, auto, and register.",
         reference="",
-        hint="restrict promises that the two pointer parameters do not alias.",
+        hint="Qualifiers affect how an object may be accessed and optimized.",
         code=r"""
 extern int shared_value;
 int shared_value = 42;
 
-int read_const(const int *value)
+int const_value(void)
 {
-    return *value;
+    const int value = 42;
+    return value;
 }
 
-int read_volatile(volatile int *value)
+int volatile_value(void)
 {
-    return *value;
-}
-
-int sum_restrict(const int *restrict left, const int *restrict right)
-{
-    return *left + *right;
+    volatile int value = 7;
+    return value;
 }
 
 int register_sum(void)
@@ -614,21 +616,16 @@ int auto_value(void)
 }
 """,
         tests=r"""
-int left = 5;
-int right = 7;
-volatile int volatile_value = 9;
-
 CLINGS_CHECK_INT(shared_value, 42);
-CLINGS_CHECK_INT(read_const(&left), 5);
-CLINGS_CHECK_INT(read_volatile(&volatile_value), 9);
-CLINGS_CHECK_INT(sum_restrict(&left, &right), 12);
+CLINGS_CHECK_INT(const_value(), 42);
+CLINGS_CHECK_INT(volatile_value(), 7);
 CLINGS_CHECK_INT(register_sum(), 3);
 CLINGS_CHECK_INT(auto_value(), 5);
 """,
         breaks=[
             (
-                "return *left + *right;",
-                "/* TODO: read both restricted pointers. */\n    return *left;",
+                "volatile int value = 7;",
+                "/* TODO: initialize the volatile value. */\n    volatile int value = 0;",
             )
         ],
     ),
@@ -1027,45 +1024,43 @@ CLINGS_CHECK_INT(factorial(5), 120);
         reference="",
         hint="continue skips the rest of the current iteration; break exits the loop.",
         code=r"""
-int first_even(const int *values, int count)
+int first_multiple_of_three(int limit)
 {
-    for (int i = 0; i < count; ++i) {
-        if (values[i] % 2 == 0) {
-            return values[i];
+    for (int value = 1; value <= limit; ++value) {
+        if (value % 3 == 0) {
+            return value;
         }
     }
     return -1;
 }
 
-int sum_positive(const int *values, int count)
+int sum_skipping_multiples_of_three(int limit)
 {
     int sum = 0;
-    for (int i = 0; i < count; ++i) {
-        if (values[i] <= 0) {
+    for (int value = 1; value <= limit; ++value) {
+        if (value % 3 == 0) {
             continue;
         }
-        sum += values[i];
+        sum += value;
     }
     return sum;
 }
 """,
         tests=r"""
-const int values[] = {1, -3, 4, 5, -6};
-
-CLINGS_CHECK_INT(first_even(values, 5), 4);
-CLINGS_CHECK_INT(sum_positive(values, 5), 10);
-CLINGS_CHECK_INT(sum_positive((const int[]){-1, -2}, 2), 0);
+CLINGS_CHECK_INT(first_multiple_of_three(10), 3);
+CLINGS_CHECK_INT(sum_skipping_multiples_of_three(5), 12);
+CLINGS_CHECK_INT(sum_skipping_multiples_of_three(0), 0);
 """,
         breaks=[
             (
-                "if (values[i] <= 0) {\n            continue;\n        }",
-                "if (values[i] <= 0) {\n            /* TODO: skip this value, do not stop the loop. */\n            break;\n        }",
+                "if (value % 3 == 0) {\n            continue;\n        }",
+                "if (value % 3 == 0) {\n            /* TODO: skip this value, do not stop the loop. */\n            break;\n        }",
             )
         ],
     ),
     ex(
-        topic="05_control_flow",
-        slug="05_goto_cleanup",
+        topic="09_dynamic_memory",
+        slug="11_goto_cleanup",
         title="goto for single-exit cleanup",
         objective="Use goto for a clear cleanup path in C.",
         reference="",
@@ -1120,8 +1115,8 @@ CLINGS_CHECK_INT(parse_and_sum(values, 4, NULL), -1);
         ],
     ),
     ex(
-        topic="05_control_flow",
-        slug="06_state_machine",
+        topic="08_arrays_strings",
+        slug="17_state_machine",
         title="A small state machine",
         objective="Track state while scanning a string.",
         reference="",
@@ -1209,37 +1204,36 @@ int clamp(int value, int low, int high)
     return value;
 }
 
-void min_max(const int *values, int count, int *min_out, int *max_out)
+int min_of_three(int a, int b, int c)
 {
-    if (count <= 0 || values == NULL || min_out == NULL || max_out == NULL) {
-        return;
+    int minimum = a;
+    if (b < minimum) {
+        minimum = b;
     }
+    if (c < minimum) {
+        minimum = c;
+    }
+    return minimum;
+}
 
-    int minimum = values[0];
-    int maximum = values[0];
-    for (int i = 1; i < count; ++i) {
-        if (values[i] < minimum) {
-            minimum = values[i];
-        }
-        if (values[i] > maximum) {
-            maximum = values[i];
-        }
+int max_of_three(int a, int b, int c)
+{
+    int maximum = a;
+    if (b > maximum) {
+        maximum = b;
     }
-    *min_out = minimum;
-    *max_out = maximum;
+    if (c > maximum) {
+        maximum = c;
+    }
+    return maximum;
 }
 """,
         tests=r"""
-const int values[] = {4, -2, 9, 1};
-int minimum = 0;
-int maximum = 0;
-
 CLINGS_CHECK_INT(clamp(5, 1, 10), 5);
 CLINGS_CHECK_INT(clamp(0, 1, 10), 1);
 CLINGS_CHECK_INT(clamp(11, 1, 10), 10);
-min_max(values, 4, &minimum, &maximum);
-CLINGS_CHECK_INT(minimum, -2);
-CLINGS_CHECK_INT(maximum, 9);
+CLINGS_CHECK_INT(min_of_three(4, -2, 9), -2);
+CLINGS_CHECK_INT(max_of_three(4, -2, 9), 9);
 """,
         breaks=[
             (
@@ -1249,8 +1243,8 @@ CLINGS_CHECK_INT(maximum, 9);
         ],
     ),
     ex(
-        topic="06_functions",
-        slug="03_pass_by_pointer",
+        topic="07_pointers",
+        slug="12_pass_by_pointer",
         title="Pass by value and pass by pointer",
         objective="Modify caller-owned data through pointers.",
         reference="",
@@ -1292,7 +1286,7 @@ CLINGS_CHECK_INT(values[2], 4);
     ),
     ex(
         topic="06_functions",
-        slug="04_recursion",
+        slug="03_recursion",
         title="Recursion and base cases",
         objective="Write recursive functions with correct base cases.",
         reference="",
@@ -1324,7 +1318,7 @@ CLINGS_CHECK_INT(fibonacci(8), 21);
     ),
     ex(
         topic="06_functions",
-        slug="05_static_inline",
+        slug="04_static_inline",
         title="Internal linkage and inline helpers",
         objective="Use static functions and file-scope state.",
         reference="",
@@ -1362,8 +1356,8 @@ CLINGS_CHECK_INT(add_one_calls(), 2);
         ],
     ),
     ex(
-        topic="06_functions",
-        slug="06_function_pointers",
+        topic="07_pointers",
+        slug="13_function_pointers",
         title="Function pointers and dispatch",
         objective="Store functions in variables and choose one at runtime.",
         reference="",
@@ -1406,20 +1400,22 @@ CLINGS_CHECK_INT(choose_operation('*')(4, 5), 20);
     ),
     ex(
         topic="06_functions",
-        slug="07_void_and_return",
+        slug="05_void_and_return",
         title="void functions and return statements",
         objective="Return early from a void function and return values from int functions.",
         reference="",
         hint="A void function uses a bare return; an int function must return a value.",
         code=r"""
-#include <stddef.h>
+static int global_value = 0;
 
-void set_zero(int *value)
+void set_global_zero(void)
 {
-    if (value == NULL) {
-        return;
-    }
-    *value = 0;
+    global_value = 0;
+}
+
+int global_value_value(void)
+{
+    return global_value;
 }
 
 int early_return(int value)
@@ -1431,12 +1427,8 @@ int early_return(int value)
 }
 """,
         tests=r"""
-int value = 5;
-
-set_zero(&value);
-CLINGS_CHECK_INT(value, 0);
-set_zero(NULL);
-CLINGS_CHECK_INT(value, 0);
+set_global_zero();
+CLINGS_CHECK_INT(global_value_value(), 0);
 CLINGS_CHECK_INT(early_return(-3), -1);
 CLINGS_CHECK_INT(early_return(4), 8);
 """,

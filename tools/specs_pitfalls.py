@@ -111,7 +111,7 @@ CLINGS_CHECK_INT(parse_c_integer("0195", &value), -1);
     ),
     ex(
         topic="05_control_flow",
-        slug="08_semicolon_pitfalls",
+        slug="06_semicolon_pitfalls",
         title="Semicolon and empty-statement traps",
         objective="Avoid accidentally ending an if or loop with a semicolon.",
         reference="",
@@ -144,7 +144,7 @@ CLINGS_CHECK_INT(count_nonzero(zeros, 3), 0);
     ),
     ex(
         topic="05_control_flow",
-        slug="09_dangling_else",
+        slug="07_dangling_else",
         title="Dangling else",
         objective="Use braces to make else bind to the intended if.",
         reference="",
@@ -250,7 +250,7 @@ CLINGS_CHECK_INT(loop_count(0, 5), 5);
     ),
     ex(
         topic="06_functions",
-        slug="10_main_return_value",
+        slug="07_main_return_value",
         title="main return values",
         objective="Return a defined success or failure status from a program.",
         reference="",

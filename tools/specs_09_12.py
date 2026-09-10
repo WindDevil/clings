@@ -1,6 +1,6 @@
 """Exercise specifications for topics 09 through 12."""
 
-from spec import ex
+from spec import ex, project
 
 SPECS = [
     # ------------------------------------------------------------------
@@ -8,6 +8,66 @@ SPECS = [
     # ------------------------------------------------------------------
     ex(
         topic="09_preprocessor",
+        slug="01_include_standard",
+        title="#include with a standard header",
+        objective="Include the standard header that declares fixed-width integer types.",
+        reference="",
+        hint="Add the standard header that declares int32_t and INT32_MAX.",
+        code=r"""
+#include <stdint.h>
+
+int32_t largest_int32(void)
+{
+    return INT32_MAX;
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(largest_int32(), INT32_MAX);
+""",
+        breaks=[
+            (
+                "#include <stdint.h>\n\n",
+                "/* TODO: include the header for fixed-width integers. */\n",
+            )
+        ],
+    ),
+    project(
+        topic="09_preprocessor",
+        slug="02_include_user",
+        title="#include with a user header",
+        objective="Include a local header so its macro is visible.",
+        reference="",
+        hint="Add the include for config.h in main.c.",
+        files={
+            "config.h": r"""
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define CONFIG_VALUE 42
+
+#endif
+""",
+            "main.c": r"""
+#include "clings/test.h"
+#include "config.h"
+
+int main(void)
+{
+    CLINGS_CHECK_INT(CONFIG_VALUE, 42);
+    return clings_report();
+}
+""",
+        },
+        file_breaks=[
+            (
+                "main.c",
+                '#include "clings/test.h"\n#include "config.h"',
+                '#include "clings/test.h"\n/* TODO: include the local header that defines CONFIG_VALUE. */',
+            )
+        ],
+    ),
+    ex(
+        topic="20_macros",
         slug="01_object_macro",
         title="Object-like macros",
         objective="Use a named compile-time constant.",
@@ -39,7 +99,7 @@ CLINGS_CHECK_INT(version(), 2);
         ],
     ),
     ex(
-        topic="09_preprocessor",
+        topic="20_macros",
         slug="02_function_macro",
         title="Function-like macros",
         objective="Protect macro arguments and the whole expansion with parentheses.",
@@ -72,7 +132,7 @@ CLINGS_CHECK_INT(MIN(2, 3) * 2, 4);
         ],
     ),
     ex(
-        topic="09_preprocessor",
+        topic="20_macros",
         slug="03_stringize_paste",
         title="Stringizing and token pasting",
         objective="Use # to stringize and ## to paste tokens.",
@@ -111,7 +171,7 @@ CLINGS_CHECK_INT(concatenated_value(), 42);
     ),
     ex(
         topic="09_preprocessor",
-        slug="04_conditional_compilation",
+        slug="03_conditional_compilation",
         title="Conditional compilation",
         objective="Select code at preprocessing time based on the language version.",
         reference="",
@@ -140,7 +200,7 @@ CLINGS_CHECK_INT(has_c11(), 1);
     ),
     ex(
         topic="09_preprocessor",
-        slug="05_include_guards",
+        slug="04_include_guards",
         title="Include guards",
         objective="Prevent multiple inclusion with a preprocessor guard.",
         reference="",
@@ -179,8 +239,8 @@ CLINGS_CHECK_INT(guarded_value(), 42);
         ],
     ),
     ex(
-        topic="09_preprocessor",
-        slug="06_variadic_macros",
+        topic="20_macros",
+        slug="04_variadic_macros",
         title="Variadic macros",
         objective="Forward a variable argument list to a variadic function.",
         reference="",
@@ -216,8 +276,8 @@ CLINGS_CHECK_INT(SUM(0), 0);
         ],
     ),
     ex(
-        topic="09_preprocessor",
-        slug="07_x_macros",
+        topic="20_macros",
+        slug="05_x_macros",
         title="X-macros",
         objective="Generate an enum and a string table from one list.",
         reference="",
@@ -251,7 +311,7 @@ CLINGS_CHECK_STR(color_names[COLOR_BLUE], "BLUE");
     ),
     ex(
         topic="09_preprocessor",
-        slug="08_pragma_error_line",
+        slug="05_pragma_error_line",
         title="#error, #line, and #pragma pack",
         objective="Use diagnostics, line control, and packing pragmas.",
         reference="",

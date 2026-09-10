@@ -142,7 +142,7 @@ Every row points to at least one exercise.
 | Variadic macros | `09_preprocessor/06_variadic_macros` | `__VA_ARGS__` and variadic functions. |
 | X-macros | `09_preprocessor/07_x_macros` | Generate enums and string tables from one list. |
 | `#error`, `#line`, `#pragma pack` | `09_preprocessor/08_pragma_error_line` | Diagnostics, line control, and packing. |
-| Predefined macros | `20_predefined_macros/01`-`08` | `__STDC__`, `__STDC_VERSION__`, `__STDC_HOSTED__`, `__FILE__`, `__LINE__`, `__func__`, `__DATE__`, `__TIME__`, optional-feature macros. |
+| Macros and macro hygiene | `20_macros/01`-`09` | Object-like macros, function-like macros, parentheses, `#`, `##`, variadic macros, X-macros, macro statements, macro-vs-typedef, macro side effects. |
 
 ## 11. Standard library and I/O
 

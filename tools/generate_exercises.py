@@ -87,7 +87,6 @@ def load_specs() -> list[ExerciseSpec]:
     from specs_advanced_topics import SPECS as specs_advanced_topics
     from specs_extra_existing import SPECS as specs_extra_existing
     from specs_extra_topics import SPECS as specs_extra_topics
-    from specs_predefined_macros import SPECS as specs_predefined_macros
     from specs_pitfalls import SPECS as specs_pitfalls
 
     specs = (
@@ -98,13 +97,13 @@ def load_specs() -> list[ExerciseSpec]:
         + specs_extra_topics
         + specs_pitfalls
         + specs_advanced_topics
-        + specs_predefined_macros
     )
     seen: set[str] = set()
     for spec in specs:
         if spec.ident in seen:
             raise SystemExit(f"duplicate exercise id: {spec.ident}")
         seen.add(spec.ident)
+    specs.sort(key=lambda spec: (spec.topic, spec.slug))
     return specs
 
 
@@ -118,7 +117,7 @@ TOPIC_TITLES = {
     "06_pointers": "Pointers and Memory Layout",
     "07_dynamic_memory": "Dynamic Memory and Data Structures",
     "08_structs_unions_enums": "Structs, Unions, Enums, and Bitfields",
-    "09_preprocessor": "Preprocessor and Macros",
+    "09_preprocessor": "Preprocessor Directives",
     "10_stdlib_io": "Standard Library and File I/O",
     "11_ub_safety": "Undefined Behavior, Safety, and Portability",
     "12_advanced_c": "Advanced C Features",
@@ -129,7 +128,7 @@ TOPIC_TITLES = {
     "17_data_structures": "Abstract Data Types and Data Structures",
     "18_file_io_advanced": "Advanced File I/O",
     "19_modern_c_library": "Modern C Library and Language Features",
-    "20_predefined_macros": "Predefined Macros",
+    "20_macros": "Macros and Macro Hygiene",
 }
 
 

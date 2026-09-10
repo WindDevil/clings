@@ -2,7 +2,7 @@
 
 This map connects each topic to the exercises that teach it.
 
-Total exercises: **184** across **21** topics.
+Total exercises: **179** across **21** topics.
 
 ## 00_getting_started - Getting Started
 
@@ -143,22 +143,16 @@ Total exercises: **184** across **21** topics.
 | `08_structs_unions_enums/12_complex_declarations` | Read and use a typedef for a function pointer and an array of function pointers. |
 | `08_structs_unions_enums/13_declaration_grammar` | Read a typedef for an array of function pointers. |
 
-## 09_preprocessor - Preprocessor and Macros
+## 09_preprocessor - Preprocessor Directives
 
 | Exercise | Objective |
 | --- | --- |
-| `09_preprocessor/01_object_macro` | Use a named compile-time constant. |
-| `09_preprocessor/02_function_macro` | Protect macro arguments and the whole expansion with parentheses. |
-| `09_preprocessor/03_stringize_paste` | Use # to stringize and ## to paste tokens. |
-| `09_preprocessor/04_conditional_compilation` | Select code at preprocessing time based on the language version. |
-| `09_preprocessor/05_include_guards` | Prevent multiple inclusion with a preprocessor guard. |
-| `09_preprocessor/06_variadic_macros` | Forward a variable argument list to a variadic function. |
-| `09_preprocessor/07_x_macros` | Generate an enum and a string table from one list. |
-| `09_preprocessor/08_pragma_error_line` | Use diagnostics, line control, and packing pragmas. |
-| `09_preprocessor/10_undef_defined` | Undefine a macro and test it with defined(). |
-| `09_preprocessor/11_macro_whitespace` | Remember that a space can turn a function-like macro into an object-like macro. |
-| `09_preprocessor/12_macro_statement` | Use do { ... } while (0) for a statement-like macro. |
-| `09_preprocessor/13_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. |
+| `09_preprocessor/01_include_standard` | Include the standard header that declares fixed-width integer types. |
+| `09_preprocessor/02_include_user` | Include a local header so its macro is visible. |
+| `09_preprocessor/03_conditional_compilation` | Select code at preprocessing time based on the language version. |
+| `09_preprocessor/04_include_guards` | Prevent multiple inclusion with a preprocessor guard. |
+| `09_preprocessor/05_pragma_error_line` | Use diagnostics, line control, and packing pragmas. |
+| `09_preprocessor/06_undef_defined` | Undefine a macro and test it with defined(). |
 
 ## 10_stdlib_io - Standard Library and File I/O
 
@@ -280,18 +274,19 @@ Total exercises: **184** across **21** topics.
 | `19_modern_c_library/03_atexit` | Register a cleanup function with atexit. |
 | `19_modern_c_library/04_atomic_flag` | Use atomic_flag as a simple test-and-set lock. |
 
-## 20_predefined_macros - Predefined Macros
+## 20_macros - Macros and Macro Hygiene
 
 | Exercise | Objective |
 | --- | --- |
-| `20_predefined_macros/01_stdc` | Use __STDC__ to detect a conforming C implementation. |
-| `20_predefined_macros/02_stdc_version` | Read the C standard version from __STDC_VERSION__. |
-| `20_predefined_macros/03_stdc_hosted` | Distinguish hosted and freestanding implementations. |
-| `20_predefined_macros/04_file` | Use __FILE__ to obtain the current source file name. |
-| `20_predefined_macros/05_line` | Use __LINE__ to obtain the current source line number. |
-| `20_predefined_macros/06_func` | Use __func__ to obtain the current function name. |
-| `20_predefined_macros/07_date_time` | Read the compilation date and time. |
-| `20_predefined_macros/08_optional_features` | Detect unavailable optional C features with __STDC_NO_* macros. |
+| `20_macros/01_object_macro` | Use a named compile-time constant. |
+| `20_macros/02_function_macro` | Protect macro arguments and the whole expansion with parentheses. |
+| `20_macros/03_stringize_paste` | Use # to stringize and ## to paste tokens. |
+| `20_macros/04_variadic_macros` | Forward a variable argument list to a variadic function. |
+| `20_macros/05_x_macros` | Generate an enum and a string table from one list. |
+| `20_macros/06_macro_whitespace` | Remember that a space can turn a function-like macro into an object-like macro. |
+| `20_macros/07_macro_statement` | Use do { ... } while (0) for a statement-like macro. |
+| `20_macros/08_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. |
+| `20_macros/09_macro_side_effects` | See that a function-like macro can evaluate its argument more than once. |
 
 ## Cross-cutting knowledge checklist
 

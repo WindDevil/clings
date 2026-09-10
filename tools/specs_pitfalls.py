@@ -315,8 +315,8 @@ int main(void)
         ],
     ),
     ex(
-        topic="09_preprocessor",
-        slug="11_macro_whitespace",
+        topic="20_macros",
+        slug="06_macro_whitespace",
         title="Whitespace in macro definitions",
         objective="Remember that a space can turn a function-like macro into an object-like macro.",
         reference="",
@@ -342,8 +342,8 @@ CLINGS_CHECK_INT(SQUARE(3), 9);
         compile_fail=True,
     ),
     ex(
-        topic="09_preprocessor",
-        slug="12_macro_statement",
+        topic="20_macros",
+        slug="07_macro_statement",
         title="Macros are not statements",
         objective="Use do { ... } while (0) for a statement-like macro.",
         reference="",
@@ -377,8 +377,8 @@ CLINGS_CHECK_INT(value, 1);
         compile_fail=True,
     ),
     ex(
-        topic="09_preprocessor",
-        slug="13_macro_not_typedef",
+        topic="20_macros",
+        slug="08_macro_not_typedef",
         title="Macros are not type definitions",
         objective="Use typedef instead of an object-like macro for pointer types.",
         reference="",
@@ -720,6 +720,45 @@ remove(path);
             (
                 "int ok = fputs(text, file) >= 0;",
                 '/* TODO: write the supplied text. */\n    int ok = fputs("wrong", file) >= 0;',
+            )
+        ],
+    ),
+    ex(
+        topic="20_macros",
+        slug="09_macro_side_effects",
+        title="Macro side effects",
+        objective="See that a function-like macro can evaluate its argument more than once.",
+        reference="",
+        hint="NEXT_VALUE() expands to the expression every time it appears.",
+        code=r"""
+static int calls = 0;
+
+#define DOUBLE(x) ((x) + (x))
+
+static int next_value(void)
+{
+    return ++calls;
+}
+
+int double_next(void)
+{
+    calls = 0;
+    return DOUBLE(next_value());
+}
+
+int next_calls(void)
+{
+    return calls;
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(double_next(), 3);
+CLINGS_CHECK_INT(next_calls(), 2);
+""",
+        breaks=[
+            (
+                "#define DOUBLE(x) ((x) + (x))",
+                "/* TODO: expand the argument twice. */\n#define DOUBLE(x) (x)",
             )
         ],
     ),

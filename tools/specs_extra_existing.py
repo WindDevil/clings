@@ -439,7 +439,7 @@ CLINGS_CHECK_INT(use_operation_table(), 7);
     ),
     ex(
         topic="09_preprocessor",
-        slug="10_undef_defined",
+        slug="06_undef_defined",
         title="#undef and defined",
         objective="Undefine a macro and test it with defined().",
         reference="",

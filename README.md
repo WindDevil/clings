@@ -9,7 +9,7 @@
 
 ## 特性
 
-- **177 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
+- **184 个练习，21 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
   数据结构、文件 I/O、线程和原子操作。
   `_Generic`。
 - **自带测试框架**：不依赖 Catch2、GoogleTest 或第三方库。
@@ -102,7 +102,7 @@ make clean
 | `06_pointers` | 11 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past、`restrict` |
 | `07_dynamic_memory` | 10 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc、arena、分配统计 |
 | `08_structs_unions_enums` | 13 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明、函数指针表 |
-| `09_preprocessor` | 13 | 对象宏、函数宏、`#`/`##`、条件编译、头文件保护、变参宏、X-macro、宏空格/语句/类型陷阱 |
+| `09_preprocessor` | 12 | 对象宏、函数宏、`#`/`##`、条件编译、头文件保护、变参宏、X-macro、宏空格/语句/类型陷阱 |
 | `10_stdlib_io` | 17 | `printf/scanf`、高级格式化、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h`、varargs |
 | `11_ub_safety` | 8 | 有符号溢出、未初始化、越界、释放后使用、序列点、严格别名、对齐、空指针 |
 | `12_advanced_c` | 12 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号、栈帧 |
@@ -113,8 +113,9 @@ make clean
 | `17_data_structures` | 3 | 队列 ADT、二叉查找树、动态数组 |
 | `18_file_io_advanced` | 7 | `fprintf/fscanf`、`fgets/fputs`、`ungetc`、`fseek/ftell`、缓冲、二进制随机访问、缓冲输出+内存 |
 | `19_modern_c_library` | 4 | `_Noreturn`、`tgmath.h`、`atexit`、`atomic_flag` |
+| `20_predefined_macros` | 8 | `__STDC__`、`__STDC_VERSION__`、`__STDC_HOSTED__`、`__FILE__`、`__LINE__`、`__func__`、`__DATE__`/`__TIME__`、可选特性宏 |
 
-总计 **177 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
+总计 **184 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
 和 [docs/knowledge-map.md](docs/knowledge-map.md)。
 
 ## 项目结构
@@ -138,7 +139,8 @@ make clean
 │   ├── specs_extra_existing.py # 扩展现有主题的练习规格
 │   ├── specs_extra_topics.py  # 扩展新主题的练习规格
 │   ├── specs_pitfalls.py      # 常见 C 陷阱练习规格
-│   └── specs_advanced_topics.py # 高级 C 与系统编程练习规格
+│   ├── specs_advanced_topics.py # 高级 C 与系统编程练习规格
+│   └── specs_predefined_macros.py # 预定义宏练习规格
 ├── docs/
 │   ├── architecture.md        # 运行器、生成器、测试框架设计
 │   ├── curriculum.md          # 按主题列出全部练习

@@ -2,7 +2,7 @@
 
 This map connects each topic to the exercises that teach it.
 
-Total exercises: **177** across **20** topics.
+Total exercises: **184** across **21** topics.
 
 ## 00_getting_started - Getting Started
 
@@ -155,7 +155,6 @@ Total exercises: **177** across **20** topics.
 | `09_preprocessor/06_variadic_macros` | Forward a variable argument list to a variadic function. |
 | `09_preprocessor/07_x_macros` | Generate an enum and a string table from one list. |
 | `09_preprocessor/08_pragma_error_line` | Use diagnostics, line control, and packing pragmas. |
-| `09_preprocessor/09_std_macros` | Use __FILE__, __LINE__, __func__, and __STDC_VERSION__. |
 | `09_preprocessor/10_undef_defined` | Undefine a macro and test it with defined(). |
 | `09_preprocessor/11_macro_whitespace` | Remember that a space can turn a function-like macro into an object-like macro. |
 | `09_preprocessor/12_macro_statement` | Use do { ... } while (0) for a statement-like macro. |
@@ -280,6 +279,19 @@ Total exercises: **177** across **20** topics.
 | `19_modern_c_library/02_tgmath` | Use sqrt with both double and float arguments through tgmath.h. |
 | `19_modern_c_library/03_atexit` | Register a cleanup function with atexit. |
 | `19_modern_c_library/04_atomic_flag` | Use atomic_flag as a simple test-and-set lock. |
+
+## 20_predefined_macros - Predefined Macros
+
+| Exercise | Objective |
+| --- | --- |
+| `20_predefined_macros/01_stdc` | Use __STDC__ to detect a conforming C implementation. |
+| `20_predefined_macros/02_stdc_version` | Read the C standard version from __STDC_VERSION__. |
+| `20_predefined_macros/03_stdc_hosted` | Distinguish hosted and freestanding implementations. |
+| `20_predefined_macros/04_file` | Use __FILE__ to obtain the current source file name. |
+| `20_predefined_macros/05_line` | Use __LINE__ to obtain the current source line number. |
+| `20_predefined_macros/06_func` | Use __func__ to obtain the current function name. |
+| `20_predefined_macros/07_date_time` | Read the compilation date and time. |
+| `20_predefined_macros/08_optional_features` | Detect unavailable optional C features with __STDC_NO_* macros. |
 
 ## Cross-cutting knowledge checklist
 

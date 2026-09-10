@@ -292,48 +292,6 @@ CLINGS_CHECK_INT(line_number(), 1000);
             )
         ],
     ),
-    ex(
-        topic="09_preprocessor",
-        slug="09_std_macros",
-        title="Predefined macros",
-        objective="Use __FILE__, __LINE__, __func__, and __STDC_VERSION__.",
-        reference="",
-        hint="__func__ is the name of the current function.",
-        code=r"""
-const char *current_file(void)
-{
-    return __FILE__;
-}
-
-const char *current_function(void)
-{
-    return __func__;
-}
-
-int current_line(void)
-{
-    return __LINE__;
-}
-
-int standard_version(void)
-{
-    return (int)(__STDC_VERSION__ / 100L);
-}
-""",
-        tests=r"""
-CLINGS_CHECK(strstr(current_file(), "09_std_macros.c") != NULL);
-CLINGS_CHECK_STR(current_function(), "current_function");
-CLINGS_CHECK(current_line() > 0);
-CLINGS_CHECK(standard_version() >= 2011);
-""",
-        breaks=[
-            (
-                "return __func__;",
-                "/* TODO: return the current function name. */\n    return \"other\";",
-            )
-        ],
-    ),
-
     # ------------------------------------------------------------------
     # 10_stdlib_io
     # ------------------------------------------------------------------

@@ -16,7 +16,6 @@ Run an exercise with:
 | `06_variadic_macros` | Forward a variable argument list to a variadic function. |
 | `07_x_macros` | Generate an enum and a string table from one list. |
 | `08_pragma_error_line` | Use diagnostics, line control, and packing pragmas. |
-| `09_std_macros` | Use __FILE__, __LINE__, __func__, and __STDC_VERSION__. |
 | `10_undef_defined` | Undefine a macro and test it with defined(). |
 | `11_macro_whitespace` | Remember that a space can turn a function-like macro into an object-like macro. |
 | `12_macro_statement` | Use do { ... } while (0) for a statement-like macro. |

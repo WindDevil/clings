@@ -40,7 +40,7 @@ CLINGS_CHECK_STR(buffer, "Hello, C!");
         title="Preprocessing, compiling, and linking",
         objective="See how the preprocessor and the C standard version are exposed.",
         reference="",
-        hint="The runner compiles with -std=c17, so __STDC_VERSION__ is 201710L.",
+        hint="The check requires C11 or newer and compares the result with __STDC_VERSION__.",
         code=r"""
 #include <stdio.h>
 
@@ -61,7 +61,10 @@ int standard_c_year(void)
 """,
         tests=r"""
 CLINGS_CHECK_INT(CLINGS_IS_STANDARD_C, 1);
-CLINGS_CHECK_INT(standard_c_year(), 2017);
+CLINGS_CHECK(standard_c_year() >= 2011);
+#if defined(__STDC_VERSION__)
+CLINGS_CHECK_INT(standard_c_year(), (int)(__STDC_VERSION__ / 100L));
+#endif
 """,
         breaks=[
             (

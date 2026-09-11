@@ -18,3 +18,4 @@ Run an exercise with:
 | `08_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. |
 | `09_macro_side_effects` | See that a function-like macro can evaluate its argument more than once. |
 | `10_assert_macro` | Use assert for programmer errors and return values for user errors. |
+| `11_macro_multiline` | Continue a macro definition onto the next line. |

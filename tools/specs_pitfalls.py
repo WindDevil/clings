@@ -760,4 +760,32 @@ CLINGS_CHECK_INT(next_calls(), 2);
             )
         ],
     ),
+    ex(
+        topic="02_macros",
+        slug="11_macro_multiline",
+        title="Multiline macros",
+        objective="Continue a macro definition onto the next line.",
+        reference="",
+        hint="A trailing backslash continues the macro definition.",
+        code=r"""
+#define CLINGS_SUM(a, b, c) \
+    ((a) + (b) + (c))
+
+int sum_three(int a, int b, int c)
+{
+    return CLINGS_SUM(a, b, c);
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(sum_three(1, 2, 3), 6);
+CLINGS_CHECK_INT(CLINGS_SUM(4, 5, 6), 15);
+""",
+        breaks=[
+            (
+                "#define CLINGS_SUM(a, b, c) \\\n    ((a) + (b) + (c))",
+                "/* TODO: continue the macro definition onto the next line. */\n#define CLINGS_SUM(a, b, c)\n    ((a) + (b) + (c))",
+            )
+        ],
+        compile_fail=True,
+    ),
 ]

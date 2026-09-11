@@ -2,7 +2,7 @@
 
 This map connects each topic to the exercises that teach it.
 
-Total exercises: **183** across **20** topics.
+Total exercises: **184** across **20** topics.
 
 ## 00_basics - Basics
 
@@ -15,7 +15,7 @@ Total exercises: **183** across **20** topics.
 | `00_basics/05_snprintf` | Write formatted text into a fixed-size buffer. |
 | `00_basics/06_sscanf` | Parse values from a string with sscanf. |
 | `00_basics/07_include_header` | Include the standard header that declares printf. |
-| `00_basics/08_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. |
+| `00_basics/08_lexical_elements` | Use comments and escape sequences correctly. |
 | `00_basics/09_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |
 
 ## 01_preprocessor - Preprocessor Directives
@@ -43,6 +43,7 @@ Total exercises: **183** across **20** topics.
 | `02_macros/08_macro_not_typedef` | Use typedef instead of an object-like macro for pointer types. |
 | `02_macros/09_macro_side_effects` | See that a function-like macro can evaluate its argument more than once. |
 | `02_macros/10_assert_macro` | Use assert for programmer errors and return values for user errors. |
+| `02_macros/11_macro_multiline` | Continue a macro definition onto the next line. |
 
 ## 03_types_variables - Types, Variables, and Storage
 

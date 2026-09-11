@@ -142,7 +142,7 @@ Every row points to at least one exercise.
 | Variadic macros | `02_macros/04_variadic_macros` | `__VA_ARGS__` and variadic functions. |
 | X-macros | `02_macros/05_x_macros` | Generate enums and string tables from one list. |
 | `#error`, `#line`, `#pragma pack` | `01_preprocessor/05_pragma_error_line` | Diagnostics, line control, and packing. |
-| Macros and macro hygiene | `02_macros/01`-`10` | Object-like macros, function-like macros, parentheses, `#`, `##`, variadic macros, X-macros, macro statements, macro-vs-typedef, macro side effects, `assert`. |
+| Macros and macro hygiene | `02_macros/01`-`11` | Object-like macros, function-like macros, parentheses, `#`, `##`, variadic macros, X-macros, macro statements, macro-vs-typedef, macro side effects, multiline macros, `assert`. |
 
 ## 11. Standard library and I/O
 

@@ -1,25 +1,25 @@
 /*
  * clings exercise: 00_basics/08_lexical_elements
- * title: Comments, line continuation, and escapes
- * objective: Recognize comments, backslash-newline continuation, and escape sequences.
- * hint: The escaped text contains a real newline, a tab, and quotation marks.
+ * title: Comments and escape sequences
+ * objective: Use comments and escape sequences correctly.
+ * hint: Escape sequences start with a backslash; comments need both delimiters.
  */
 
 #include "clings/test.h"
 
-#include <string.h>
-
-const char *escaped_text(void)
+char newline_character(void)
 {
-    return "line1\nline2\t\"quoted\"";
+    return '\n';
 }
 
-int continued_sum(void)
+char tab_character(void)
 {
-    int sum = 1 + \
-              2 + \
-              3;
-    return sum;
+    return '\t';
+}
+
+char backslash_character(void)
+{
+    return '\\';
 }
 
 int comment_is_ignored(void)
@@ -29,8 +29,9 @@ int comment_is_ignored(void)
 
 int main(void)
 {
-    CLINGS_CHECK_STR(escaped_text(), "line1\nline2\t\"quoted\"");
-    CLINGS_CHECK_INT(continued_sum(), 6);
+    CLINGS_CHECK_INT(newline_character(), '\n');
+    CLINGS_CHECK_INT(tab_character(), '\t');
+    CLINGS_CHECK_INT(backslash_character(), '\\');
     CLINGS_CHECK_INT(comment_is_ignored(), 3);
     return clings_report();
 }

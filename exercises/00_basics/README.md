@@ -15,5 +15,5 @@ Run an exercise with:
 | `05_snprintf` | Write formatted text into a fixed-size buffer. |
 | `06_sscanf` | Parse values from a string with sscanf. |
 | `07_include_header` | Include the standard header that declares printf. |
-| `08_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. |
+| `08_lexical_elements` | Use comments and escape sequences correctly. |
 | `09_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |

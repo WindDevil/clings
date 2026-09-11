@@ -9,7 +9,7 @@
 
 ## 特性
 
-- **183 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
+- **184 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
   数据结构、文件 I/O、线程和原子操作。
   `_Generic`。
 - **自带测试框架**：不依赖 Catch2、GoogleTest 或第三方库。
@@ -95,7 +95,7 @@ make clean
 | --- | ---: | --- |
 | `00_basics` | 9 | `printf`、`scanf`、字符数组、`snprintf`/`sscanf`、`#include`、词法元素、编译器诊断 |
 | `01_preprocessor` | 6 | `#include`、条件编译、头文件保护、`#pragma`/`#error`/`#line`、`#undef`/`defined` |
-| `02_macros` | 10 | 对象宏、函数宏、参数括号、`#`/`##`、变参宏、X-macro、宏空格、宏语句、宏与 typedef、宏副作用、`assert` |
+| `02_macros` | 11 | 对象宏、函数宏、参数括号、`#`/`##`、变参宏、X-macro、宏空格、宏语句、宏与 typedef、宏副作用、多行宏、`assert` |
 | `03_types_variables` | 12 | 整数/浮点类型、符号、溢出、字符、存储类、限定符、八进制常量、`char` 符号性、整型提升 |
 | `04_operators` | 9 | 算术、优先级、短路求值、位运算、移位、`sizeof`、复合赋值、赋值/相等、最长匹配 |
 | `05_control_flow` | 7 | `if`、`switch`、循环、`break/continue`、分号陷阱、悬挂 `else` |
@@ -114,7 +114,7 @@ make clean
 | `18_advanced_c` | 12 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号、栈帧 |
 | `19_modern_c_library` | 4 | `_Noreturn`、`tgmath.h`、`atexit`、`atomic_flag` |
 
-总计 **183 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
+总计 **184 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
 和 [docs/knowledge-map.md](docs/knowledge-map.md)。
 
 ## 项目结构

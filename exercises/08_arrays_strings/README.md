@@ -25,3 +25,4 @@ Run an exercise with:
 | `15_strtod` | Parse a double with strtod and reject trailing input. |
 | `16_main_args` | Work with the arguments passed to main. |
 | `17_state_machine` | Track state while scanning a string. |
+| `18_escaped_strings` | Use escape sequences inside a string literal and continue lines explicitly. |

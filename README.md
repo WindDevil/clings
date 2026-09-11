@@ -9,7 +9,7 @@
 
 ## 特性
 
-- **184 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
+- **185 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
   数据结构、文件 I/O、线程和原子操作。
   `_Generic`。
 - **自带测试框架**：不依赖 Catch2、GoogleTest 或第三方库。
@@ -101,7 +101,7 @@ make clean
 | `05_control_flow` | 7 | `if`、`switch`、循环、`break/continue`、分号陷阱、悬挂 `else` |
 | `06_functions` | 7 | 声明/定义、参数、递归、尾递归、`static`、`void/return`、`main` 返回值 |
 | `07_pointers` | 13 | 指针基础、`NULL`、指针运算、二级指针、`void *`、野指针、`NULL`/空串、one-past、`restrict`、传参、函数指针 |
-| `08_arrays_strings` | 17 | 数组、数组退化、多维数组、字符串、分词、VLA、复合字面量、不对称边界、字符串函数、`argc/argv`、状态机 |
+| `08_arrays_strings` | 18 | 数组、数组退化、多维数组、字符串、分词、VLA、复合字面量、不对称边界、字符串函数、`argc/argv`、状态机、转义字符串 |
 | `09_dynamic_memory` | 11 | `malloc/calloc/realloc/free`、泄漏、越界、柔性数组、链表、free 后 realloc、arena、分配统计、`goto` 清理 |
 | `10_aggregates` | 13 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明、函数指针表 |
 | `11_data_representation` | 5 | 进制转换、整数位表示、浮点位表示、位域与掩码、端序 |
@@ -114,7 +114,7 @@ make clean
 | `18_advanced_c` | 12 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号、栈帧 |
 | `19_modern_c_library` | 4 | `_Noreturn`、`tgmath.h`、`atexit`、`atomic_flag` |
 
-总计 **184 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
+总计 **185 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
 和 [docs/knowledge-map.md](docs/knowledge-map.md)。
 
 ## 项目结构

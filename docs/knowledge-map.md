@@ -21,7 +21,7 @@ Every row points to at least one exercise.
 | --- | --- | --- |
 | Comments, identifiers, keywords | all exercises | Lexical and keyword usage across the exercises. |
 | Comments, line continuation, escapes | `00_basics/08_lexical_elements` | `/* ... */`, backslash-newline, `\n`, `\t`, `\"`. |
-| Character constants and string literals | `03_types_variables/05_char_ascii`, `08_arrays_strings/04_string_literals` | `char`, ASCII, mutable arrays vs immutable literals. |
+| Character constants and string literals | `03_types_variables/05_char_ascii`, `08_arrays_strings/04_string_literals`, `08_arrays_strings/18_escaped_strings` | `char`, ASCII, mutable arrays vs immutable literals, escapes. |
 | Integer types and ranges | `03_types_variables/01_integer_types` | `sizeof`, `CHAR_BIT`, `INT_MIN`, `INT_MAX`. |
 | Signed and unsigned | `03_types_variables/02_signed_unsigned`, `15_ub_safety/01_signed_overflow` | Usual arithmetic conversions and overflow. |
 | Integer overflow and wraparound | `03_types_variables/03_overflow`, `15_ub_safety/01_signed_overflow` | Unsigned wraps; signed overflow is undefined behavior. |

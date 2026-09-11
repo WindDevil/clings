@@ -2,7 +2,7 @@
 
 This map connects each topic to the exercises that teach it.
 
-Total exercises: **184** across **20** topics.
+Total exercises: **185** across **20** topics.
 
 ## 00_basics - Basics
 
@@ -139,6 +139,7 @@ Total exercises: **184** across **20** topics.
 | `08_arrays_strings/15_strtod` | Parse a double with strtod and reject trailing input. |
 | `08_arrays_strings/16_main_args` | Work with the arguments passed to main. |
 | `08_arrays_strings/17_state_machine` | Track state while scanning a string. |
+| `08_arrays_strings/18_escaped_strings` | Use escape sequences inside a string literal and continue lines explicitly. |
 
 ## 09_dynamic_memory - Dynamic Memory
 

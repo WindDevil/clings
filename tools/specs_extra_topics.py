@@ -1290,4 +1290,29 @@ unlock_flag();
             )
         ],
     ),
+    ex(
+        topic="13_character_io",
+        slug="06_include_ctypes",
+        title="Include ctype.h",
+        objective="Call toupper after including the header that declares it.",
+        reference="",
+        hint="The compiler needs the declaration from ctype.h; add the include.",
+        code=r"""
+#include <ctype.h>
+
+int uppercase_a(void)
+{
+    return toupper('a');
+}
+""",
+        tests=r"""
+CLINGS_CHECK_INT(uppercase_a(), 'A');
+""",
+        breaks=[
+            (
+                "#include <ctype.h>\n\n",
+                "/* TODO: include the header that declares toupper. */\n",
+            )
+        ],
+    ),
 ]

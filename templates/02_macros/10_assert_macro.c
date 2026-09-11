@@ -8,6 +8,7 @@
 #include "clings/test.h"
 
 #include <assert.h>
+#include <stddef.h>
 
 int checked_divide(int numerator, int denominator, int *out)
 {

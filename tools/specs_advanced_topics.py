@@ -420,6 +420,8 @@ if (is_little_endian()) {
         reference="",
         hint="__builtin_frame_address is a GCC/Clang extension.",
         code=r"""
+#include <stddef.h>
+
 static void *inner_frame(void)
 {
     return __builtin_frame_address(0);

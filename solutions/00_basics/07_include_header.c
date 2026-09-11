@@ -1,21 +1,21 @@
 /*
  * clings exercise: 00_basics/07_include_header
- * title: Include a header
- * objective: Include the standard header that declares toupper.
- * hint: The compiler needs a declaration before use; add the header for character functions.
+ * title: Include the I/O header
+ * objective: Include the standard header that declares printf.
+ * hint: The compiler needs a declaration of printf; add the standard I/O header.
  */
 
 #include "clings/test.h"
 
-#include <ctype.h>
+#include <stdio.h>
 
-int uppercase_a(void)
+int print_greeting(void)
 {
-    return toupper('a');
+    return printf("header works\n");
 }
 
 int main(void)
 {
-    CLINGS_CHECK_INT(uppercase_a(), 'A');
+    CLINGS_CHECK_INT(print_greeting(), 13);
     return clings_report();
 }

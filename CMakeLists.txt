@@ -43,7 +43,11 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
 endif()
 
 function(clings_add_target target)
-  add_executable(${target} ${ARGN})
+  add_executable(
+    ${target}
+    ${ARGN}
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/clings/test.c"
+  )
   target_link_libraries(
     ${target}
     PRIVATE clings_harness Threads::Threads ${CMAKE_DL_LIBS}
@@ -100,6 +104,7 @@ foreach(source IN LISTS clings_exercise_sources)
     ${target}
     EXCLUDE_FROM_ALL
     "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${source}"
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/clings/test.c"
   )
   target_link_libraries(${target} PRIVATE clings_harness Threads::Threads)
   if(CMAKE_DL_LIBS)
@@ -121,7 +126,12 @@ foreach(main IN LISTS clings_project_exercise_mains)
     "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${project_dir}/*.c"
   )
   string(REPLACE "/" "_" target "exercise_${project_dir}")
-  add_executable(${target} EXCLUDE_FROM_ALL ${project_sources})
+  add_executable(
+    ${target}
+    EXCLUDE_FROM_ALL
+    ${project_sources}
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/clings/test.c"
+  )
   target_include_directories(
     ${target}
     PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/exercises/${project_dir}"

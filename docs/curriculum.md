@@ -2,7 +2,7 @@
 
 This map connects each topic to the exercises that teach it.
 
-Total exercises: **182** across **20** topics.
+Total exercises: **183** across **20** topics.
 
 ## 00_basics - Basics
 
@@ -14,7 +14,7 @@ Total exercises: **182** across **20** topics.
 | `00_basics/04_char_array` | Store text in a char array and access its characters. |
 | `00_basics/05_snprintf` | Write formatted text into a fixed-size buffer. |
 | `00_basics/06_sscanf` | Parse values from a string with sscanf. |
-| `00_basics/07_include_header` | Include the standard header that declares toupper. |
+| `00_basics/07_include_header` | Include the standard header that declares printf. |
 | `00_basics/08_lexical_elements` | Recognize comments, backslash-newline continuation, and escape sequences. |
 | `00_basics/09_compiler_diagnostics` | Fix a format-string warning that the compiler reports. |
 
@@ -213,6 +213,7 @@ Total exercises: **182** across **20** topics.
 | `13_character_io/03_input_validation` | Reject input with trailing characters or out-of-range values. |
 | `13_character_io/04_iso646` | Use and/or/not from iso646.h. |
 | `13_character_io/05_getchar_putchar` | Use the standard input/output character macros directly. |
+| `13_character_io/06_include_ctypes` | Call toupper after including the header that declares it. |
 
 ## 14_file_io - File I/O
 

@@ -7,6 +7,8 @@
 
 #include "clings/test.h"
 
+#include <stddef.h>
+
 int dereference_or_default(const int *pointer, int fallback)
 {
     /* TODO: return the pointed-to value only when the pointer is not null. */

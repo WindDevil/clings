@@ -1022,6 +1022,8 @@ CLINGS_CHECK_INT(second_member_is_aligned(), 1);
         reference="",
         hint="Use a conditional expression to provide a fallback.",
         code=r"""
+#include <stddef.h>
+
 int dereference_or_default(const int *pointer, int fallback)
 {
     return pointer != NULL ? *pointer : fallback;

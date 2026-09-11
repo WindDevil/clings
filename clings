@@ -232,6 +232,7 @@ def compile_sources(
     for directory in include_dirs:
         command.append(f"-I{directory}")
     command.extend(str(source) for source in sources)
+    command.append(str(ROOT / "include" / "clings" / "test.c"))
     command.extend(["-o", str(output), *DEFAULT_LDLIBS])
     return subprocess.run(
         command,

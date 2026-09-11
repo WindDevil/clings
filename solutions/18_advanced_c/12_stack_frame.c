@@ -7,6 +7,8 @@
 
 #include "clings/test.h"
 
+#include <stddef.h>
+
 static void *inner_frame(void)
 {
     return __builtin_frame_address(0);

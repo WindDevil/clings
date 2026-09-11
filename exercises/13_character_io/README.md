@@ -13,3 +13,4 @@ Run an exercise with:
 | `03_input_validation` | Reject input with trailing characters or out-of-range values. |
 | `04_iso646` | Use and/or/not from iso646.h. |
 | `05_getchar_putchar` | Use the standard input/output character macros directly. |
+| `06_include_ctypes` | Call toupper after including the header that declares it. |

@@ -202,25 +202,25 @@ CLINGS_CHECK_INT(parse_invalid(), -1);
     ex(
         topic="00_basics",
         slug="07_include_header",
-        title="Include a header",
-        objective="Include the standard header that declares toupper.",
+        title="Include the I/O header",
+        objective="Include the standard header that declares printf.",
         reference="",
-        hint="The compiler needs a declaration before use; add the header for character functions.",
+        hint="The compiler needs a declaration of printf; add the standard I/O header.",
         code=r"""
-#include <ctype.h>
+#include <stdio.h>
 
-int uppercase_a(void)
+int print_greeting(void)
 {
-    return toupper('a');
+    return printf("header works\n");
 }
 """,
         tests=r"""
-CLINGS_CHECK_INT(uppercase_a(), 'A');
+CLINGS_CHECK_INT(print_greeting(), 13);
 """,
         breaks=[
             (
-                "#include <ctype.h>\n\n",
-                "/* TODO: include the header that declares toupper. */\n",
+                "#include <stdio.h>\n\n",
+                "/* TODO: include the header that declares printf. */\n",
             )
         ],
     ),
@@ -274,6 +274,7 @@ CLINGS_CHECK_INT(find_arg(3, argv, "missing"), -1);
         hint="A zero denominator is a normal error, so return -1 instead of dividing.",
         code=r"""
 #include <assert.h>
+#include <stddef.h>
 
 int checked_divide(int numerator, int denominator, int *out)
 {

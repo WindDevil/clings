@@ -9,7 +9,7 @@
 
 ## 特性
 
-- **182 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
+- **183 个练习，20 个主题**：从 `Hello, C!` 到多翻译单元、字符 I/O、
   数据结构、文件 I/O、线程和原子操作。
   `_Generic`。
 - **自带测试框架**：不依赖 Catch2、GoogleTest 或第三方库。
@@ -106,7 +106,7 @@ make clean
 | `10_aggregates` | 13 | 结构体、嵌套、对齐、位域、联合、枚举、`typedef`、结构体数组/传参/文件、复杂声明、函数指针表 |
 | `11_data_representation` | 5 | 进制转换、整数位表示、浮点位表示、位域与掩码、端序 |
 | `12_standard_library` | 16 | `printf` 格式进阶、`strtol`、`qsort/bsearch`、`math.h`、`time.h`、随机数、`RAND_MAX`、文件 I/O、`mem*`、`ctype.h`、varargs、默认参数提升 |
-| `13_character_io` | 5 | `getc/putc`、`EOF/feof/ferror`、输入验证、`iso646.h`、`getchar/putchar` |
+| `13_character_io` | 6 | `getc/putc`、`EOF/feof/ferror`、输入验证、`iso646.h`、`getchar/putchar`、`ctype.h` |
 | `14_file_io` | 7 | `fprintf/fscanf`、`fgets/fputs`、`ungetc`、`fseek/ftell`、缓冲、二进制随机访问、缓冲输出+内存 |
 | `15_ub_safety` | 11 | 有符号溢出、未初始化、越界、释放后使用、序列点、严格别名、对齐、空指针、标准版本、标识符长度、实现定义行为 |
 | `16_data_structures` | 3 | 队列 ADT、二叉查找树、动态数组 |
@@ -114,7 +114,7 @@ make clean
 | `18_advanced_c` | 12 | 变参函数、`setjmp/longjmp`、POSIX 线程、C11 原子、`_Generic`、静态断言、对齐、匿名联合、`_Thread_local`、复数、信号、栈帧 |
 | `19_modern_c_library` | 4 | `_Noreturn`、`tgmath.h`、`atexit`、`atomic_flag` |
 
-总计 **182 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
+总计 **183 个练习**。完整映射见 [docs/curriculum.md](docs/curriculum.md)
 和 [docs/knowledge-map.md](docs/knowledge-map.md)。
 
 ## 项目结构
